@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ROS 2 build output
+build/
+install/
+log/
+
+# Large recordings
+*.bag
+*.db3
+*.mcap
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
