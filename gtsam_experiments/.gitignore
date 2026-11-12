@@ -1,0 +1,10 @@
+.venv/
+.venv-ros/
+.build/
+__pycache__/
+data/
+results/
+*.db3
+*.mcap
+*.bag
+*.zip

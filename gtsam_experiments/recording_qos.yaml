@@ -1,0 +1,6 @@
+# Capture latched static transforms even when recording starts after the robot.
+/tf_static:
+  reliability: reliable
+  durability: transient_local
+  history: keep_last
+  depth: 100

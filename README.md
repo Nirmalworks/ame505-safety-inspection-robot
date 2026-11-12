@@ -11,3 +11,8 @@ ame505-safety-inspection-robot/
 ├── README.md
 └── .gitignore
 ```
+
+## GTSAM experiments
+
+See [gtsam_experiments](gtsam_experiments/README.md) for setup and simulation,
+and [the hardware guide](gtsam_experiments/HARDWARE.md) for JetAuto testing.
