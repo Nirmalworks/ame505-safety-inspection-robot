@@ -1,0 +1,37 @@
+# GTSAM lidar/gyro odometry (Shreyash's jetauto.yaml, adapted). Initial experimental noise
+# settings, not calibrated safety bounds.
+gtsam_slam:
+  ros__parameters:
+    scan_topic: /scan
+    imu_topic: /imu                # imu_complementary_filter output, frame imu_link
+    base_frame: base_footprint
+    output_frame: gtsam_odom
+    anchor_frames: [map, odom]     # draw the GTSAM path on the saved map when one is running
+    output_dir: ''                 # '' = $AME505_DATA/gtsam/<time>_live/
+    process_rate_hz: 5.0
+    sensor_timeout: 1.0
+    use_imu: true
+    calibration_seconds: 4.0
+    calibration_max_gyro_std: 0.02
+    calibration_max_gyro_mean: 0.05
+    calibration_max_translation: 0.025
+    calibration_max_yaw: 0.03
+    max_imu_gap: 0.10
+    max_scan_gap: 1.0
+    min_range: 0.2                 # A1 filter drops < 0.2 m anyway
+    max_range: 6.0
+    max_points: 300
+    min_points: 40
+    correspondence_distance: 0.20
+    icp_iterations: 35
+    min_overlap: 0.65
+    max_rmse: 0.06
+    min_geometry_ratio: 0.001
+    max_speed: 0.8
+    max_yaw_rate: 1.5
+    motion_slack: 0.03
+    lidar_translation_sigma: 0.03
+    lidar_yaw_sigma: 0.05
+    gyro_noise_density: 0.01
+    gyro_bias_sigma: 0.003
+    max_poses: 3000

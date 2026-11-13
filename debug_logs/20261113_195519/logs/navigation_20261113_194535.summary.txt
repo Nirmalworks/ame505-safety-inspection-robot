@@ -1,0 +1,62 @@
+navigation_20261113_194535: 4138 lines, 60 distinct warning/error messages
+
+   634 x  [component_container_isolated-16] [WARN] [1794599258.370198010] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+   547 x  [component_container_isolated-16] [ERROR] [1794599250.623178626] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.134337 but the earliest data is at time 1794599244.256980, when looking up transfor
+    49 x  [ekf_node-7] Failed to meet update rate! Took 0.075673304999999996268seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+    47 x  [component_container_isolated-16] [WARN] [1794599258.594637665] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 5.197971 seconds. Ignoring the source.
+    20 x  [component_container_isolated-16] [ERROR] [1794599258.460456453] [tf_help]: Transform data too old when converting from odom to map
+    20 x  [component_container_isolated-16] [ERROR] [1794599258.460526456] [tf_help]: Data time: 1794599249s 809355129ns, Transform time: 1794599244s 600673776ns
+    20 x  [component_container_isolated-16] [WARN] [1794599258.460871574] [controller_server]: Unable to transform robot pose into global plan's frame
+     4 x  [component_container_isolated-16] [ERROR] [1794599258.922096473] [controller_server]: Controller patience exceeded
+     4 x  [component_container_isolated-16] [WARN] [1794599258.939023492] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+     3 x  [component_container_isolated-16] [WARN] [1794599323.555181704] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+     2 x  [xbox_teleop-13] [WARN] [1794599204.878347548] [xbox_teleop]: Joystick timed out -> stopping
+     2 x  [component_container_isolated-16] [WARN] [1794599252.034721240] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+     2 x  [ros_robot_controller-3] Traceback (most recent call last):
+     2 x  [component_container_isolated-16] [ERROR] [1794599323.555240352] [map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+     1 x  [component_container_isolated-16] [WARN] [1794599241.759567647] [planner_server]: No planners specified in action call. Server will use only plugin GridBased  in server. This warning will appear once.
+     1 x  [component_container_isolated-16] [WARN] [1794599258.420939015] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+     1 x  [component_container_isolated-16] [WARN] [1794599262.684228141] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+     1 x  [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+     1 x  [servo_controller-8] Traceback (most recent call last):
+     1 x  [init_pose-9] Traceback (most recent call last):
+     1 x  [ERROR] [servo_controller-8]: process has died [pid 14922, exit code -2, cmd '/home/ubuntu/ros2_ws/install/servo_controller/lib/servo_controller/servo_controller --ros-args --params-file /home/ubuntu/ros2_ws/src/driver/servo_controller/config/servo_controller.yaml --params-file /tmp/launch_params_dy
+     1 x  [ros_robot_controller-3] Exception in thread Thread-2 (pub_callback):
+     1 x  [ERROR] [init_pose-9]: process has died [pid 14924, exit code -2, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/init_pose --ros-args -r __node:=init_pose --params-file /tmp/tmp8hc72jit'].
+     1 x  [ERROR] [checkpoint_recorder-15]: process has died [pid 14938, exit code -2, cmd '/home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/checkpoint_recorder --ros-args -r __node:=checkpoint_recorder --params-file /home/ubuntu/ame505-safety-inspection-robot/install/ame5
+     1 x  [ERROR] [lifecycle_guard-14]: process has died [pid 14935, exit code -2, cmd '/home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/lifecycle_guard --ros-args -r __node:=lifecycle_guard'].
+     1 x  [ERROR] [odom_publisher-4]: process has died [pid 14905, exit code -2, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/odom_publisher --ros-args -r __node:=odom_publisher --params-file /home/ubuntu/ros2_ws/src/driver/controller/config/calibrate_params.yaml --params-file /tmp/launch_param
+     1 x  [ERROR] [xbox_teleop-13]: process has died [pid 14933, exit code -2, cmd '/home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/xbox_teleop --ros-args -r __node:=xbox_teleop --params-file /home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/share/ame505_
+     1 x  [odom_publisher-4] Exception in thread Thread-1 (cal_odom_fun):
+     1 x  [odom_publisher-4] Traceback (most recent call last):
+     1 x  [ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [ERROR] [joint_state_publisher-2]: process has died [pid 14901, exit code -2, cmd '/opt/ros/humble/lib/joint_state_publisher/joint_state_publisher --ros-args -r __node:=joint_state_publisher --params-file /tmp/launch_params_lstgp821'].
+     1 x  [ros_robot_controller-3] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [ros_robot_controller-3]     raise handler.exception()
+     1 x  [ros_robot_controller-3]     abort, ready, _ = select.select([self.pipe_abort_write_r], [self.fd], [], None)
+     1 x  [ros_robot_controller-3]     raise RuntimeError('Context must be initialized before it can be shutdown')
+     1 x  [ros_robot_controller-3] RuntimeError: Context must be initialized before it can be shutdown
+     1 x  [ERROR] [ros_robot_controller-3]: process has died [pid 14903, exit code 1, cmd '/home/ubuntu/ros2_ws/install/ros_robot_controller/lib/ros_robot_controller/ros_robot_controller --ros-args --params-file /tmp/launch_params__1o34ovd'].
+     1 x  [component_container_isolated-16] [ERROR] [1794599323.494927201] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 30000 ms. Shutting down related nodes.
+     1 x  [component_container_isolated-16] [WARN] [1794599323.549748574] [rcl_lifecycle]: No transition matching 4 found for current state cleaningup
+     1 x  [component_container_isolated-16] [ERROR] [1794599323.549822379] [amcl]: Unable to start transition 4 from current state cleaningup: Transition is not registered., at ./src/rcl_lifecycle.c:355
+     1 x  [component_container_isolated-16] [ERROR] [1794599323.553854517] [lifecycle_manager_localization]: Failed to change state for node: amcl
+     1 x  [component_container_isolated-16] [ERROR] [1794599323.556542591] [lifecycle_manager_localization]: Failed to change state for node: map_server
+     1 x  [component_container_isolated-16] [ERROR] [1794599323.587097698] [amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+     1 x  [component_container_isolated-16] [WARN] [1794599323.644178744] [bt_navigator]: [navigate_to_pose] [ActionServer] Requested to deactivate server but goal is still executing. Should check if action server is running before deactivating.
+     1 x  [component_container_isolated-16] [WARN] [1794599324.148012974] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+     1 x  [component_container_isolated-16] [ERROR] [1794599324.158562294] [bt_navigator]: Caught exception in callback for transition 14
+     1 x  [component_container_isolated-16] [ERROR] [1794599324.158684903] [bt_navigator]: Original error: bad_function_call
+     1 x  [component_container_isolated-16] [WARN] [1794599324.158760323] [bt_navigator]: Error occurred while doing error handling.
+     1 x  [component_container_isolated-16] [FATAL] [1794599324.158808085] [bt_navigator]: Lifecycle node bt_navigator does not have error state implemented
+     1 x  [ERROR] [component_container_isolated-16]: process[component_container_isolated-16] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+     1 x  [component_container_isolated-16] [WARN] [1794599324.701955839] [planner_server]: [compute_path_to_pose] [ActionServer] Requested to deactivate server but goal is still executing. Should check if action server is running before deactivating.
+     1 x  [component_container_isolated-16] [ERROR] [1794599324.725037372] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for compute_path_to_pose in node halt!
+     1 x  [component_container_isolated-16] [WARN] [1794599324.725435043] [bt_navigator]: [navigate_to_pose] [ActionServer] Stopping the thread per request.
+     1 x  [component_container_isolated-16] [WARN] [1794599325.203473051] [planner_server]: [compute_path_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+     1 x  [component_container_isolated-16] [ERROR] [1794599325.203905516] [planner_server]: Caught exception in callback for transition 14
+     1 x  [component_container_isolated-16] [ERROR] [1794599325.203979686] [planner_server]: Original error: bad_function_call
+     1 x  [component_container_isolated-16] [WARN] [1794599325.204044428] [planner_server]: Error occurred while doing error handling.
+     1 x  [component_container_isolated-16] [FATAL] [1794599325.204123129] [planner_server]: Lifecycle node planner_server does not have error state implemented
+     1 x  [component_container_isolated-16] Magick: abort due to signal 11 (SIGSEGV) "Segmentation Fault"...
+     1 x  [ERROR] [component_container_isolated-16]: process has died [pid 15205, exit code -6, cmd '/opt/ros/humble/lib/rclcpp_components/component_container_isolated --ros-args -r __node:=nav2_container -r __ns:=/ --params-file /home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/share/ame505_

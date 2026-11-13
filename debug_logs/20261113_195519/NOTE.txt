@@ -1,0 +1,1 @@
+2026-11-13 localization fix session: AMCL 2D nav on lab_map_new; lidar driver crash seen once (now respawns); load avg ~18 with VS Code open

@@ -1,0 +1,31 @@
+navigation_20261113_194856: 614 lines, 29 distinct warning/error messages
+
+    24 x  [ekf_node-7] Failed to meet update rate! Took 0.071943557000000005197seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+     2 x  [servo_controller-8] Traceback (most recent call last):
+     2 x  [odom_publisher-4] Traceback (most recent call last):
+     2 x  [ros_robot_controller-3] Traceback (most recent call last):
+     2 x  [component_container_isolated-16] [WARN] [1794599584.779708860] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+     2 x  [component_container_isolated-16] [ERROR] [1794599584.779798916] [map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+     1 x  [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+     1 x  [xbox_teleop-13] Traceback (most recent call last):
+     1 x  [xbox_teleop-13] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [init_pose-9] Traceback (most recent call last):
+     1 x  [component_container_isolated-16] [ERROR] [1794599580.442235308] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 30000 ms. Shutting down related nodes.
+     1 x  [servo_controller-8] Exception in thread Thread-1 (publish_joint_states):
+     1 x  [servo_controller-8] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [ERROR] [init_pose-9]: process has died [pid 17288, exit code -2, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/init_pose --ros-args -r __node:=init_pose --params-file /tmp/tmps302vtj8'].
+     1 x  [ERROR] [robot_state_publisher-1]: process has died [pid 17267, exit code -15, cmd '/opt/ros/humble/lib/robot_state_publisher/robot_state_publisher --ros-args -r __node:=robot_state_publisher --params-file /tmp/launch_params_5wtgcm0s'].
+     1 x  [odom_publisher-4] Exception in thread Thread-1 (cal_odom_fun):
+     1 x  [ros_robot_controller-3] Exception in thread Thread-2 (pub_callback):
+     1 x  [ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [ros_robot_controller-3] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+     1 x  [odom_publisher-4] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [odom_publisher-4] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [odom_publisher-4] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+     1 x  [ERROR] [xbox_teleop-13]: process has died [pid 17321, exit code 1, cmd '/home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/xbox_teleop --ros-args -r __node:=xbox_teleop --params-file /home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/share/ame505_b
+     1 x  [ERROR] [ros_robot_controller-3]: process has died [pid 17273, exit code 1, cmd '/home/ubuntu/ros2_ws/install/ros_robot_controller/lib/ros_robot_controller/ros_robot_controller --ros-args --params-file /tmp/launch_params_1ijwdieo'].
+     1 x  [ERROR] [servo_controller-8]: process has died [pid 17284, exit code -2, cmd '/home/ubuntu/ros2_ws/install/servo_controller/lib/servo_controller/servo_controller --ros-args --params-file /home/ubuntu/ros2_ws/src/driver/servo_controller/config/servo_controller.yaml --params-file /tmp/launch_params_9t
+     1 x  [ERROR] [odom_publisher-4]: process has died [pid 17275, exit code 1, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/odom_publisher --ros-args -r __node:=odom_publisher --params-file /home/ubuntu/ros2_ws/src/driver/controller/config/calibrate_params.yaml --params-file /tmp/launch_params
+     1 x  [component_container_isolated-16] [ERROR] [1794599584.795342235] [lifecycle_manager_localization]: Failed to change state for node: map_server
+     1 x  [ERROR] [component_container_isolated-16]: process[component_container_isolated-16] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'

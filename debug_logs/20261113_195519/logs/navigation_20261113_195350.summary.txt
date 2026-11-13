@@ -1,0 +1,4 @@
+navigation_20261113_195350: 351 lines, 2 distinct warning/error messages
+
+    13 x  [ekf_node-7] Failed to meet update rate! Took 0.04885212900000000108seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+     3 x  [component_container_isolated-16] [WARN] [1794599675.503690713] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 1794599675.503581 but the latest data is at time 1794599675.466509, when looking up transform from frame [base_footpri

@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""Autonomous patrol: visit every recorded checkpoint with Nav2, stop, dwell.
+
+    ros2 run ame505_bringup patrol --map lab_map --loops 1 --dwell 5
+
+At each checkpoint it publishes the checkpoint id on /patrol/at_checkpoint
+(std_msgs/String) and waits --dwell seconds. That is the hook for the
+inspection node (capture RGB-D -> YOLO -> keep-clear check) from the proposal.
+"""
+import argparse
+import math
+import os
+import sys
+import time
+
+import rclpy
+import yaml
+from geometry_msgs.msg import PoseStamped
+from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
+from std_msgs.msg import String
+
+from ame505_bringup.paths import checkpoints_file
+
+
+def make_pose(nav, frame, cp):
+    p = PoseStamped()
+    p.header.frame_id = frame
+    p.header.stamp = nav.get_clock().now().to_msg()
+    p.pose.position.x = float(cp['x'])
+    p.pose.position.y = float(cp['y'])
+    p.pose.orientation.z = math.sin(cp['yaw'] / 2.0)
+    p.pose.orientation.w = math.cos(cp['yaw'] / 2.0)
+    return p
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--map', default='lab_map', help='map name (selects checkpoint file)')
+    ap.add_argument('--file', default='', help='explicit checkpoint yaml (overrides --map)')
+    ap.add_argument('--loops', type=int, default=1, help='patrol loops (0 = forever)')
+    ap.add_argument('--dwell', type=float, default=5.0, help='seconds to stop at each checkpoint')
+    ap.add_argument('--return-home', action='store_true', help='go back to cp_01 at the end')
+    args = ap.parse_args(rclpy.utilities.remove_ros_args(sys.argv)[1:])
+
+    path = args.file or checkpoints_file(args.map)
+    if not os.path.exists(path):
+        sys.exit(f'No checkpoint file {path}. Record checkpoints first (Y button during navigation).')
+    with open(path) as f:
+        data = yaml.safe_load(f)
+    cps, frame = data['checkpoints'], data.get('frame_id', 'map')
+    if not cps:
+        sys.exit(f'No checkpoints in {path}')
+
+    rclpy.init()
+    nav = BasicNavigator()
+    pub = nav.create_publisher(String, 'patrol/at_checkpoint', 10)
+    nav.get_logger().info(f'Loaded {len(cps)} checkpoints from {path}')
+    # RTAB-Map does localization (no AMCL), so only wait for Nav2 itself.
+    nav.waitUntilNav2Active(localizer='robot_localization')
+
+    loop = 0
+    try:
+        while args.loops == 0 or loop < args.loops:
+            loop += 1
+            for cp in cps:
+                nav.get_logger().info(f'[loop {loop}] -> {cp["id"]} ({cp["x"]}, {cp["y"]})')
+                nav.goToPose(make_pose(nav, frame, cp))
+                while not nav.isTaskComplete():
+                    rclpy.spin_once(nav, timeout_sec=0.1)
+                result = nav.getResult()
+                if result == TaskResult.SUCCEEDED:
+                    pub.publish(String(data=cp['id']))
+                    nav.get_logger().info(f'Arrived at {cp["id"]}, inspecting for {args.dwell}s')
+                    time.sleep(args.dwell)
+                else:
+                    nav.get_logger().warn(f'{cp["id"]} not reached ({result}), skipping')
+        if args.return_home:
+            nav.goToPose(make_pose(nav, frame, cps[0]))
+            while not nav.isTaskComplete():
+                rclpy.spin_once(nav, timeout_sec=0.1)
+        nav.get_logger().info('Patrol finished')
+    except KeyboardInterrupt:
+        nav.cancelTask()
+        nav.get_logger().warn('Patrol cancelled')
+    finally:
+        rclpy.try_shutdown()
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AME 505 Robot</title>
+<style>
+  :root{--bg:#0f1216;--card:#181c22;--line:#2a3039;--txt:#e6e9ee;--mut:#8a94a3;--ok:#2ecc71;--warn:#f1c40f;--bad:#e74c3c;--acc:#3d8bfd}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  header{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5;flex-wrap:wrap}
+  h1{font-size:18px;margin:0} h2{font-size:13px;margin:0 0 10px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+  .badge{padding:3px 10px;border-radius:99px;font-weight:600;font-size:12px;background:#333}
+  .badge.idle{background:#394150}.badge.mapping{background:#8e44ad}.badge.navigation{background:#2471a3}.badge.drive{background:#1e8449}
+  .spacer{flex:1}
+  .estop{background:var(--bad);color:#fff;border:0;border-radius:10px;padding:10px 22px;font-size:16px;font-weight:800;cursor:pointer;letter-spacing:.05em}
+  main{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:14px;padding:14px 16px;max-width:1500px;margin:auto}
+  @media(max-width:900px){main{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+  .step{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line)} .step:first-of-type{border-top:0}
+  .num{flex:0 0 26px;height:26px;border-radius:50%;background:#2a3039;display:grid;place-items:center;font-weight:700}
+  .step.active .num{background:var(--acc)} .step.done .num{background:var(--ok)}
+  .step p{margin:2px 0 8px;color:var(--mut)}
+  button.big{width:100%;padding:12px;border:0;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;color:#fff}
+  button.go{background:#27ae60} button.save{background:#d35400} button.view{background:var(--acc)} button.stop{background:#555}
+  button:disabled{opacity:.35;cursor:not-allowed}
+  input[type=text],select,input[type=number]{background:#0f1216;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:8px;width:100%}
+  label.chk{display:flex;gap:8px;align-items:center;color:var(--mut);margin:6px 0}
+  .row{display:flex;gap:8px} .row>*{flex:1}
+  .job{background:#0f1216;border:1px dashed var(--line);border-radius:8px;padding:8px;color:var(--warn);min-height:20px;font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+  .s{background:#0f1216;border:1px solid var(--line);border-radius:10px;padding:10px}
+  .s .k{color:var(--mut);font-size:12px;display:flex;justify-content:space-between}
+  .s .v{font-size:20px;font-weight:700;margin-top:2px;font-variant-numeric:tabular-nums}
+  .s .d{color:var(--mut);font-size:12px;font-variant-numeric:tabular-nums}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;background:var(--bad)} .dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)}
+  .feeds{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+  .feed{background:#000;border-radius:10px;overflow:hidden;position:relative;aspect-ratio:4/3;display:grid;place-items:center}
+  .feed img,.feed canvas{width:100%;height:100%;object-fit:contain}
+  .feed .cap{position:absolute;left:8px;top:6px;font-size:12px;background:#000a;padding:2px 8px;border-radius:6px}
+  .nosig{position:absolute;color:var(--mut)}
+  pre{background:#0b0d10;border-radius:8px;padding:10px;max-height:220px;overflow:auto;font-size:11px;color:#b9c2cf;margin:0;white-space:pre-wrap}
+  table{width:100%;border-collapse:collapse;font-size:13px} td{padding:5px 4px;border-top:1px solid var(--line)} td.r{text-align:right;color:var(--mut)}
+  a{color:#7fb2ff} .keys{color:var(--mut);font-size:12px;margin:0;padding-left:18px}
+  .pill{display:inline-block;padding:1px 7px;border-radius:6px;background:#2a3039;margin:1px;font-size:12px}
+  .pill.on{background:var(--ok);color:#000;font-weight:700}
+  .tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;align-items:center}
+  .tool,.tbtn{background:#2a3039;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 10px;cursor:pointer;font-size:13px}
+  .tool.on{background:var(--acc);border-color:var(--acc)} .tbtn.red{background:#922b21} .tbtn.green{background:#1e8449}
+  .mapwrap{position:relative;background:#111;border-radius:10px;overflow:hidden;height:min(62vh,520px)}
+  #mapcanvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+  .maphint{position:absolute;inset:0;display:grid;place-items:center;color:var(--mut);pointer-events:none}
+  .mapbanner{position:absolute;left:10px;right:10px;top:10px;background:#000c;border:1px solid var(--warn);color:var(--warn);border-radius:8px;padding:8px 10px;font-size:13px;pointer-events:none}
+  .navbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:13px}
+  .navbar .cp{display:inline-block;background:#3a3218;color:#f7dc6f;border-radius:6px;padding:2px 7px;margin:2px;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+  <h1>AME 505 Robot</h1>
+  <span id="mode" class="badge idle">IDLE</span>
+  <span id="uptime" style="color:var(--mut)"></span>
+  <span class="spacer"></span>
+  <button class="estop" onclick="act('estop')">E-STOP</button>
+</header>
+
+<main>
+<section>
+  <div class="card">
+    <h2>Just drive (no map)</h2>
+    <p style="color:var(--mut);margin:0 0 8px">Starts motors, lidar, camera and Xbox teleop. Then <b>hold LB</b> and use the sticks.</p>
+    <div class="row">
+      <button class="big go" id="bDrive" onclick="act('start_drive')">Start driving</button>
+      <button class="big stop" id="bStop2" onclick="act('stop')">Stop</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Make a 2D map</h2>
+    <div class="step" id="st1"><div class="num">1</div><div style="flex:1">
+      <b>Start mapping</b><p>Put the robot at the spot you want as <b>home</b> (navigation will assume it starts here). Name the map, then press Start. The map grows live in the <b>Map</b> panel →</p>
+      <input type="text" id="mapname" value="lab2d" placeholder="map name">
+      <label class="chk"><input type="checkbox" id="newmap" checked> New map (overwrite this name)</label>
+      <label class="chk"><input type="checkbox" id="mapcam"> camera on while mapping (live view; slower)</label>
+      <label class="chk"><input type="checkbox" id="map3d"> 3D map instead (RTAB-Map, heavy, old pipeline)</label>
+      <button class="big go" id="bStart" onclick="startMapping()">Start mapping</button>
+    </div></div>
+    <div class="step" id="st2"><div class="num">2</div><div style="flex:1">
+      <b>Drive around slowly</b>
+      <ul class="keys">
+        <li><b>Hold LB</b> to move (RB = faster). Left stick: drive and strafe. Right stick: turn.</li>
+        <li>Go slowly (no RB) and turn slowly. Come back to the start to close the loop.</li>
+        <li>Watch the Map panel: grey = unknown. Drive until every room / corridor you will patrol is white with black walls.</li>
+      </ul>
+    </div></div>
+    <div class="step" id="st3"><div class="num">3</div><div style="flex:1">
+      <b>Stop &amp; save</b><p>Saves the 2D map (maps_2d/&lt;name&gt;.pgm + .yaml). For a 3D map it also saves the RTAB-Map database and builds the 3D scene (~1 min).</p>
+      <button class="big save" id="bSave" onclick="act('stop_save')">Stop &amp; Save map</button>
+    </div></div>
+    <div class="step" id="st4"><div class="num">4</div><div style="flex:1">
+      <b>View the 3D map</b>
+      <button class="big view" id="bView" onclick="openLatest()">Open 3D map viewer</button>
+    </div></div>
+    <div class="job" id="job"></div>
+  </div>
+
+  <div class="card">
+    <h2>Patrol</h2>
+    <p style="color:var(--mut);margin:0 0 6px">First pick a map and press <b>Start navigation</b> in the <b>Map</b> panel →</p>
+    <ul class="keys">
+      <li>Drive to each inspection spot (hold LB), aim the camera, and press <b>Y</b> on the controller or <b>+ Checkpoint here</b> on the map (<b>X</b> = undo).</li>
+      <li>Then start the patrol. The robot visits every checkpoint and stops at each one.</li>
+    </ul>
+    <div class="row" style="margin-top:8px">
+      <input type="number" id="loops" value="1" min="0" title="loops (0 = forever)">
+      <input type="number" id="dwell" value="5" min="0" title="seconds at each checkpoint">
+      <button class="big view" id="bPatrol" onclick="patrol()">Patrol</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>GTSAM SLAM (lidar + gyro)</h2>
+    <p style="color:var(--mut);margin:0 0 6px">Runs <b>next to</b> driving, mapping or navigation (read-only, never drives).
+      Keep the robot <b>still ~5 s</b> after starting. The <span style="color:#ff9f1a;font-weight:700">orange path</span> is GTSAM, drawn on your saved map.</p>
+    <label class="chk"><input type="checkbox" id="gtsamImu" checked> use IMU gyro (untick = lidar only)</label>
+    <div class="row">
+      <button class="big go" id="bGtsam" onclick="act('start_gtsam',{use_imu:$('gtsamImu').checked})">Start GTSAM</button>
+      <button class="big stop" id="bGtsamStop" onclick="act('stop_gtsam')">Stop</button>
+    </div>
+    <div class="row" style="margin-top:8px">
+      <button class="tbtn" id="bGtsamAnchor" onclick="act('gtsam_reanchor')" title="after the robot is localized on the map, re-attach the GTSAM path to it">Re-align to map</button>
+      <button class="tbtn" id="bGtsamCheck" onclick="act('gtsam_check',{map:$('mapsel').value})" title="run GTSAM on the lidar scans stored in the selected saved map">Check on saved map</button>
+    </div>
+    <div id="gtsamCheck" style="margin-top:8px;font-size:12px;color:var(--mut)"></div>
+  </div>
+
+  <div class="card">
+    <h2>Saved maps</h2>
+    <table id="files"></table>
+    <div style="color:var(--mut);font-size:12px;margin-top:6px" id="datadir"></div>
+  </div>
+</section>
+
+<section>
+  <div class="card" id="mapcard">
+    <h2>Map &amp; navigation</h2>
+    <div class="tools" style="margin-bottom:10px">
+      <select id="mapsel" style="width:auto;min-width:160px" title="saved maps"></select>
+      <button class="big go" id="bNav" style="width:auto;padding:8px 16px;font-size:14px" onclick="startNav()">▶ Start navigation</button>
+      <button class="big stop" id="bStop" style="width:auto;padding:8px 16px;font-size:14px" onclick="act('stop')">■ Stop</button>
+      <label class="chk" style="margin:0" title="depth camera obstacles + live camera view. The camera arrives ~5 s late on the Nano, so lidar-only is steadier."><input type="checkbox" id="navcam"> camera</label>
+    </div>
+    <div class="tools">
+      <button class="tool on" data-tool="pan" title="drag to move, wheel/pinch to zoom">✋ Pan</button>
+      <button class="tool" data-tool="pose" title="click where the robot is, drag the direction it faces">📍 Set pose</button>
+      <button class="tool" data-tool="goal" title="click the destination, drag the direction to face">🎯 Go to goal</button>
+      <button class="tbtn red" onclick="act('cancel_goal')">■ Cancel</button>
+      <button class="tbtn green" onclick="act('go_home')">🏠 Go home</button>
+      <button class="tbtn" onclick="act('set_home')" title="make the robot's current spot its home">Set home here</button>
+      <button class="tbtn" onclick="act('add_checkpoint')" title="save current spot as a patrol checkpoint">+ Checkpoint here</button>
+      <button class="tbtn" onclick="nm.fit()">Fit</button>
+      <label class="chk" style="margin:0 0 0 6px"><input type="checkbox" id="follow" checked> follow robot</label>
+    </div>
+    <div class="mapwrap"><canvas id="mapcanvas"></canvas><div id="maphint" class="maphint">No saved map yet. Make one with "Start mapping".</div>
+      <div id="mapbanner" class="mapbanner" style="display:none"></div></div>
+    <div class="navbar"><span id="navstat">–</span><span id="cplist"></span></div>
+  </div>
+
+  <div class="card">
+    <h2>Live view</h2>
+    <div class="feeds">
+      <div class="feed"><img id="rgb" alt=""><span class="nosig" id="rgbNo">no camera</span><span class="cap">Camera</span></div>
+      <div class="feed"><img id="depth" alt=""><span class="nosig" id="depthNo">no depth</span><span class="cap">Depth (red = near, blue = far)</span></div>
+      <div class="feed"><canvas id="lidar" width="480" height="360"></canvas><span class="cap">Lidar (top view, 1 m rings)</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Sensors</h2>
+    <div class="grid" id="sensors"></div>
+  </div>
+
+  <div class="card">
+    <h2>Robot software log</h2>
+    <pre id="log">(nothing running)</pre>
+  </div>
+</section>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+let st = {}, files = {clouds: [], maps: []};
+
+async function act(a, body) {
+  const r = await fetch('/api/' + a, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body || {})});
+  const j = await r.json(); $('job').textContent = j.msg; poll();
+}
+function startMapping() { act('start_mapping', {map: $('mapname').value.trim(), new: $('newmap').checked, rviz: false,
+  map3d: $('map3d').checked, camera: $('mapcam').checked || $('map3d').checked}); }
+function startNav() { act('start_navigation', {map: $('mapsel').value, rviz: false, camera: $('navcam').checked}); }
+function patrol() { act('patrol', {loops: +$('loops').value, dwell: +$('dwell').value}); }
+function openLatest() {
+  const c = files.clouds.find(x => x.name.endsWith('_mesh.ply')) || files.clouds.find(x => x.name.endsWith('_dense.ply')) || files.clouds[0];
+  if (!c) { $('job').textContent = 'No 3D map saved yet.'; return; }
+  window.open('/viewer?file=' + encodeURIComponent(c.name), '_blank');
+}
+
+function card(title, ok, val, detail) {
+  const cls = ok === true ? 'ok' : ok === 'warn' ? 'warn' : '';
+  return `<div class="s"><div class="k"><span>${title}</span><span class="dot ${cls}"></span></div><div class="v">${val}</div><div class="d">${detail || ''}</div></div>`;
+}
+const f = (x, u = '') => (x === null || x === undefined) ? '–' : x + u;
+
+function renderSensors() {
+  const s = st.sensors || {}, r = st.rates || {};
+  const hz = t => r[t] || 0, live = t => hz(t) > 0.5;
+  const b = s.battery || {}, sc = s.scan || {}, d = s.depth || {}, o = s.odom || {}, im = s.imu || {}, j = s.joy || {}, m = s.map || {};
+  const cmd = s.cmd_teleop || {}, nav = s.cmd_nav2 || {};
+  const battOk = b.v ? (b.v > 11 ? true : b.v > 10.5 ? 'warn' : false) : false;
+  const pills = ['LB', 'RB', 'A', 'B', 'X', 'Y', 'Start'].map(k => `<span class="pill ${(j.pressed || []).includes(k) ? 'on' : ''}">${k}</span>`).join('');
+  $('sensors').innerHTML = [
+    card('Battery', battOk, f(b.v, ' V'), b.v ? (b.v < 10.5 ? 'CHARGE NOW' : 'ok above 11 V') : 'robot software not running'),
+    card('Lidar /scan', live('/scan'), f(sc.nearest, ' m'), `nearest obstacle · ${hz('/scan')} Hz · ${f(sc.valid)} pts`),
+    card('Camera RGB', live('/depth_cam/rgb/image_raw'), hz('/depth_cam/rgb/image_raw') + ' Hz', s.rgb ? `${s.rgb.w}×${s.rgb.h} ${s.rgb.enc}` : 'via ROS 1 bridge'),
+    card('Depth', live('/depth_cam/depth/image_raw'), f(d.center_m, ' m'), `centre distance · ${f(d.valid_pct, '%')} valid · ${hz('/depth_cam/depth/image_raw')} Hz`),
+    card('Odometry', live('/odom'), `${f(o.x)}, ${f(o.y)}`, `x, y (m) · yaw ${f(o.yaw_deg, '°')}<br>v ${f(o.vx)} / ${f(o.vy)} m/s · ω ${f(o.wz)}`),
+    card('IMU', live('/imu'), f(im.gz, ' r/s'), `yaw rate · acc ${f(im.ax)}, ${f(im.ay)}, ${f(im.az)}`),
+    card('Xbox controller', live('/joy') ? (j.layout_ok ? true : 'warn') : false, live('/joy') ? (j.lb ? 'DRIVING' : 'connected') : 'not seen',
+         (live('/joy') && !j.layout_ok ? 'wrong layout! ' : '') + pills),
+    card('Drive command', live('/cmd_teleop') || live('/cmd_nav2'), `${f(cmd.x ?? nav.x)} m/s`,
+         `teleop x ${f(cmd.x)} y ${f(cmd.y)} ω ${f(cmd.z)}<br>nav2 x ${f(nav.x)} ω ${f(nav.z)}`),
+    card('Map /map', live('/map') || !!m.w_m, m.known_m2 ? f(m.known_m2, ' m²') : '–', m.w_m ? `explored · ${m.w_m} × ${m.h_m} m` : 'appears ~15 s after start'),
+    gtsamCard(s.gtsam, live('/gtsam/status')),
+  ].join('');
+  $('rgbNo').style.display = live('/depth_cam/rgb/image_raw') ? 'none' : '';
+  $('depthNo').style.display = live('/depth_cam/depth/image_raw') ? 'none' : '';
+}
+
+const GTSAM_HINT = {
+  calibrating_keep_robot_still: 'keep the robot STILL', tracking: 'tracking',
+  waiting_for_imu: 'waiting for IMU', waiting_for_imu_coverage: 'waiting for IMU',
+  low_scan_overlap: 'slow down (low overlap)', high_scan_rmse: 'slow down (poor match)',
+  icp_not_converged: 'slow down', degenerate_scan_geometry: 'needs corners / walls in view',
+  lidar_gyro_disagreement: 'lidar and gyro disagree', scan_stream_stale: 'no lidar', imu_stream_stale: 'no IMU',
+};
+function gtsamCard(g, isLive) {
+  if (!st.gtsam_running && !g) return card('GTSAM SLAM', false, 'off', 'press Start GTSAM (left)');
+  g = g || {};
+  const s = g.state || 'starting', ok = s === 'tracking' ? true : /restart_required/.test(s) ? false : 'warn';
+  const hint = /restart_required/.test(s) ? 'Stop + Start GTSAM with the robot still' : (GTSAM_HINT[s] || s);
+  const q = g.overlap != null ? `overlap ${Math.round(g.overlap * 100)}% · fit ${f(g.rmse_m && +(g.rmse_m * 100).toFixed(1), ' cm')}` : '';
+  const a = g.anchor ? `on "${g.anchor.frame}"` : 'not on map yet';
+  return card('GTSAM SLAM', isLive ? ok : false, g.poses ? `${g.poses} poses` : '–',
+              `${hint}<br>${q}${q ? ' · ' : ''}${g.use_imu === false ? 'lidar only' : 'lidar+gyro'} · ${a}`);
+}
+
+function renderMode() {
+  const m = st.mode || 'idle', run = st.running;
+  $('mode').className = 'badge ' + m;
+  $('mode').textContent = m.toUpperCase() + (st.map && m !== 'idle' ? ' · ' + st.map : '') + (st.patrol ? ' · PATROL' : '');
+  $('uptime').textContent = run ? `${Math.floor(st.uptime_s / 60)}:${String(st.uptime_s % 60).padStart(2, '0')}` : '';
+  $('bStart').disabled = run; $('bNav').disabled = run; $('bDrive').disabled = run; $('bStop2').disabled = !run;
+  $('bSave').disabled = !(run && m === 'mapping');
+  $('bStop').disabled = !run; $('bPatrol').disabled = !(run && m === 'navigation') || st.patrol;
+  $('bView').disabled = !files.clouds.length;
+  $('bGtsam').disabled = !run || st.gtsam_running; $('bGtsamStop').disabled = !st.gtsam_running;
+  $('bGtsamAnchor').disabled = !st.gtsam_running;
+  const gc = st.gtsam_check || {};
+  $('gtsamCheck').innerHTML = gc.map ? `<pre style="max-height:80px">${gc.text || ''}</pre>` +
+    (gc.png ? `<a href="${gc.png}" target="_blank"><img src="${gc.png}" style="width:100%;border-radius:8px;margin-top:6px" alt="GTSAM on ${gc.map}"></a>` : '') : '';
+  const stage = m === 'mapping' ? 2 : (st.last_saved && st.last_saved.ply ? 4 : 1);
+  for (let i = 1; i <= 4; i++) $('st' + i).className = 'step' + (i === stage ? ' active' : i < stage ? ' done' : '');
+  if (st.job) $('job').textContent = st.job;
+  $('log').textContent = st.log || '(nothing running)';
+}
+
+async function poll() {
+  try { st = await (await fetch('/api/status')).json(); renderSensors(); renderMode(); } catch (e) { $('job').textContent = 'Dashboard server not reachable'; }
+}
+async function pollFiles() {
+  files = await (await fetch('/api/files')).json();
+  const sel = $('mapsel'), cur = sel.value;
+  const names = files.maps.map(m => m.map);
+  if (sel.dataset.list !== names.join('|')) {             // rebuild only when the list changes (keeps it open)
+    sel.dataset.list = names.join('|');
+    sel.innerHTML = names.map(n => `<option>${n}</option>`).join('') || '<option value="">no saved maps yet</option>';
+    if (cur && names.includes(cur)) sel.value = cur; else sel.dispatchEvent(new Event('change'));
+  }
+  if (st.running && st.map && names.includes(st.map) && sel.value !== st.map) { sel.value = st.map; sel.dispatchEvent(new Event('change')); }
+  $('files').innerHTML = files.maps.map(m => { const n = m.map;
+      if (m.kind === '2d') return `<tr><td>🗺 ${n} <span style="color:var(--mut)">(2D)</span></td><td class="r">${m.mb} MB · ${m.time}</td></tr>`;
+      return `<tr><td>🧊 ${n} <span style="color:var(--mut)">(3D RTAB-Map)</span><br><button class="stop" style="margin-top:4px;padding:4px 8px;border-radius:6px;color:#fff;border:0;cursor:pointer" onclick="act('reconstruct',{map:'${n}'})">Build realistic 3D</button></td><td class="r">${m.mb} MB · ${m.time}</td></tr>`; }).join('') +
+    files.clouds.map(c => `<tr><td>☁ <a href="/viewer?file=${encodeURIComponent(c.name)}" target="_blank">${c.name}</a></td><td class="r">${c.mb} MB · ${c.time}</td></tr>`).join('') ||
+    '<tr><td style="color:var(--mut)">No maps yet</td></tr>';
+  $('datadir').textContent = 'Stored on SSD: ' + files.data_dir;
+}
+
+// lidar canvas
+async function drawLidar() {
+  const c = $('lidar'), g = c.getContext('2d'), W = c.width, H = c.height, s = 40; // px per metre
+  let pts = []; try { pts = await (await fetch('/api/scan')).json(); } catch (e) {}
+  g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+  g.strokeStyle = '#233'; g.lineWidth = 1;
+  for (let r = 1; r <= 6; r++) { g.beginPath(); g.arc(W / 2, H / 2, r * s, 0, 7); g.stroke(); }
+  g.fillStyle = '#ff4d4d';
+  for (const [a, r] of pts) { const x = W / 2 - Math.sin(a) * r * s, y = H / 2 - Math.cos(a) * r * s; g.fillRect(x - 1.5, y - 1.5, 3, 3); }
+  g.fillStyle = '#3d8bfd'; g.beginPath(); g.moveTo(W / 2, H / 2 - 12); g.lineTo(W / 2 - 8, H / 2 + 8); g.lineTo(W / 2 + 8, H / 2 + 8); g.fill();
+}
+
+$('rgb').src = '/stream/rgb'; $('depth').src = '/stream/depth';
+poll(); pollFiles(); drawLidar();
+setInterval(poll, 700); setInterval(pollFiles, 4000); setInterval(drawLidar, 250);
+</script>
+<script>
+// ---------- Map panel: saved/live map, robot, lidar, plan, goal, home, checkpoints ----------
+const nm = (() => {
+  const cv = $('mapcanvas'), g = cv.getContext('2d');
+  let st = null, img = new Image(), imgVer = -1, tool = 'pan';
+  let view = {s: 40, cx: 0, cy: 0};                    // px per metre, map point at canvas centre
+  let drag = null, fitted = false;
+  const W = () => cv.width / devicePixelRatio, H = () => cv.height / devicePixelRatio;
+  const toPx = (x, y) => [W() / 2 + (x - view.cx) * view.s, H() / 2 - (y - view.cy) * view.s];
+  const toM = (px, py) => [view.cx + (px - W() / 2) / view.s, view.cy - (py - H() / 2) / view.s];
+  function resize() { const r = cv.getBoundingClientRect(); cv.width = r.width * devicePixelRatio; cv.height = r.height * devicePixelRatio; g.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0); draw(); }
+  addEventListener('resize', resize);
+  let autoGoalDone = false;
+  function setTool(t) {
+    tool = t;
+    document.querySelectorAll('.tool').forEach(x => x.classList.toggle('on', x.dataset.tool === t));
+    cv.style.cursor = t === 'pan' ? 'grab' : 'crosshair';
+  }
+  document.querySelectorAll('.tool').forEach(b => b.onclick = () => { autoGoalDone = true; setTool(b.dataset.tool); });
+  // double-click anywhere = go there (facing the direction of travel)
+  cv.addEventListener('dblclick', e => {
+    const [x, y] = pos(e), [mx, my] = toM(x, y);
+    const yaw = st && st.robot ? Math.atan2(my - st.robot.y, mx - st.robot.x) : 0;
+    act('goal', {x: mx, y: my, yaw});
+  });
+  function fit() {
+    const m = st && st.map;
+    if (!m) {                                         // no map (just driving): fit the GTSAM path
+      const p = (st && st.gtsam && st.gtsam.path) || [];
+      if (!p.length) return;
+      const xs = p.map(q => q[0]), ys = p.map(q => q[1]);
+      const w = Math.max(2, Math.max(...xs) - Math.min(...xs) + 1), h = Math.max(2, Math.max(...ys) - Math.min(...ys) + 1);
+      view.s = Math.min(W() / w, H() / h) * 0.9; view.cx = (Math.max(...xs) + Math.min(...xs)) / 2; view.cy = (Math.max(...ys) + Math.min(...ys)) / 2; draw();
+      return;
+    }
+    const w = m.w * m.res, h = m.h * m.res;
+    view.s = Math.min(W() / w, H() / h) * 0.92; view.cx = m.ox + w / 2; view.cy = m.oy + h / 2; draw();
+  }
+  function arrow(x, y, yaw, color, size, fill = true) {
+    const [px, py] = toPx(x, y), L = size;
+    g.save(); g.translate(px, py); g.rotate(-yaw); g.fillStyle = color; g.strokeStyle = color; g.lineWidth = 2;
+    g.beginPath(); g.moveTo(L, 0); g.lineTo(-L * 0.6, L * 0.55); g.lineTo(-L * 0.3, 0); g.lineTo(-L * 0.6, -L * 0.55); g.closePath();
+    fill ? g.fill() : g.stroke(); g.restore();
+  }
+  function draw() {
+    g.fillStyle = '#111'; g.fillRect(0, 0, W(), H());
+    const gt = st && st.gtsam;
+    if (!st || (!st.map && !(st.live && gt))) { $('maphint').style.display = ''; return; }
+    $('maphint').style.display = 'none';
+    const m = st.map;
+    if (m && img.complete && img.naturalWidth) {
+      const [x0, y0] = toPx(m.ox, m.oy + m.h * m.res);
+      g.imageSmoothingEnabled = false; g.drawImage(img, x0, y0, m.w * m.res * view.s, m.h * m.res * view.s);
+    }
+    // 1 m grid ticks
+    g.strokeStyle = '#ffffff10'; g.lineWidth = 1;
+    const [ax, ay] = toM(0, 0), [bx, by] = toM(W(), H());
+    for (let x = Math.floor(ax); x <= bx; x++) { const [p] = toPx(x, 0); g.beginPath(); g.moveTo(p, 0); g.lineTo(p, H()); g.stroke(); }
+    for (let y = Math.floor(by); y <= ay; y++) { const [, q] = toPx(0, y); g.beginPath(); g.moveTo(0, q); g.lineTo(W(), q); g.stroke(); }
+    // plan
+    if (st.plan && st.plan.length > 1) {
+      g.strokeStyle = '#00c8ff'; g.lineWidth = 3; g.beginPath();
+      st.plan.forEach(([x, y], i) => { const [p, q] = toPx(x, y); i ? g.lineTo(p, q) : g.moveTo(p, q); }); g.stroke();
+    }
+    // AMCL particles (where the robot might be): tight cluster = well localized
+    g.fillStyle = '#7fe3ff99';
+    for (const [x, y] of st.particles || []) { const [p, q] = toPx(x, y); g.fillRect(p - 1, q - 1, 2, 2); }
+    // lidar
+    g.fillStyle = '#ff3b3b';
+    for (const [x, y] of st.scan || []) { const [p, q] = toPx(x, y); g.fillRect(p - 1.5, q - 1.5, 3, 3); }
+    // checkpoints
+    (st.checkpoints || []).forEach((c, i) => {
+      const [p, q] = toPx(c.x, c.y); g.fillStyle = '#f7dc6f'; g.beginPath(); g.arc(p, q, 9, 0, 7); g.fill();
+      g.fillStyle = '#000'; g.font = 'bold 10px system-ui'; g.textAlign = 'center'; g.fillText(i + 1, p, q + 3.5);
+    });
+    // home
+    if (st.home) {
+      const [p, q] = toPx(st.home.x, st.home.y);
+      g.fillStyle = '#2ecc71'; g.beginPath(); g.moveTo(p, q - 12); g.lineTo(p + 10, q - 2); g.lineTo(p + 7, q - 2); g.lineTo(p + 7, q + 8);
+      g.lineTo(p - 7, q + 8); g.lineTo(p - 7, q - 2); g.lineTo(p - 10, q - 2); g.closePath(); g.fill();
+    }
+    // GTSAM path (orange) + its pose estimate (hollow orange arrow)
+    if (gt && gt.path && gt.path.length > 1) {
+      g.strokeStyle = '#ff9f1a'; g.lineWidth = 2.5; g.beginPath();
+      gt.path.forEach(([x, y], i) => { const [p, q] = toPx(x, y); i ? g.lineTo(p, q) : g.moveTo(p, q); }); g.stroke();
+    }
+    if (gt && gt.robot) arrow(gt.robot.x, gt.robot.y, gt.robot.yaw, '#ff9f1a', Math.max(12, 0.22 * view.s), false);
+    if (st.goal) arrow(st.goal.x, st.goal.y, st.goal.yaw, '#ff4fd8', 14, false);
+    if (st.robot) {
+      const [p, q] = toPx(st.robot.x, st.robot.y);
+      g.fillStyle = '#3d8bfd33'; g.beginPath(); g.arc(p, q, 0.2 * view.s, 0, 7); g.fill();
+      arrow(st.robot.x, st.robot.y, st.robot.yaw, '#3d8bfd', Math.max(12, 0.22 * view.s));
+    }
+    if (drag && drag.tool !== 'pan') {
+      const yaw = Math.atan2(-(drag.y1 - drag.y0), drag.x1 - drag.x0), [mx, my] = toM(drag.x0, drag.y0);
+      arrow(mx, my, yaw, drag.tool === 'goal' ? '#ff4fd8' : '#2ecc71', 18);
+    }
+  }
+  // pointer interaction (mouse + touch)
+  const pos = e => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  cv.addEventListener('pointerdown', e => {
+    cv.setPointerCapture(e.pointerId); const [x, y] = pos(e);
+    drag = {tool, x0: x, y0: y, x1: x + 1, y1: y, cx: view.cx, cy: view.cy};
+    if (tool === 'pan') { cv.style.cursor = 'grabbing'; $('follow').checked = false; }
+  });
+  cv.addEventListener('pointermove', e => {
+    if (!drag) return; const [x, y] = pos(e); drag.x1 = x; drag.y1 = y;
+    if (drag.tool === 'pan') { view.cx = drag.cx - (x - drag.x0) / view.s; view.cy = drag.cy + (y - drag.y0) / view.s; }
+    draw();
+  });
+  cv.addEventListener('pointerup', () => {
+    if (!drag) return; const d = drag; drag = null;
+    if (d.tool === 'pan') { cv.style.cursor = 'grab'; return; }
+    const [mx, my] = toM(d.x0, d.y0);
+    const moved = Math.hypot(d.x1 - d.x0, d.y1 - d.y0) > 8;
+    const yaw = moved ? Math.atan2(-(d.y1 - d.y0), d.x1 - d.x0) : (st && st.robot ? Math.atan2(my - st.robot.y, mx - st.robot.x) : 0);
+    act(d.tool === 'goal' ? 'goal' : 'initialpose', {x: mx, y: my, yaw});
+    draw();
+  });
+  cv.addEventListener('wheel', e => {
+    e.preventDefault(); const [x, y] = pos(e), [mx, my] = toM(x, y), k = Math.exp(-e.deltaY * 0.0015);
+    view.s = Math.min(400, Math.max(4, view.s * k)); const [nx, ny] = toM(x, y); view.cx += mx - nx; view.cy += my - ny; draw();
+  }, {passive: false});
+  async function poll() {
+    const sel = $('mapsel').value || '';
+    try { st = await (await fetch('/api/navstate?map=' + encodeURIComponent(sel))).json(); } catch (e) { return; }
+    if (st.map && st.map.url !== imgVer) { imgVer = st.map.url; img = new Image(); img.onload = draw; img.src = st.map.url; if (!fitted) { fitted = true; setTimeout(fit, 50); } }
+    if (!st.map) fitted = false;
+    if ($('follow').checked && st.robot && !drag && st.live) { view.cx = st.robot.x; view.cy = st.robot.y; }
+    const n = st.nav || {}, lbl = n.label ? ` → ${n.label}` : '';
+    const txt = {driving: `🚗 Driving${lbl}` + (n.remaining_m !== undefined ? ` · ${n.remaining_m} m left · ~${n.eta_s}s` : ''),
+                 arrived: `✅ Arrived${lbl}`, failed: `⚠️ Could not reach${lbl}`, canceled: '■ Cancelled', rejected: '⚠️ Goal rejected',
+                 sending: `Sending goal${lbl}...`}[n.state] || (st.mode === 'navigation' ? {
+                   starting: `⏳ Starting navigation... ${st.uptime_s}s (the Nano needs about 1-2 min - don't press Stop)`,
+                   localizing: `📍 Finding the robot on the map... If it takes long, choose 📍 Set pose and click-drag where the robot really is.`,
+                   lost: `⚠️ Not sure where the robot is (blue dots spread out). Use 📍 Set pose: click where it really is, drag the way it faces.`,
+                   ready: '✅ Ready: choose 🎯 Go to goal, then click the destination on the map and drag to set the direction'}[st.phase] || ''
+                   : st.live ? `Live map (${st.mode})` : st.map ? `Saved map "${st.map_name}" (preview). Press ▶ Start navigation to drive in it.` : '');
+    const L = st.loc, locTxt = L ? `  ·  Localization ${L.quality.toUpperCase()} (±${L.pos_std_m} m, ±${L.yaw_std_deg}°)` : '';
+    $('navstat').textContent = (st.robot ? `Robot (${st.robot.x.toFixed(2)}, ${st.robot.y.toFixed(2)}, ${(st.robot.yaw * 57.3).toFixed(0)}°)` : '') + locTxt + '  ·  ' + txt;
+    if (st.live && st.mode === 'navigation' && st.phase === 'ready' && !autoGoalDone) { autoGoalDone = true; setTool('goal'); }
+    if (!st.live) autoGoalDone = false;
+    const ban = $('mapbanner');
+    if (st.live && st.mode === 'navigation' && st.phase !== 'ready') {
+      ban.style.display = ''; ban.textContent = st.phase === 'starting'
+        ? `⏳ Navigation starting... ${st.uptime_s}s - the Jetson Nano needs about 1 minute. The saved map is shown meanwhile.`
+        : st.phase === 'lost'
+        ? '⚠️ Localization is unsure. Check: do the red lidar dots line up with the black walls? If not, 📍 Set pose (click where the robot is, drag the way it faces).'
+        : '📍 Finding the robot on the map. Use 📍 Set pose (click where the robot is, drag the way it faces).';
+    } else ban.style.display = 'none';
+    $('cplist').innerHTML = (st.checkpoints || []).map(c => `<span class="cp" title="go here" onclick="act('go_checkpoint',{id:'${c.id}'})">${c.id}</span>`).join('');
+    draw();
+  }
+  $('mapsel').addEventListener('change', () => { fitted = false; imgVer = null; poll(); });
+  resize(); poll(); setInterval(poll, 400);
+  return {fit};
+})();
+</script>
+</body>
+</html>

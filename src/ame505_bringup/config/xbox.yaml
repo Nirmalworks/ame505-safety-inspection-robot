@@ -1,0 +1,34 @@
+# Xbox controller mapping (USB cable or Bluetooth). Used by joy_node, xbox_teleop and
+# checkpoint_recorder. Read by joy/game_controller_node (SDL GameController layout;
+# verified on this robot over Bluetooth: 6 axes, 21 buttons):
+#   buttons: A=0 B=1 X=2 Y=3 Back=4 Xbox=5 Start=6 LS=7 RS=8 LB=9 RB=10 Dpad U/D/L/R=11-14
+#   axes:    LX=0 LY=1 RX=2 RY=3 LT=4 RT=5      (stick up / left = +1)
+# Over Bluetooth this is only right with SDL_GAMECONTROLLERCONFIG from scripts/env.sh.
+# Check with: ros2 topic echo /joy
+joy_node:
+  ros__parameters:
+    device_id: 0
+    deadzone: 0.08
+    autorepeat_rate: 20.0       # re-publish /joy while a stick is held (teleop timeout relies on it)
+    coalesce_interval_ms: 1
+
+xbox_teleop:
+  ros__parameters:
+    axis_linear_x: 1            # left stick up/down
+    axis_linear_y: 0            # left stick left/right (strafe)
+    axis_angular_z: 2           # right stick left/right
+    button_enable: 9            # LB  (deadman)
+    button_turbo: 10            # RB  (deadman + faster)
+    button_estop: 1             # B
+    button_reset: 6             # START
+    scale_linear: 0.15          # m/s  (slow = clean maps)
+    scale_linear_turbo: 0.30
+    scale_angular: 0.5          # rad/s
+    scale_angular_turbo: 1.0
+    enable_strafe: true
+    deadzone: 0.1
+
+checkpoint_recorder:
+  ros__parameters:
+    button_save: 3              # Y
+    button_undo: 2              # X

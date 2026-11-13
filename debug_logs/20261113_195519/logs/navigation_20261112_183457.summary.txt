@@ -1,0 +1,17 @@
+navigation_20261112_183457: 1076 lines, 15 distinct warning/error messages
+
+   278 x  [component_container_isolated-18] [WARN] [1794508567.700009301] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 2.722519 seconds. Ignoring the source.
+   224 x  [component_container_isolated-18] [WARN] [1794508567.329645987] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+    78 x  [component_container_isolated-18] [WARN] [1794508567.615598530] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+    11 x  [ekf_node-7] Failed to meet update rate! Took 0.058974166000000001475seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+     3 x  [rtabmap-17] [WARN] [1794508537.934487460] [rtabmap]: rtabmap: Did not receive data since 5 seconds! Make sure the input topics are published ("$ ros2 topic hz my_topic") and the timestamps in their header are set. If topics are coming from different computers, make sure the clocks of the computers 
+     3 x  [component_container_isolated-18] [WARN] [1794508587.826678646] [planner_server]: Planner loop missed its desired rate of 5.0000 Hz. Current loop rate is 0.8375 Hz
+     1 x  [rtabmap-17] [WARN] [1794508531.318369687] [rtabmap]: Setting "RGBD/ProximityPathMaxNeighbors" parameter to 10 (default 0) as "subscribe_scan" is true and "Reg/Strategy" uses ICP. Proximity detection by space will be also done by merging close scans. To disable, set "RGBD/ProximityPathMaxNeighbors" 
+     1 x  [component_container_isolated-18] [WARN] [1794508567.489413612] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+     1 x  [component_container_isolated-18] [WARN] [1794508586.629056710] [bt_navigator_navigate_to_pose_rclcpp_node]: Timed out while waiting for action server to acknowledge goal request for compute_path_to_pose
+     1 x  [component_container_isolated-18] [ERROR] [1794508590.604667420] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER collision_monitor IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+     1 x  [component_container_isolated-18] [WARN] [1794508592.081363113] [bt_navigator]: [navigate_to_pose] [ActionServer] Requested to deactivate server but goal is still executing. Should check if action server is running before deactivating.
+     1 x  [component_container_isolated-18] [ERROR] [1794508592.114343247] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
+     1 x  [component_container_isolated-18] [WARN] [1794508592.114882329] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+     1 x  [component_container_isolated-18] [WARN] [1794508592.119356603] [bt_navigator]: [navigate_to_pose] [ActionServer] Stopping the thread per request.
+     1 x  [component_container_isolated-18] [WARN] [1794508592.228647897] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.

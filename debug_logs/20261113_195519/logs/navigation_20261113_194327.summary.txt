@@ -1,0 +1,31 @@
+navigation_20261113_194327: 349 lines, 29 distinct warning/error messages
+
+     2 x  [servo_controller-8] Traceback (most recent call last):
+     2 x  [ros_robot_controller-3] Traceback (most recent call last):
+     2 x  [odom_publisher-4] Traceback (most recent call last):
+     1 x  [ekf_node-7] Failed to meet update rate! Took 0.03360847599999999824seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+     1 x  [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+     1 x  [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the '/nav2_container/_container/load_node' service response, due to shutdown.
+     1 x  Future exception was never retrieved
+     1 x  future: <Future finished exception=InvalidHandle('cannot use Destroyable because destruction was requested')>
+     1 x  Traceback (most recent call last):
+     1 x  [xbox_teleop-13] Traceback (most recent call last):
+     1 x  [xbox_teleop-13] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [ERROR] [init_pose-9]: process has died [pid 14139, exit code -2, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/init_pose --ros-args -r __node:=init_pose --params-file /tmp/tmp9sfnknhh'].
+     1 x  [init_pose-9] Traceback (most recent call last):
+     1 x  [servo_controller-8] Exception in thread Thread-1 (publish_joint_states):
+     1 x  [servo_controller-8] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [ERROR] [xbox_teleop-13]: process has died [pid 14164, exit code 1, cmd '/home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/xbox_teleop --ros-args -r __node:=xbox_teleop --params-file /home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/share/ame505_b
+     1 x  [ros_robot_controller-3] Exception in thread Thread-2 (pub_callback):
+     1 x  [ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [odom_publisher-4] Exception in thread Thread-1 (cal_odom_fun):
+     1 x  [odom_publisher-4] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [odom_publisher-4] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [odom_publisher-4] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+     1 x  [ERROR] [servo_controller-8]: process has died [pid 14135, exit code -2, cmd '/home/ubuntu/ros2_ws/install/servo_controller/lib/servo_controller/servo_controller --ros-args --params-file /home/ubuntu/ros2_ws/src/driver/servo_controller/config/servo_controller.yaml --params-file /tmp/launch_params__6
+     1 x  [ros_robot_controller-3] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+     1 x  [ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+     1 x  [ERROR] [ros_robot_controller-3]: process has died [pid 14123, exit code 1, cmd '/home/ubuntu/ros2_ws/install/ros_robot_controller/lib/ros_robot_controller/ros_robot_controller --ros-args --params-file /tmp/launch_params_1vwxs4zd'].
+     1 x  [ERROR] [odom_publisher-4]: process has died [pid 14125, exit code 1, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/odom_publisher --ros-args -r __node:=odom_publisher --params-file /home/ubuntu/ros2_ws/src/driver/controller/config/calibrate_params.yaml --params-file /tmp/launch_params
+     1 x  [ERROR] [joint_state_publisher-2]: process has died [pid 14121, exit code -11, cmd '/opt/ros/humble/lib/joint_state_publisher/joint_state_publisher --ros-args -r __node:=joint_state_publisher --params-file /tmp/launch_params_2g9907hd'].
+     1 x  [ERROR] [component_container_isolated-16]: process[component_container_isolated-16] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'

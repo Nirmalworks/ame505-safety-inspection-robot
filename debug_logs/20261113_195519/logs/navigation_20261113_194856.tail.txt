@@ -1,0 +1,300 @@
+[component_container_isolated-16] [INFO] [1794599380.947329005] [lifecycle_manager_navigation]: Activating bt_navigator
+[component_container_isolated-16] [INFO] [1794599380.955281661] [bt_navigator]: Activating
+[component_container_isolated-16] [INFO] [1794599383.091360982] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599383.287203784] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[component_container_isolated-16] [INFO] [1794599383.287330820] [lifecycle_manager_navigation]: Activating waypoint_follower
+[component_container_isolated-16] [INFO] [1794599383.294947265] [waypoint_follower]: Activating
+[component_container_isolated-16] [INFO] [1794599383.295134356] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599383.602019959] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[component_container_isolated-16] [INFO] [1794599383.602167413] [lifecycle_manager_navigation]: Activating velocity_smoother
+[component_container_isolated-16] [INFO] [1794599383.603942535] [velocity_smoother]: Activating
+[component_container_isolated-16] [INFO] [1794599383.604127594] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599383.899124137] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[component_container_isolated-16] [INFO] [1794599383.899251642] [lifecycle_manager_navigation]: Activating collision_monitor
+[component_container_isolated-16] [INFO] [1794599383.908957752] [collision_monitor]: Activating
+[component_container_isolated-16] [INFO] [1794599383.909254639] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599384.538936732] [lifecycle_manager_navigation]: Server collision_monitor connected with bond.
+[component_container_isolated-16] [INFO] [1794599384.539123979] [lifecycle_manager_navigation]: Managed nodes are active
+[component_container_isolated-16] [INFO] [1794599384.539168355] [lifecycle_manager_navigation]: Creating bond timer...
+[ekf_node-7] Failed to meet update rate! Took 0.035758801999999999255seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.03721234799999999926seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.034138841000000003101seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.040188506999999998315seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.052954686000000000812seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.03674139199999999772seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.035049346000000002055seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.033533037000000001648seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.035888546000000000336seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.040686859999999998305seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[component_container_isolated-16] [INFO] [1794599524.980890301] [local_costmap.local_costmap]: Message Filter dropping message: frame 'lidar_frame' at time 1794599524.557 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-16] [INFO] [1794599524.994526983] [global_costmap.global_costmap]: Message Filter dropping message: frame 'lidar_frame' at time 1794599524.557 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-16] [INFO] [1794599525.290392153] [global_costmap.global_costmap]: Message Filter dropping message: frame 'lidar_frame' at time 1794599524.644 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[ekf_node-7] Failed to meet update rate! Took 0.036224548000000002246seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.036052666999999996578seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.045021196999999998911seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.033475013999999997383seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.040313719999999997334seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-7] Failed to meet update rate! Took 0.041157606999999998831seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [component_container_isolated-16]: sending signal 'SIGINT' to process[component_container_isolated-16]
+[INFO] [checkpoint_recorder-15]: sending signal 'SIGINT' to process[checkpoint_recorder-15]
+[INFO] [lifecycle_guard-14]: sending signal 'SIGINT' to process[lifecycle_guard-14]
+[INFO] [xbox_teleop-13]: sending signal 'SIGINT' to process[xbox_teleop-13]
+[INFO] [game_controller_node-12]: sending signal 'SIGINT' to process[game_controller_node-12]
+[INFO] [scan_to_scan_filter_chain-11]: sending signal 'SIGINT' to process[scan_to_scan_filter_chain-11]
+[INFO] [sllidar_node-10]: sending signal 'SIGINT' to process[sllidar_node-10]
+[INFO] [init_pose-9]: sending signal 'SIGINT' to process[init_pose-9]
+[INFO] [servo_controller-8]: sending signal 'SIGINT' to process[servo_controller-8]
+[INFO] [ekf_node-7]: sending signal 'SIGINT' to process[ekf_node-7]
+[INFO] [complementary_filter_node-6]: sending signal 'SIGINT' to process[complementary_filter_node-6]
+[INFO] [scan_to_scan_filter_chain-11]: process has finished cleanly [pid 17300]
+[INFO] [game_controller_node-12]: process has finished cleanly [pid 17307]
+[INFO] [apply_calib-5]: sending signal 'SIGINT' to process[apply_calib-5]
+[INFO] [odom_publisher-4]: sending signal 'SIGINT' to process[odom_publisher-4]
+[INFO] [sllidar_node-10]: process has finished cleanly [pid 17295]
+[INFO] [ros_robot_controller-3]: sending signal 'SIGINT' to process[ros_robot_controller-3]
+[INFO] [joint_state_publisher-2]: sending signal 'SIGINT' to process[joint_state_publisher-2]
+[INFO] [complementary_filter_node-6]: process has finished cleanly [pid 17279]
+[INFO] [ekf_node-7]: process has finished cleanly [pid 17281]
+[INFO] [robot_state_publisher-1]: sending signal 'SIGINT' to process[robot_state_publisher-1]
+[component_container_isolated-16] [INFO] [1794599579.849446540] [rclcpp]: signal_handler(signum=2)
+[component_container_isolated-16] [INFO] [1794599579.849608317] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[component_container_isolated-16] [INFO] [1794599579.849840357] [map_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599579.849928278] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[xbox_teleop-13] Traceback (most recent call last):
+[xbox_teleop-13]   File "/home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/xbox_teleop", line 33, in <module>
+[xbox_teleop-13]     sys.exit(load_entry_point('ame505-bringup', 'console_scripts', 'xbox_teleop')())
+[xbox_teleop-13]   File "/home/ubuntu/ame505-safety-inspection-robot/build/ame505_bringup/ame505_bringup/xbox_teleop.py", line 115, in main
+[xbox_teleop-13]     node.stop()
+[xbox_teleop-13]   File "/home/ubuntu/ame505-safety-inspection-robot/build/ame505_bringup/ame505_bringup/xbox_teleop.py", line 78, in stop
+[xbox_teleop-13]     self.pub.publish(Twist())
+[xbox_teleop-13]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[xbox_teleop-13]     self.__publisher.publish(msg)
+[xbox_teleop-13] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[game_controller_node-12] [INFO] [1794599580.069478990] [rclcpp]: signal_handler(signum=2)
+[INFO] [apply_calib-5]: process has finished cleanly [pid 17277]
+[scan_to_scan_filter_chain-11] [INFO] [1794599580.187339456] [rclcpp]: signal_handler(signum=2)
+[init_pose-9] Traceback (most recent call last):
+[init_pose-9]   File "/home/ubuntu/ros2_ws/install/controller/lib/controller/init_pose", line 33, in <module>
+[init_pose-9]     sys.exit(load_entry_point('controller', 'console_scripts', 'init_pose')())
+[init_pose-9]   File "/home/ubuntu/ros2_ws/build/controller/controller/init_pose.py", line 53, in main
+[init_pose-9]     rclpy.spin(node)  # 循环等待ROS2退出
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+[init_pose-9]     executor.spin_once()
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+[init_pose-9]     self._spin_once_impl(timeout_sec)
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+[init_pose-9]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+[init_pose-9]     return next(self._cb_iter)
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 608, in _wait_for_ready_callbacks
+[init_pose-9]     wait_set.wait(timeout_nsec)
+[init_pose-9] KeyboardInterrupt
+[INFO] [lifecycle_guard-14]: process has finished cleanly [pid 17326]
+[sllidar_node-10] [INFO] [1794599580.408423458] [sllidar_node]: Stop motor
+[component_container_isolated-16] [INFO] [1794599580.431191592] [lifecycle_manager_localization]: Have not received a heartbeat from map_server.
+[component_container_isolated-16] [ERROR] [1794599580.442235308] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 30000 ms. Shutting down related nodes.
+[component_container_isolated-16] [INFO] [1794599580.442411460] [lifecycle_manager_localization]: Terminating bond timer...
+[component_container_isolated-16] [INFO] [1794599580.442475004] [lifecycle_manager_localization]: Resetting managed nodes...
+[component_container_isolated-16] [INFO] [1794599580.442520579] [lifecycle_manager_localization]: Deactivating amcl
+[component_container_isolated-16] [INFO] [1794599580.588967273] [amcl]: Deactivating
+[component_container_isolated-16] [INFO] [1794599580.598360090] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[servo_controller-8] Traceback (most recent call last):
+[servo_controller-8]   File "/home/ubuntu/ros2_ws/install/servo_controller/lib/servo_controller/servo_controller", line 33, in <module>
+[servo_controller-8] Exception in thread Thread-1 (publish_joint_states):
+[servo_controller-8] Traceback (most recent call last):
+[servo_controller-8]   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+[servo_controller-8]     self.run()
+[servo_controller-8]   File "/usr/lib/python3.10/threading.py", line 953, in run
+[servo_controller-8]     self._target(*self._args, **self._kwargs)
+[servo_controller-8]   File "/home/ubuntu/ros2_ws/build/servo_controller/servo_controller/controller_manager.py", line 94, in publish_joint_states
+[servo_controller-8]     sys.exit(load_entry_point('servo-controller', 'console_scripts', 'servo_controller')())
+[servo_controller-8]   File "/home/ubuntu/ros2_ws/build/servo_controller/servo_controller/controller_manager.py", line 100, in main
+[servo_controller-8]     rclpy.spin(node)  # 循环等待ROS2退出
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+[servo_controller-8]     self.joint_states_pub.publish(msg)
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[servo_controller-8]     self.__publisher.publish(msg)
+[servo_controller-8] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[servo_controller-8]     executor.spin_once()
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+[servo_controller-8]     self._spin_once_impl(timeout_sec)
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+[servo_controller-8]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+[servo_controller-8]     return next(self._cb_iter)
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 608, in _wait_for_ready_callbacks
+[servo_controller-8]     wait_set.wait(timeout_nsec)
+[servo_controller-8] KeyboardInterrupt
+[ekf_node-7] [INFO] [1794599580.855661921] [rclcpp]: signal_handler(signum=2)
+[ERROR] [init_pose-9]: process has died [pid 17288, exit code -2, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/init_pose --ros-args -r __node:=init_pose --params-file /tmp/tmps302vtj8'].
+[ERROR] [robot_state_publisher-1]: process has died [pid 17267, exit code -15, cmd '/opt/ros/humble/lib/robot_state_publisher/robot_state_publisher --ros-args -r __node:=robot_state_publisher --params-file /tmp/launch_params_5wtgcm0s'].
+[complementary_filter_node-6] [INFO] [1794599581.158630183] [rclcpp]: signal_handler(signum=2)
+[complementary_filter_node-6] [INFO] [1794599581.196143793] [imu_filter]: Destroying ComplementaryFilterROS
+[apply_calib-5] [INFO] [1794599581.423664507] [rclcpp]: signal_handler(signum=2)
+[robot_state_publisher-1] [INFO] [1794599581.746732777] [rclcpp]: signal_handler(signum=2)
+[component_container_isolated-16] [INFO] [1794599582.093744125] [rclcpp]: signal_handler(signum=15)
+[odom_publisher-4] Exception in thread Thread-1 (cal_odom_fun):
+[odom_publisher-4] Traceback (most recent call last):
+[odom_publisher-4]   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+[ros_robot_controller-3] Exception in thread Thread-2 (pub_callback):
+[ros_robot_controller-3] Traceback (most recent call last):
+[ros_robot_controller-3]   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+[ros_robot_controller-3]     self.run()
+[ros_robot_controller-3]   File "/usr/lib/python3.10/threading.py", line 953, in run
+[ros_robot_controller-3]     self._target(*self._args, **self._kwargs)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 67, in pub_callback
+[ros_robot_controller-3]     self.pub_joy_data(self.joy_pub)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 227, in pub_joy_data
+[ros_robot_controller-3]     pub.publish(msg)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[ros_robot_controller-3]     self.__publisher.publish(msg)
+[ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[ros_robot_controller-3] [INFO] [1794599582.128008023] [ros_robot_controller]: shutdown
+[ros_robot_controller-3] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[ros_robot_controller-3] Traceback (most recent call last):
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/install/ros_robot_controller/lib/ros_robot_controller/ros_robot_controller", line 33, in <module>
+[ros_robot_controller-3]     sys.exit(load_entry_point('ros-robot-controller', 'console_scripts', 'ros_robot_controller')())
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 265, in main
+[ros_robot_controller-3]     rclpy.spin(node)                                 # 循环等待ROS2退出
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+[ros_robot_controller-3]     executor.spin_once()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+[ros_robot_controller-3]     self._spin_once_impl(timeout_sec)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+[ros_robot_controller-3]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+[ros_robot_controller-3]     return next(self._cb_iter)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 608, in _wait_for_ready_callbacks
+[ros_robot_controller-3]     wait_set.wait(timeout_nsec)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 58, in shutdown
+[ros_robot_controller-3]     rclpy.shutdown()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 126, in shutdown
+[ros_robot_controller-3]     _shutdown(context=context)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[ros_robot_controller-3]     return context.shutdown()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+[ros_robot_controller-3]     self.__context.shutdown()
+[ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[odom_publisher-4]     self.run()
+[odom_publisher-4]   File "/usr/lib/python3.10/threading.py", line 953, in run
+[odom_publisher-4]     self._target(*self._args, **self._kwargs)
+[odom_publisher-4]   File "/home/ubuntu/ros2_ws/build/controller/controller/odom_publisher_node.py", line 240, in cal_odom_fun
+[odom_publisher-4]     self.odom_pub.publish(self.odom)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[odom_publisher-4]     self.__publisher.publish(msg)
+[odom_publisher-4] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[odom_publisher-4] [INFO] [1794599582.133288804] [odom_publisher]: shutdown
+[odom_publisher-4] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[odom_publisher-4] Traceback (most recent call last):
+[odom_publisher-4]   File "/home/ubuntu/ros2_ws/install/controller/lib/controller/odom_publisher", line 33, in <module>
+[odom_publisher-4]     sys.exit(load_entry_point('controller', 'console_scripts', 'odom_publisher')())
+[odom_publisher-4]   File "/home/ubuntu/ros2_ws/build/controller/controller/odom_publisher_node.py", line 246, in main
+[odom_publisher-4]     rclpy.spin(node)  # 循环等待ROS2退出
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+[odom_publisher-4]     executor.spin_once()
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[odom_publisher-4]     self._spin_once_impl(timeout_sec)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+[odom_publisher-4]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+[odom_publisher-4]     return next(self._cb_iter)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 608, in _wait_for_ready_callbacks
+[odom_publisher-4]     wait_set.wait(timeout_nsec)
+[odom_publisher-4]   File "/home/ubuntu/ros2_ws/build/controller/controller/odom_publisher_node.py", line 141, in shutdown
+[odom_publisher-4]     rclpy.shutdown()
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 126, in shutdown
+[odom_publisher-4]     _shutdown(context=context)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[odom_publisher-4]     return context.shutdown()
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+[odom_publisher-4]     self.__context.shutdown()
+[odom_publisher-4] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[ERROR] [xbox_teleop-13]: process has died [pid 17321, exit code 1, cmd '/home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/xbox_teleop --ros-args -r __node:=xbox_teleop --params-file /home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/share/ame505_bringup/config/xbox.yaml'].
+[INFO] [checkpoint_recorder-15]: process has finished cleanly [pid 17334]
+[INFO] [joint_state_publisher-2]: process has finished cleanly [pid 17269]
+[ERROR] [ros_robot_controller-3]: process has died [pid 17273, exit code 1, cmd '/home/ubuntu/ros2_ws/install/ros_robot_controller/lib/ros_robot_controller/ros_robot_controller --ros-args --params-file /tmp/launch_params_1ijwdieo'].
+[ERROR] [servo_controller-8]: process has died [pid 17284, exit code -2, cmd '/home/ubuntu/ros2_ws/install/servo_controller/lib/servo_controller/servo_controller --ros-args --params-file /home/ubuntu/ros2_ws/src/driver/servo_controller/config/servo_controller.yaml --params-file /tmp/launch_params_9txpgtps'].
+[component_container_isolated-16] [INFO] [1794599583.702358391] [map_server]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599583.702536784] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599583.702588817] [global_costmap.global_costmap]: Running Nav2 LifecycleNode rcl preshutdown (global_costmap)
+[component_container_isolated-16] [INFO] [1794599583.702683821] [global_costmap.global_costmap]: Deactivating
+[ERROR] [odom_publisher-4]: process has died [pid 17275, exit code 1, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/odom_publisher --ros-args -r __node:=odom_publisher --params-file /home/ubuntu/ros2_ws/src/driver/controller/config/calibrate_params.yaml --params-file /tmp/launch_params_sx7pi23o'].
+[component_container_isolated-16] [INFO] [1794599584.535345454] [global_costmap.global_costmap]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599584.596031901] [lifecycle_manager_localization]: Deactivating map_server
+[component_container_isolated-16] [WARN] [1794599584.779708860] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[component_container_isolated-16] [ERROR] [1794599584.779798916] [map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[component_container_isolated-16] [ERROR] [1794599584.795342235] [lifecycle_manager_localization]: Failed to change state for node: map_server
+[component_container_isolated-16] [INFO] [1794599584.795462344] [lifecycle_manager_localization]: Cleaning up amcl
+[component_container_isolated-16] [INFO] [1794599584.797096419] [amcl]: Cleaning up
+[ERROR] [component_container_isolated-16]: process[component_container_isolated-16] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[INFO] [component_container_isolated-16]: sending signal 'SIGTERM' to process[component_container_isolated-16]
+[component_container_isolated-16] [INFO] [1794599584.851052758] [rclcpp]: signal_handler(signum=15)
+[component_container_isolated-16] [INFO] [1794599584.891650135] [global_costmap.global_costmap]: Destroying bond (global_costmap) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599584.891786338] [velocity_smoother]: Running Nav2 LifecycleNode rcl preshutdown (velocity_smoother)
+[component_container_isolated-16] [INFO] [1794599584.891903426] [velocity_smoother]: Deactivating
+[component_container_isolated-16] [INFO] [1794599584.892043275] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599584.904823153] [velocity_smoother]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599584.904982013] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599584.905041286] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[component_container_isolated-16] [INFO] [1794599584.905095507] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599584.905133998] [lifecycle_manager_navigation]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_navigation)
+[component_container_isolated-16] [INFO] [1794599584.905192594] [lifecycle_manager_navigation]: Terminating bond timer...
+[component_container_isolated-16] [INFO] [1794599585.273841823] [lifecycle_manager_localization]: Cleaning up map_server
+[component_container_isolated-16] [WARN] [1794599585.274484713] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[component_container_isolated-16] [ERROR] [1794599585.274535340] [map_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[component_container_isolated-16] [INFO] [1794599585.275528713] [lifecycle_manager_localization]: Managed nodes have been reset
+[component_container_isolated-16] [INFO] [1794599585.696055449] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[component_container_isolated-16] [INFO] [1794599585.696218424] [controller_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599585.696392650] [local_costmap.local_costmap]: Deactivating
+[component_container_isolated-16] [INFO] [1794599585.743301056] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599585.743579869] [controller_server]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599585.746046477] [local_costmap.local_costmap]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599585.892444574] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599585.892541557] [smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[component_container_isolated-16] [INFO] [1794599585.892636926] [smoother_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599585.892717033] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599585.892848028] [smoother_server]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599585.952393076] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599585.952504279] [lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[component_container_isolated-16] [INFO] [1794599585.974361961] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[component_container_isolated-16] [INFO] [1794599585.974539520] [planner_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599585.974643274] [planner_server]: Deactivating plugin GridBased of type NavfnPlanner
+[component_container_isolated-16] [INFO] [1794599585.974705308] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599585.974823593] [planner_server]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599586.043493219] [planner_server]: Cleaning up plugin GridBased of type NavfnPlanner
+[component_container_isolated-16] [INFO] [1794599586.043988343] [planner_server]: Destroying plugin GridBased of type NavfnPlanner
+[component_container_isolated-16] [INFO] [1794599586.046444065] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599586.046527558] [local_costmap.local_costmap]: Running Nav2 LifecycleNode rcl preshutdown (local_costmap)
+[component_container_isolated-16] [INFO] [1794599586.046583914] [local_costmap.local_costmap]: Destroying bond (local_costmap) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599586.046634333] [behavior_server]: Running Nav2 LifecycleNode rcl preshutdown (behavior_server)
+[component_container_isolated-16] [INFO] [1794599586.046806058] [behavior_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599586.046904551] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599586.047125550] [behavior_server]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599586.078786846] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599586.080045333] [collision_monitor]: Running Nav2 LifecycleNode rcl preshutdown (collision_monitor)
+[component_container_isolated-16] [INFO] [1794599586.080257633] [collision_monitor]: Deactivating
+[component_container_isolated-16] [INFO] [1794599586.080419254] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599586.080610564] [collision_monitor]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599586.080706140] [collision_monitor]: [PolygonStop]: Destroying Polygon
+[component_container_isolated-16] [INFO] [1794599586.080770362] [collision_monitor]: [FootprintApproach]: Destroying Polygon
+[component_container_isolated-16] [INFO] [1794599586.080881877] [collision_monitor]: [scan]: Destroying Scan
+[component_container_isolated-16] [INFO] [1794599586.081002610] [collision_monitor]: [depth]: Destroying PointCloud
+[component_container_isolated-16] [INFO] [1794599586.114350067] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599586.114454654] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[component_container_isolated-16] [INFO] [1794599586.114555648] [bt_navigator]: Deactivating
+[component_container_isolated-16] [INFO] [1794599586.114639974] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599586.114771490] [bt_navigator]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599586.548720994] [bt_navigator]: Completed Cleaning up
+[component_container_isolated-16] [INFO] [1794599586.549002098] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599586.549055590] [waypoint_follower]: Running Nav2 LifecycleNode rcl preshutdown (waypoint_follower)
+[component_container_isolated-16] [INFO] [1794599586.549158094] [waypoint_follower]: Deactivating
+[component_container_isolated-16] [INFO] [1794599586.549255910] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599586.549678115] [waypoint_follower]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599586.574433463] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.

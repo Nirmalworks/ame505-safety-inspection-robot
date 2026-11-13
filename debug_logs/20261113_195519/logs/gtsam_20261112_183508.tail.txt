@@ -1,0 +1,63 @@
+[INFO] [launch]: All log files can be found below /home/ubuntu/.ros/log/2026-11-12-18-35-23-280234-jetauto-14444
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gtsam_slam-1]: process started with pid [14686]
+[gtsam_slam-1] /usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+[gtsam_slam-1]   warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[gtsam_slam-1] [INFO] [1794508552.548230880] [gtsam_slam]: Reading /scan, /imu; output frame gtsam_odom; logs: /home/ubuntu/share/tmp/ame505_data/gtsam/20261112_183550_live. Keep robot STILL for the initial gyro calibration.
+[gtsam_slam-1] [INFO] [1794508552.621314671] [gtsam_slam]: {"state": "scan_stream_stale", "monotonic_s": 3384.198832412, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508553.043536100] [gtsam_slam]: {"state": "waiting_for_scan", "monotonic_s": 3384.625050705, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508554.068168659] [gtsam_slam]: {"state": "waiting_for_scan", "monotonic_s": 3385.645865365, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508555.008518375] [gtsam_slam]: {"state": "waiting_for_scan", "monotonic_s": 3386.617477098, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508556.008650255] [gtsam_slam]: {"state": "waiting_for_scan", "monotonic_s": 3387.619585351, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508557.047417388] [gtsam_slam]: {"state": "waiting_for_scan", "monotonic_s": 3388.635749374, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508558.119946993] [gtsam_slam]: {"state": "calibrating_keep_robot_still", "monotonic_s": 3389.731434713, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508559.094386693] [gtsam_slam]: {"state": "calibrating_keep_robot_still", "monotonic_s": 3390.649919211, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508560.076420731] [gtsam_slam]: {"state": "calibrating_keep_robot_still", "monotonic_s": 3391.663729763, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508561.013910968] [gtsam_slam]: {"state": "calibrating_keep_robot_still", "monotonic_s": 3392.616693426, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508562.102827679] [gtsam_slam]: {"state": "calibrating_keep_robot_still", "monotonic_s": 3393.70349132, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508563.045575212] [gtsam_slam]: {"state": "calibrating_keep_robot_still", "monotonic_s": 3394.615791569, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508564.054303223] [gtsam_slam]: {"state": "waiting_for_imu_coverage", "monotonic_s": 3395.642806013, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508565.030682788] [gtsam_slam]: {"state": "waiting_for_imu_coverage", "monotonic_s": 3396.622853157, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508566.024593656] [gtsam_slam]: {"state": "waiting_for_imu_coverage", "monotonic_s": 3397.621842852, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508567.019949628] [gtsam_slam]: {"state": "waiting_for_imu_coverage", "monotonic_s": 3398.634817681, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508568.173769168] [gtsam_slam]: {"state": "waiting_for_imu_coverage", "monotonic_s": 3399.699424769, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508569.022391937] [gtsam_slam]: {"state": "waiting_for_imu_coverage", "monotonic_s": 3400.625576814, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508570.026239983] [gtsam_slam]: {"state": "waiting_for_imu_coverage", "monotonic_s": 3401.615209456, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508571.063874754] [gtsam_slam]: {"state": "waiting_for_imu_coverage", "monotonic_s": 3402.65883517, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508572.043248489] [gtsam_slam]: {"state": "waiting_for_imu_coverage", "monotonic_s": 3403.623860008, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508573.272785521] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3404.836345339, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508574.105501004] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3405.681048332, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508575.038503502] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3406.644370036, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508576.010018675] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3407.622228769, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508577.043266467] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3408.655755529, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508578.181883486] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3409.727581468, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508579.005886679] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3410.616442704, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508580.051314645] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3411.660308166, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508581.050417312] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3412.653976421, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508582.064612862] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3413.660267366, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508583.043798048] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3414.65072384, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508584.617567672] [gtsam_slam]: {"state": "low_scan_overlap", "monotonic_s": 3416.196408816, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508585.020080935] [gtsam_slam]: {"state": "low_scan_overlap", "monotonic_s": 3416.634946437, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508586.066684360] [gtsam_slam]: {"state": "low_scan_overlap", "monotonic_s": 3417.66998299, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508587.023131964] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3418.622703847, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508588.026682447] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3419.628217577, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508589.266088061] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3420.826753869, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508590.734487676] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3422.32738281, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508591.018980740] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3422.622954082, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508592.033320045] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3423.633545024, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508593.021247574] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3424.61977093, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508594.028215887] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3425.638187412, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508595.066200202] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3426.657896075, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508596.038168985] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3427.63606435, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508597.106396775] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3428.665264185, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508598.021323732] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3429.629245288, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508599.009511843] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3430.620305845, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508600.027786289] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3431.639141352, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508601.012806944] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3432.618437584, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508602.039545545] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3433.639835787, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508603.059243062] [gtsam_slam]: {"state": "too_few_correspondences", "monotonic_s": 3434.65551415, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508604.714437621] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3436.326224419, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508605.037514040] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3436.63721374, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508606.008572426] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3437.622480863, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+[gtsam_slam-1] [INFO] [1794508607.094156877] [gtsam_slam]: {"state": "icp_not_converged", "monotonic_s": 3438.665221858, "pose_available": false, "pose_fresh": false, "use_imu": true, "anchor": null}
+                                                                                                                                                                                                                                                                                                                                                                                                                

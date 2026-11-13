@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "/opt/ros/humble/bin/ros2", line 33, in <module>
+    sys.exit(load_entry_point('ros2cli==0.18.10', 'console_scripts', 'ros2')())
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2cli/cli.py", line 52, in main
+    add_subparsers_on_demand(
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2cli/command/__init__.py", line 235, in add_subparsers_on_demand
+    command_extensions = get_command_extensions(
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2cli/command/__init__.py", line 57, in get_command_extensions
+    extensions = instantiate_extensions(
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2cli/plugin_system.py", line 40, in instantiate_extensions
+    extension_types = load_entry_points(
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2cli/entry_points.py", line 91, in load_entry_points
+    extension_type = entry_point.load()
+  File "/usr/lib/python3.10/importlib/metadata/__init__.py", line 171, in load
+    module = import_module(match.group('module'))
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2launch/command/launch.py", line 30, in <module>
+    from ros2launch.api import get_share_file_path_from_package
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2launch/api/__init__.py", line 17, in <module>
+    from launch.launch_description_sources import InvalidLaunchFileError
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch/__init__.py", line 17, in <module>
+    from . import actions
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch/actions/__init__.py", line 17, in <module>
+    from .declare_launch_argument import DeclareLaunchArgument
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch/actions/declare_launch_argument.py", line 22, in <module>
+    import launch.logging
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch/logging/__init__.py", line 32, in <module>
+    from ..frontend import expose_substitution
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch/frontend/__init__.py", line 17, in <module>
+    from . import type_utils
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch/frontend/type_utils.py", line 22, in <module>
+    from .entity import Entity
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch/frontend/entity.py", line 22, in <module>
+    from launch.utilities.type_utils import AllowedTypesType
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch/utilities/type_utils.py", line 29, in <module>
+    import yaml
+  File "/usr/lib/python3/dist-packages/yaml/__init__.py", line 8, in <module>
+    from .loader import *
+  File "/usr/lib/python3/dist-packages/yaml/loader.py", line 4, in <module>
+    from .reader import *
+  File "/usr/lib/python3/dist-packages/yaml/reader.py", line 45, in <module>
+    class Reader(object):
+  File "/usr/lib/python3/dist-packages/yaml/reader.py", line 137, in Reader
+    NON_PRINTABLE = re.compile('[^\x09\x0A\x0D\x20-\x7E\x85\xA0-\uD7FF\uE000-\uFFFD\U00010000-\U0010ffff]')
+  File "/usr/lib/python3.10/re.py", line 251, in compile
+    return _compile(pattern, flags)
+  File "/usr/lib/python3.10/re.py", line 303, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "/usr/lib/python3.10/sre_compile.py", line 792, in compile
+    code = _code(p, flags)
+  File "/usr/lib/python3.10/sre_compile.py", line 628, in _code
+    _compile_info(code, p, flags)
+  File "/usr/lib/python3.10/sre_compile.py", line 614, in _compile_info
+    charset, hascased = _optimize_charset(charset)
+  File "/usr/lib/python3.10/sre_compile.py", line 421, in _optimize_charset
+    mapping[i // 256] = comps[chunk]
+KeyboardInterrupt

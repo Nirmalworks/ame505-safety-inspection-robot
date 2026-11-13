@@ -1,0 +1,156 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+- Class: rviz_common/Tool Properties
+  Name: Tool Properties
+Visualization Manager:
+  Class: ''
+  Displays:
+  - Class: rviz_default_plugins/Grid
+    Name: Grid
+    Enabled: true
+    Cell Size: 1
+    Plane Cell Count: 40
+  - Class: rviz_default_plugins/Map
+    Name: 2D map /map
+    Enabled: true
+    Topic:
+      Value: /map
+      Durability Policy: Transient Local
+      Reliability Policy: Reliable
+    Alpha: 0.7
+    Color Scheme: map
+  - Class: rviz_default_plugins/LaserScan
+    Name: Lidar /scan
+    Enabled: true
+    Topic:
+      Value: /scan
+      Reliability Policy: Best Effort
+    Size (m): 0.05
+    Style: Flat Squares
+    Color Transformer: FlatColor
+    Color: 255; 40; 40
+    Decay Time: 0
+  - Class: rviz_default_plugins/RobotModel
+    Name: RobotModel
+    Enabled: true
+    Description Source: Topic
+    Description Topic:
+      Value: /robot_description
+      Durability Policy: Transient Local
+  - Class: rviz_default_plugins/Map
+    Name: Global Costmap
+    Enabled: true
+    Topic:
+      Value: /global_costmap/costmap
+      Durability Policy: Transient Local
+      Reliability Policy: Reliable
+    Alpha: 0.4
+    Color Scheme: costmap
+  - Class: rviz_default_plugins/Map
+    Name: Local Costmap
+    Enabled: true
+    Topic:
+      Value: /local_costmap/costmap
+    Alpha: 0.5
+    Color Scheme: costmap
+  - Class: rviz_default_plugins/Path
+    Name: Global Plan /plan
+    Enabled: true
+    Topic:
+      Value: /plan
+    Color: 0; 200; 255
+  - Class: rviz_default_plugins/Path
+    Name: Local Plan
+    Enabled: true
+    Topic:
+      Value: /local_plan
+    Color: 255; 200; 0
+  - Class: rviz_default_plugins/Polygon
+    Name: Footprint
+    Enabled: true
+    Topic:
+      Value: /local_costmap/published_footprint
+    Color: 0; 255; 0
+  - Class: rviz_default_plugins/Pose
+    Name: Current Goal
+    Enabled: true
+    Topic:
+      Value: /goal_pose
+    Shape: Arrow
+    Color: 255; 0; 255
+  - Class: rviz_default_plugins/PointCloud2
+    Name: 3D map /cloud_map
+    Enabled: false
+    Topic:
+      Value: /cloud_map
+      Reliability Policy: Reliable
+    Color Transformer: RGB8
+    Style: Points
+    Size (Pixels): 2
+    Alpha: 1
+    Decay Time: 0
+  - Class: rviz_default_plugins/DepthCloud
+    Name: Live depth camera
+    Enabled: false
+    Depth Map Topic: /depth_cam/depth/image_raw
+    Depth Map Transport Hint: raw
+    Color Image Topic: /depth_cam/rgb/image_raw
+    Color Transport Hint: raw
+    Color Transformer: RGB8
+    Style: Points
+    Size (Pixels): 3
+    Alpha: 1
+    Queue Size: 5
+    Occlusion Compensation:
+      Value: false
+  - Class: rviz_default_plugins/Image
+    Name: Camera
+    Enabled: false
+    Topic:
+      Value: /depth_cam/rgb/image_raw
+      Reliability Policy: Best Effort
+  - Class: rviz_default_plugins/TF
+    Name: TF
+    Enabled: false
+  - Class: rviz_default_plugins/Path
+    Name: GTSAM path /gtsam/path
+    Enabled: true
+    Topic:
+      Value: /gtsam/path
+    Color: 255; 159; 26
+    Line Style: Lines
+    Line Width: 0.03
+  - Class: rviz_default_plugins/Odometry
+    Name: GTSAM pose /gtsam/odom
+    Enabled: true
+    Topic:
+      Value: /gtsam/odom
+    Keep: 1
+    Shape:
+      Value: Arrow
+      Color: 255; 159; 26
+  Global Options:
+    Fixed Frame: map
+    Background Color: 40; 40; 40
+    Frame Rate: 15
+  Tools:
+  - Class: rviz_default_plugins/Interact
+  - Class: rviz_default_plugins/MoveCamera
+  - Class: rviz_default_plugins/Measure
+  - Class: rviz_default_plugins/SetInitialPose
+    Topic:
+      Value: /initialpose
+  - Class: rviz_default_plugins/SetGoal
+    Topic:
+      Value: /goal_pose
+  - Class: rviz_default_plugins/PublishPoint
+    Topic:
+      Value: /clicked_point
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Current View
+      Scale: 60
+      X: 0
+      Y: 0

@@ -1,0 +1,300 @@
+[component_container_isolated-18] [WARN] [1794508582.525390860] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508582.538065791] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.529560 seconds. Ignoring the source.
+[astra_bridge-12] [INFO] [1794508582.562550571] [astra_bridge]: in: depth 5.3 Hz, colour 2.3 Hz | out: 0.4 Hz
+[component_container_isolated-18] [WARN] [1794508582.610957870] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.592311 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508582.668211891] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.660183 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508582.734733275] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.721136 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508582.777383338] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.784869 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508582.849486430] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.826676 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508582.929817733] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508582.940056379] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.899368 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508583.066912102] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.071183 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508583.130000446] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508583.158850225] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.174506 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508583.204666911] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.209388 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508583.248117055] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508583.285051133] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.281865 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508583.318048768] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508583.321437795] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508583.358551879] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508583.376301940] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.334312 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508583.427791224] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508583.451759319] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508583.465632470] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508583.469049675] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[rtabmap-17] [INFO] [1794508583.556674884] [rtabmap]: rtabmap (36): Rate=1.00s, Limit=0.000s, Conversion=0.0011s, RTAB-Map=1.0115s, Maps update=0.0009s pub=0.0001s (local map=11, WM=11)
+[component_container_isolated-18] [WARN] [1794508583.559252632] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.433966 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508583.573853673] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508583.578088564] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [INFO] [1794508583.578180130] [controller_server]: Passing new path to controller.
+[component_container_isolated-18] [WARN] [1794508583.720182747] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508583.770648974] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.642630 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508583.862450946] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508583.958909439] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.839052 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508584.012769225] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508584.092512121] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 6.016694 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508584.143675040] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508584.174151700] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 6.147466 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508584.275264838] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 6.233648 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508584.380170402] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508584.406511133] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 6.354159 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508584.589276350] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 6.479590 seconds. Ignoring the source.
+[component_container_isolated-18] [INFO] [1794508584.643921945] [controller_server]: Passing new path to controller.
+[component_container_isolated-18] [WARN] [1794508584.719126242] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508584.738863405] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 6.661920 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508584.780685261] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508584.796745938] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508584.803829524] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 6.788621 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508584.878242230] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508584.934004063] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508584.944764343] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 6.858149 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508585.029087715] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 7.013152 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508585.104027836] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 7.116433 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508585.115968210] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508585.152422114] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 7.153392 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508585.233670585] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.257692431] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 7.214707 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508585.299530642] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508585.468023319] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 7.323983 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508585.552704621] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.592078160] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[rtabmap-17] [INFO] [1794508585.592588126] [rtabmap]: rtabmap (37): Rate=1.00s, Limit=0.000s, Conversion=0.0021s, RTAB-Map=0.7497s, Maps update=0.0005s pub=0.0001s (local map=11, WM=11)
+[component_container_isolated-18] [WARN] [1794508585.598963458] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.652867204] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [INFO] [1794508585.683891852] [controller_server]: Passing new path to controller.
+[component_container_isolated-18] [WARN] [1794508585.702678147] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.706406301] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.722377600] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.727050943] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.734781427] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.744304736] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 7.532336 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508585.747658449] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.780537330] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508585.875521395] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508586.026894607] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 7.797257 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508586.049685003] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508586.285490289] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 8.082852 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508586.356285054] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508586.453403622] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508586.519260190] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508586.628971707] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508586.629056710] [bt_navigator_navigate_to_pose_rclcpp_node]: Timed out while waiting for action server to acknowledge goal request for compute_path_to_pose
+[component_container_isolated-18] [INFO] [1794508586.631411742] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[component_container_isolated-18] [WARN] [1794508586.651967736] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508586.693263584] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 8.335423 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508586.706989386] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508586.830142164] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508587.066511272] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508587.084404046] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 8.762759 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508587.122116484] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.251389481] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.311468134] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.349769136] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508587.361078445] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 9.147698 seconds. Ignoring the source.
+[component_container_isolated-18] [INFO] [1794508587.370109809] [collision_monitor]: Robot to approach for 1.500000 seconds away from collision
+[component_container_isolated-18] [WARN] [1794508587.442806413] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508587.493966414] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.513531123] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.551478205] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.576251901] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.637720084] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.673937782] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.680785734] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.691986394] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.712397383] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 2.004120 seconds. Ignoring the source.
+[component_container_isolated-18] [INFO] [1794508587.712815679] [collision_monitor]: Robot to continue normal operation
+[component_container_isolated-18] [WARN] [1794508587.725271852] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.734870267] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.748034383] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.772198474] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.825651839] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.826678646] [planner_server]: Planner loop missed its desired rate of 5.0000 Hz. Current loop rate is 0.8375 Hz
+[component_container_isolated-18] [WARN] [1794508587.848467548] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[rtabmap-17] [INFO] [1794508587.853305429] [rtabmap]: rtabmap (38): Rate=1.00s, Limit=0.000s, Conversion=0.0012s, RTAB-Map=0.7999s, Maps update=0.0006s pub=0.0001s (local map=11, WM=11)
+[component_container_isolated-18] [WARN] [1794508587.862478621] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508587.888207508] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.931539105] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.956058053] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508587.988487022] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.010635416] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [INFO] [1794508588.010819121] [controller_server]: Passing new path to controller.
+[component_container_isolated-18] [WARN] [1794508588.026119041] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.032518332] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.040804930] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.090503057] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.135901290] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.143341608] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.152908512] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.154678939] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 2.332873 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.172613798] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.201089657] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.206523184] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.352448181] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 2.775128 seconds. Ignoring the source.
+[component_container_isolated-18] [INFO] [1794508588.352631729] [collision_monitor]: Robot to stop due to PolygonStop polygon
+[component_container_isolated-18] [WARN] [1794508588.386857533] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.439524464] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 2.972976 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.459346369] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.496079919] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.517073324] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.534076326] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.075600 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.561827993] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.156631 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.572097734] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508588.589536221] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.637919509] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.181360 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.662709456] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.260291 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.696799213] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.282205 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.769386177] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.334641 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.803532447] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.830010579] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508588.833371897] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.399109 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.836143194] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.853145936] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508588.876250302] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.453615 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.938788522] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.495742 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508588.961829656] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.560371 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.004997446] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.581298 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.024848362] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.043847113] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.064946199] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.630298 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.130979544] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.693563 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.157010212] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.157174488] [planner_server]: Planner loop missed its desired rate of 5.0000 Hz. Current loop rate is 4.0814 Hz
+[component_container_isolated-18] [WARN] [1794508589.165823859] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508589.197691246] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.204466540] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.766872 seconds. Ignoring the source.
+[component_container_isolated-18] [INFO] [1794508589.204921921] [collision_monitor]: Robot to continue normal operation
+[component_container_isolated-18] [WARN] [1794508589.217993012] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.236311374] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.824392 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.254915996] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.315683267] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.857084 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.394389564] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 3.935572 seconds. Ignoring the source.
+[component_container_isolated-18] [INFO] [1794508589.405659706] [controller_server]: Passing new path to controller.
+[component_container_isolated-18] [WARN] [1794508589.430797113] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.458761027] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.467812756] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.470991619] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.014913 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.491335366] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.500910551] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.509522837] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.526430159] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.582477992] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.136730 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.600682183] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508589.628694484] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.213554 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.694474799] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.278265 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.749393372] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508589.768313006] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.314363 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.778672438] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.858894570] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.400548 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.868965450] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.960382877] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.491085 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508589.978892704] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508589.999136499] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508590.008687517] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.036739663] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.594178 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508590.056959291] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.068251048] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.105052308] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.662738 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508590.189643711] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.724877 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508590.297587665] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.825378 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508590.317320348] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.343771813] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508590.392263282] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 4.918067 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508590.441247893] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.026018 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508590.458152090] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.500638658] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.061663 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508590.517516864] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [INFO] [1794508590.604527728] [lifecycle_manager_navigation]: Have not received a heartbeat from collision_monitor.
+[component_container_isolated-18] [ERROR] [1794508590.604667420] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER collision_monitor IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[component_container_isolated-18] [INFO] [1794508590.604806071] [lifecycle_manager_navigation]: Terminating bond timer...
+[component_container_isolated-18] [INFO] [1794508590.604861229] [lifecycle_manager_navigation]: Resetting managed nodes...
+[component_container_isolated-18] [INFO] [1794508590.604900137] [lifecycle_manager_navigation]: Deactivating collision_monitor
+[component_container_isolated-18] [WARN] [1794508590.613119024] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.627940646] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.129392 seconds. Ignoring the source.
+[component_container_isolated-18] [WARN] [1794508590.684540373] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.716731990] [planner_server]: Planner loop missed its desired rate of 5.0000 Hz. Current loop rate is 2.0590 Hz
+[component_container_isolated-18] [WARN] [1794508590.876540086] [collision_monitor]: [depth]: Latest source and current collision monitor node timestamps differ on 5.333223 seconds. Ignoring the source.
+[component_container_isolated-18] [INFO] [1794508590.877408242] [collision_monitor]: Deactivating
+[component_container_isolated-18] [INFO] [1794508590.877596114] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[component_container_isolated-18] [WARN] [1794508590.897663184] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.947382665] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[rtabmap-17] [INFO] [1794508590.958563116] [rtabmap]: rtabmap (39): Rate=1.00s, Limit=0.000s, Conversion=0.0014s, RTAB-Map=0.6326s, Maps update=0.0005s pub=0.0001s (local map=11, WM=11)
+[component_container_isolated-18] [WARN] [1794508590.964968657] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.975781699] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508590.996674736] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.007925293] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.016177150] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [INFO] [1794508591.016381220] [controller_server]: Passing new path to controller.
+[component_container_isolated-18] [WARN] [1794508591.043496719] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.086036673] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.094067949] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.199614579] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508591.263543369] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [INFO] [1794508591.328204426] [lifecycle_manager_navigation]: Deactivating velocity_smoother
+[component_container_isolated-18] [INFO] [1794508591.333075381] [velocity_smoother]: Deactivating
+[component_container_isolated-18] [INFO] [1794508591.333275075] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[component_container_isolated-18] [WARN] [1794508591.337771694] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.344780746] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.421111021] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.452473389] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508591.526914222] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.578663047] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [INFO] [1794508591.621695311] [lifecycle_manager_navigation]: Deactivating waypoint_follower
+[component_container_isolated-18] [INFO] [1794508591.624123054] [waypoint_follower]: Deactivating
+[component_container_isolated-18] [INFO] [1794508591.624312175] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[component_container_isolated-18] [WARN] [1794508591.629157348] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.659696874] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.770917144] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.778593720] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.792144984] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [INFO] [1794508591.822650447] [controller_server]: Passing new path to controller.
+[component_container_isolated-18] [WARN] [1794508591.824411916] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [WARN] [1794508591.977720249] [controller_server]: Control loop missed its desired rate of 8.0000Hz
+[component_container_isolated-18] [WARN] [1794508591.980087000] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-18] [INFO] [1794508592.072119241] [lifecycle_manager_navigation]: Deactivating bt_navigator
+[component_container_isolated-18] [INFO] [1794508592.081252379] [bt_navigator]: Deactivating
+[component_container_isolated-18] [WARN] [1794508592.081363113] [bt_navigator]: [navigate_to_pose] [ActionServer] Requested to deactivate server but goal is still executing. Should check if action server is running before deactivating.
+[component_container_isolated-18] [ERROR] [1794508592.114343247] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
+[component_container_isolated-18] [INFO] [1794508592.114800555] [bt_navigator]: Goal canceled
+[component_container_isolated-18] [WARN] [1794508592.114882329] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[component_container_isolated-18] [WARN] [1794508592.119356603] [bt_navigator]: [navigate_to_pose] [ActionServer] Stopping the thread per request.
+[component_container_isolated-18] [INFO] [1794508592.122455099] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[component_container_isolated-18] [INFO] [1794508592.228505496] [controller_server]: Goal was canceled. Stopping the robot.
+[component_container_isolated-18] [WARN] [1794508592.228647897] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[component_container_isolated-18] [INFO] [1794508592.387688310] [lifecycle_manager_navigation]: Deactivating behavior_server
+[component_container_isolated-18] [INFO] [1794508592.388980022] [behavior_server]: Deactivating
+[component_container_isolated-18] [INFO] [1794508592.389149872] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[component_container_isolated-18] [INFO] [1794508592.545939527] [lifecycle_manager_navigation]: Deactivating planner_server
+[component_container_isolated-18] [INFO] [1794508592.550406197] [planner_server]: Deactivating
+[component_container_isolated-18] [INFO] [1794508592.550603235] [global_costmap.global_costmap]: Deactivating
+[rtabmap-17] [WARN] [1794508592.936920608] [rtabmap]: rtabmap: Did not receive data since 5 seconds! Make sure the input topics are published ("$ ros2 topic hz my_topic") and the timestamps in their header are set. If topics are coming from different computers, make sure the clocks of the computers are synchronized ("ntpdate"). If topics are not published at the same rate, you could increase "queu
+[rtabmap-17] rtabmap subscribed to (approx sync):
+[rtabmap-17]    /depth_cam/rgb/image_raw \
+[rtabmap-17]    /depth_cam/depth/image_raw \
+[rtabmap-17]    /depth_cam/rgb/camera_info \
+[rtabmap-17]    /scan
+[astra_bridge-12] [INFO] [1794508593.129665191] [astra_bridge]: in: depth 7.3 Hz, colour 3.3 Hz | out: 0.4 Hz
+[component_container_isolated-18] [INFO] [1794508593.307118656] [planner_server]: Deactivating plugin GridBased of type NavfnPlanner
+[component_container_isolated-18] [INFO] [1794508593.307261474] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[component_container_isolated-18] [INFO] [1794508593.484070280] [lifecycle_manager_navigation]: Deactivating smoother_server
+[component_container_isolated-18] [INFO] [1794508593.487098565] [smoother_server]: Deactivating
+[component_container_isolated-18] [INFO] [1794508593.487247894] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[component_container_isolated-18] [INFO] [1794508593.646582067] [lifecycle_manager_navigation]: Deactivating controller_server
+[component_container_isolated-18] [INFO] [1794508593.647844559] [controller_server]: Deactivating
+[component_container_isolated-18] [INFO] [1794508593.648067432] [local_costmap.local_costmap]: Deactivating
+[component_container_isolated-18] [INFO] [1794508593.681345546] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[rtabmap-17] [INFO] [1794508593.705218273] [rtabmap]: rtabmap (40): Rate=1.00s, Limit=0.000s, Conversion=0.0010s, RTAB-Map=0.6009s, Maps update=0.0008s pub=0.0001s (local map=11, WM=11)
+[component_container_isolated-18] [INFO] [1794508593.841134110] [lifecycle_manager_navigation]: Cleaning up collision_monitor
+[component_container_isolated-18] [INFO] [1794508593.844142603] [collision_monitor]: Cleaning up
+[component_container_isolated-18] [INFO] [1794508593.905033473] [collision_monitor]: [PolygonStop]: Destroying Polygon
+[component_container_isolated-18] [INFO] [1794508593.981862567] [collision_monitor]: [FootprintApproach]: Destroying Polygon
+[component_container_isolated-18] [INFO] [1794508594.014360705] [collision_monitor]: [scan]: Destroying Scan
+[component_container_isolated-18] [INFO] [1794508594.055258362] [collision_monitor]: [depth]: Destroying PointCloud
+[component_container_isolated-18] [INFO] [1794508594.294832376] [lifecycle_manager_navigation]: Cleaning up velocity_smoother
+[component_container_isolated-18] [INFO] [1794508594.295795535] [velocity_smoother]: Cleaning up
+[component_container_isolated-18] [INFO] [1794508594.372557075] [lifecycle_manager_navigation]: Cleaning up waypoint_follower
+[component_container_isolated-18] [INFO] [1794508594.373465025] [waypoint_follower]: Cleaning up
+[rtabmap-17] [INFO] [1794508595.045842080] [rtabmap]: rtabmap (41): Rate=1.00s, Limit=0.000s, Conversion=0.0013s, RTAB-Map=0.3560s, Maps update=0.0006s pub=0.0001s (local map=11, WM=11)
+[component_container_isolated-18] [INFO] [1794508595.052501172] [lifecycle_manager_navigation]: Cleaning up bt_navigator
+[component_container_isolated-18] [INFO] [1794508595.054817973] [bt_navigator]: Cleaning up
+[rtabmap-17] [INFO] [1794508597.168509980] [rtabmap]: rtabmap (42): Rate=1.00s, Limit=0.000s, Conversion=0.0029s, RTAB-Map=0.5285s, Maps update=0.0005s pub=0.0001s (local map=11, WM=11)
+                                                                                                                                                                                                                                                                                                                                                                                                                

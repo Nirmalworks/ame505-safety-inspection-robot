@@ -1,0 +1,29 @@
+time: Fri Nov 13 19:55:22 UTC 2026
+note: 2026-11-13 localization fix session: AMCL 2D nav on lab_map_new; lidar driver crash seen once (now respawns); load avg ~18 with VS Code open
+git: 29d5e3b 7 changed files
+
+== memory
+               total        used        free      shared  buff/cache   available
+Mem:            3955        3024         159          39         771         697
+Swap:           1977        1977           0
+
+== disk
+/dev/sda1       916G   51G  819G   6% /home/ubuntu/share/tmp
+
+== robot processes
+19451 /usr/bin/python3 /opt/ros/humble/bin/ros2 run ame505_bringup dashboard
+19457 /usr/bin/python3 /home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/dashboard
+19488 /usr/bin/python3 /opt/ros/humble/bin/ros2 launch ame505_bringup navigation_2d.launch.py map:=lab_map_new use_rviz:=false use_camera:=false
+19748 /opt/ros/humble/lib/rclcpp_components/component_container_isolated --ros-args -r __node:=nav2_container -r __ns:=/ --params-file /home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringu
+
+== topics
+/scan                        no data
+/odom                        no data
+/odom_raw                    no data
+/imu                         no data
+/amcl_pose                   no data
+/map                         no data
+/cmd_vel                     no data
+/depth_cam/rgb/image_raw     no data
+
+== TF map -> base_footprint

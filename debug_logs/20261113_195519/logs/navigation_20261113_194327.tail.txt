@@ -1,0 +1,300 @@
+[ros_robot_controller-3] [INFO] [1794599033.693046205] [ros_robot_controller]: start
+[servo_controller-8] [INFO] [1794599034.000824453] [servo_manager]: start
+[servo_controller-8] [INFO] [1794599037.005613981] [controller_manager]: start
+[odom_publisher-4] [INFO] [1794599035.283725961] [odom_publisher]: 1.000000 1.040000
+[odom_publisher-4] [INFO] [1794599035.544059183] [odom_publisher]: start
+[checkpoint_recorder-15] [INFO] [1794599036.049107238] [checkpoint_recorder]: Checkpoint file: /home/ubuntu/share/tmp/ame505_data/checkpoints/lab_map_new.yaml (0 loaded). Y = save pose, X = undo last.
+[init_pose-9] [INFO] [1794599039.062193322] [init_pose]: start
+[component_container_isolated-16] [INFO] [1794599043.610784112] [nav2_container]: Load Library: /opt/ros/humble/lib/libmap_server_core.so
+[ekf_node-7] Failed to meet update rate! Took 0.03360847599999999824seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[component_container_isolated-16] [INFO] [1794599044.309201206] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[component_container_isolated-16] [INFO] [1794599044.309327565] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[component_container_isolated-16] [INFO] [1794599044.309369702] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[component_container_isolated-16] [INFO] [1794599044.309400432] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[component_container_isolated-16] [INFO] [1794599044.681088478] [map_server]: 
+[component_container_isolated-16] 	map_server lifecycle node launched. 
+[component_container_isolated-16] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-16] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-16] [INFO] [1794599044.681371562] [map_server]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map_server' in container '/nav2_container'
+[component_container_isolated-16] [INFO] [1794599044.741226836] [nav2_container]: Load Library: /opt/ros/humble/lib/libamcl_core.so
+[component_container_isolated-16] [INFO] [1794599044.820087028] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[component_container_isolated-16] [INFO] [1794599044.820203647] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[component_container_isolated-16] [INFO] [1794599044.919749808] [amcl]: 
+[component_container_isolated-16] 	amcl lifecycle node launched. 
+[component_container_isolated-16] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-16] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-16] [INFO] [1794599044.993519136] [amcl]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/amcl' in container '/nav2_container'
+[component_container_isolated-16] [INFO] [1794599045.169711502] [nav2_container]: Load Library: /opt/ros/humble/lib/libnav2_lifecycle_manager_core.so
+[component_container_isolated-16] [INFO] [1794599045.222552717] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-16] [INFO] [1794599045.222689492] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-16] [INFO] [1794599045.593274737] [lifecycle_manager_localization]: Creating
+[component_container_isolated-16] [INFO] [1794599045.733716882] [lifecycle_manager_localization]: Creating and initializing lifecycle service clients
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_localization' in container '/nav2_container'
+[component_container_isolated-16] [INFO] [1794599045.782859002] [nav2_container]: Load Library: /opt/ros/humble/lib/libcontroller_server_core.so
+[component_container_isolated-16] [INFO] [1794599045.858879246] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[component_container_isolated-16] [INFO] [1794599045.893188112] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[component_container_isolated-16] [INFO] [1794599045.980013597] [lifecycle_manager_localization]: Starting managed nodes bringup...
+[component_container_isolated-16] [INFO] [1794599045.980193031] [lifecycle_manager_localization]: Configuring map_server
+[component_container_isolated-16] [INFO] [1794599045.987904461] [map_server]: Configuring
+[component_container_isolated-16] [INFO] [map_io]: Loading yaml file: /home/ubuntu/share/tmp/ame505_data/maps_2d/lab_map_new.yaml
+[component_container_isolated-16] [DEBUG] [map_io]: resolution: 0.05
+[component_container_isolated-16] [DEBUG] [map_io]: origin[0]: -9.22
+[component_container_isolated-16] [DEBUG] [map_io]: origin[1]: -7.2
+[component_container_isolated-16] [DEBUG] [map_io]: origin[2]: 0
+[component_container_isolated-16] [DEBUG] [map_io]: free_thresh: 0.25
+[component_container_isolated-16] [DEBUG] [map_io]: occupied_thresh: 0.65
+[component_container_isolated-16] [DEBUG] [map_io]: mode: trinary
+[component_container_isolated-16] [DEBUG] [map_io]: negate: 0
+[component_container_isolated-16] [INFO] [map_io]: Loading image_file: /home/ubuntu/share/tmp/ame505_data/maps_2d/lab_map_new.pgm
+[component_container_isolated-16] [DEBUG] [map_io]: Read map /home/ubuntu/share/tmp/ame505_data/maps_2d/lab_map_new.pgm: 413 X 199 map @ 0.05 m/cell
+[component_container_isolated-16] [INFO] [1794599046.334946913] [lifecycle_manager_localization]: Configuring amcl
+[component_container_isolated-16] [INFO] [1794599046.335595426] [amcl]: Configuring
+[component_container_isolated-16] [INFO] [1794599046.336639110] [amcl]: initTransforms
+[component_container_isolated-16] [INFO] [1794599046.488840542] [controller_server]: 
+[component_container_isolated-16] 	controller_server lifecycle node launched. 
+[component_container_isolated-16] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-16] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-16] [INFO] [1794599046.648047595] [amcl]: initPubSub
+[component_container_isolated-16] [INFO] [1794599046.760876329] [amcl]: Subscribed to map topic.
+[component_container_isolated-16] [INFO] [1794599046.878807281] [lifecycle_manager_localization]: Activating map_server
+[component_container_isolated-16] [INFO] [1794599046.882054796] [map_server]: Activating
+[component_container_isolated-16] [INFO] [1794599046.885350959] [map_server]: Creating bond (map_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599046.905991197] [amcl]: Received a 413 X 199 map @ 0.050 m/pix
+[component_container_isolated-16] [INFO] [1794599047.030943553] [lifecycle_manager_localization]: Server map_server connected with bond.
+[component_container_isolated-16] [INFO] [1794599047.031184708] [lifecycle_manager_localization]: Activating amcl
+[component_container_isolated-16] [INFO] [1794599047.031871140] [amcl]: Activating
+[component_container_isolated-16] [INFO] [1794599047.032003488] [amcl]: initialPoseReceived
+[component_container_isolated-16] [INFO] [1794599047.032580801] [amcl]: Setting pose (1794599047.032579): 0.000 0.000 0.000
+[component_container_isolated-16] [INFO] [1794599047.033845587] [amcl]: Creating bond (amcl) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599047.115032948] [amcl]: createLaserObject
+[component_container_isolated-16] [INFO] [1794599047.147365075] [lifecycle_manager_localization]: Server amcl connected with bond.
+[component_container_isolated-16] [INFO] [1794599047.147526175] [lifecycle_manager_localization]: Managed nodes are active
+[component_container_isolated-16] [INFO] [1794599047.147583625] [lifecycle_manager_localization]: Creating bond timer...
+[component_container_isolated-16] [INFO] [1794599047.540640061] [controller_server]: Creating controller server
+[component_container_isolated-16] [INFO] [1794599048.109238474] [local_costmap.local_costmap]: 
+[component_container_isolated-16] 	local_costmap lifecycle node launched. 
+[component_container_isolated-16] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-16] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-16] [INFO] [1794599048.169989459] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/controller_server' in container '/nav2_container'
+[component_container_isolated-16] [INFO] [1794599048.249490143] [nav2_container]: Load Library: /opt/ros/humble/lib/libsmoother_server_core.so
+[component_container_isolated-16] [INFO] [1794599048.296461298] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[component_container_isolated-16] [INFO] [1794599048.296636982] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the '/nav2_container/_container/load_node' service response, due to shutdown.
+Future exception was never retrieved
+future: <Future finished exception=InvalidHandle('cannot use Destroyable because destruction was requested')>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch_ros/actions/load_composable_nodes.py", line 197, in _load_in_sequence
+    self._load_node(next_load_node_request, context)
+  File "/opt/ros/humble/lib/python3.10/site-packages/launch_ros/actions/load_composable_nodes.py", line 119, in _load_node
+    while not self.__rclpy_load_node_client.wait_for_service(timeout_sec=1.0):
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/client.py", line 180, in wait_for_service
+    return self.service_is_ready()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/client.py", line 159, in service_is_ready
+    with self.handle:
+rclpy._rclpy_pybind11.InvalidHandle: cannot use Destroyable because destruction was requested
+[INFO] [component_container_isolated-16]: sending signal 'SIGINT' to process[component_container_isolated-16]
+[INFO] [checkpoint_recorder-15]: sending signal 'SIGINT' to process[checkpoint_recorder-15]
+[INFO] [lifecycle_guard-14]: sending signal 'SIGINT' to process[lifecycle_guard-14]
+[INFO] [xbox_teleop-13]: sending signal 'SIGINT' to process[xbox_teleop-13]
+[INFO] [game_controller_node-12]: sending signal 'SIGINT' to process[game_controller_node-12]
+[INFO] [scan_to_scan_filter_chain-11]: sending signal 'SIGINT' to process[scan_to_scan_filter_chain-11]
+[INFO] [sllidar_node-10]: sending signal 'SIGINT' to process[sllidar_node-10]
+[INFO] [init_pose-9]: sending signal 'SIGINT' to process[init_pose-9]
+[INFO] [servo_controller-8]: sending signal 'SIGINT' to process[servo_controller-8]
+[INFO] [ekf_node-7]: sending signal 'SIGINT' to process[ekf_node-7]
+[INFO] [complementary_filter_node-6]: sending signal 'SIGINT' to process[complementary_filter_node-6]
+[INFO] [apply_calib-5]: sending signal 'SIGINT' to process[apply_calib-5]
+[INFO] [game_controller_node-12]: process has finished cleanly [pid 14152]
+[INFO] [scan_to_scan_filter_chain-11]: process has finished cleanly [pid 14150]
+[INFO] [odom_publisher-4]: sending signal 'SIGINT' to process[odom_publisher-4]
+[INFO] [sllidar_node-10]: process has finished cleanly [pid 14142]
+[INFO] [ros_robot_controller-3]: sending signal 'SIGINT' to process[ros_robot_controller-3]
+[INFO] [checkpoint_recorder-15]: process has finished cleanly [pid 14177]
+[INFO] [ekf_node-7]: process has finished cleanly [pid 14132]
+[INFO] [joint_state_publisher-2]: sending signal 'SIGINT' to process[joint_state_publisher-2]
+[INFO] [robot_state_publisher-1]: sending signal 'SIGINT' to process[robot_state_publisher-1]
+[INFO] [apply_calib-5]: process has finished cleanly [pid 14127]
+[INFO] [complementary_filter_node-6]: process has finished cleanly [pid 14129]
+[INFO] [lifecycle_guard-14]: process has finished cleanly [pid 14169]
+[component_container_isolated-16] [INFO] [1794599048.645383767] [smoother_server]: 
+[component_container_isolated-16] 	smoother_server lifecycle node launched. 
+[component_container_isolated-16] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-16] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-16] [INFO] [1794599048.891566155] [smoother_server]: Creating smoother server
+[component_container_isolated-16] [INFO] [1794599049.417751654] [rclcpp]: signal_handler(signum=2)
+[component_container_isolated-16] [INFO] [1794599049.420009602] [smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[component_container_isolated-16] [INFO] [1794599049.421465854] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599049.421539502] [local_costmap.local_costmap]: Running Nav2 LifecycleNode rcl preshutdown (local_costmap)
+[component_container_isolated-16] [INFO] [1794599049.421587212] [local_costmap.local_costmap]: Destroying bond (local_costmap) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599049.421625755] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[component_container_isolated-16] [INFO] [1794599049.421676486] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599049.421713102] [lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[component_container_isolated-16] [INFO] [1794599049.421765292] [lifecycle_manager_localization]: Terminating bond timer...
+[component_container_isolated-16] [INFO] [1794599049.553405550] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[component_container_isolated-16] [INFO] [1794599049.564559554] [amcl]: Deactivating
+[component_container_isolated-16] [INFO] [1794599049.564646068] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599049.564826387] [amcl]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599049.713079444] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599049.713180021] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[component_container_isolated-16] [INFO] [1794599049.713273201] [map_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599049.713349402] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599049.713511439] [map_server]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599049.713631964] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[xbox_teleop-13] Traceback (most recent call last):
+[xbox_teleop-13]   File "/home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/xbox_teleop", line 33, in <module>
+[xbox_teleop-13]     sys.exit(load_entry_point('ame505-bringup', 'console_scripts', 'xbox_teleop')())
+[xbox_teleop-13]   File "/home/ubuntu/ame505-safety-inspection-robot/build/ame505_bringup/ame505_bringup/xbox_teleop.py", line 115, in main
+[xbox_teleop-13]     node.stop()
+[xbox_teleop-13]   File "/home/ubuntu/ame505-safety-inspection-robot/build/ame505_bringup/ame505_bringup/xbox_teleop.py", line 78, in stop
+[xbox_teleop-13]     self.pub.publish(Twist())
+[xbox_teleop-13]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[xbox_teleop-13]     self.__publisher.publish(msg)
+[xbox_teleop-13] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[game_controller_node-12] [INFO] [1794599050.077129917] [rclcpp]: signal_handler(signum=2)
+[scan_to_scan_filter_chain-11] [INFO] [1794599050.176172414] [rclcpp]: signal_handler(signum=2)
+[ERROR] [init_pose-9]: process has died [pid 14139, exit code -2, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/init_pose --ros-args -r __node:=init_pose --params-file /tmp/tmp9sfnknhh'].
+[sllidar_node-10] [INFO] [1794599050.366875053] [sllidar_node]: Stop motor
+[init_pose-9] Traceback (most recent call last):
+[init_pose-9]   File "/home/ubuntu/ros2_ws/install/controller/lib/controller/init_pose", line 33, in <module>
+[init_pose-9]     sys.exit(load_entry_point('controller', 'console_scripts', 'init_pose')())
+[init_pose-9]   File "/home/ubuntu/ros2_ws/build/controller/controller/init_pose.py", line 53, in main
+[init_pose-9]     rclpy.spin(node)  # 循环等待ROS2退出
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+[init_pose-9]     executor.spin_once()
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+[init_pose-9]     self._spin_once_impl(timeout_sec)
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+[init_pose-9]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+[init_pose-9]     return next(self._cb_iter)
+[init_pose-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 608, in _wait_for_ready_callbacks
+[init_pose-9]     wait_set.wait(timeout_nsec)
+[init_pose-9] KeyboardInterrupt
+[servo_controller-8] Traceback (most recent call last):
+[servo_controller-8]   File "/home/ubuntu/ros2_ws/install/servo_controller/lib/servo_controller/servo_controller", line 33, in <module>
+[servo_controller-8]     sys.exit(load_entry_point('servo-controller', 'console_scripts', 'servo_controller')())
+[servo_controller-8]   File "/home/ubuntu/ros2_ws/build/servo_controller/servo_controller/controller_manager.py", line 100, in main
+[servo_controller-8]     rclpy.spin(node)  # 循环等待ROS2退出
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+[servo_controller-8]     executor.spin_once()
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+[servo_controller-8]     self._spin_once_impl(timeout_sec)
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+[servo_controller-8]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+[servo_controller-8] Exception in thread Thread-1 (publish_joint_states):
+[servo_controller-8] Traceback (most recent call last):
+[servo_controller-8]   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+[servo_controller-8]     self.run()
+[servo_controller-8]   File "/usr/lib/python3.10/threading.py", line 953, in run
+[servo_controller-8]     self._target(*self._args, **self._kwargs)
+[servo_controller-8]   File "/home/ubuntu/ros2_ws/build/servo_controller/servo_controller/controller_manager.py", line 94, in publish_joint_states
+[servo_controller-8]     self.joint_states_pub.publish(msg)
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[servo_controller-8]     self.__publisher.publish(msg)
+[servo_controller-8] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[servo_controller-8]     return next(self._cb_iter)
+[servo_controller-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 608, in _wait_for_ready_callbacks
+[servo_controller-8]     wait_set.wait(timeout_nsec)
+[servo_controller-8] KeyboardInterrupt
+[ekf_node-7] [INFO] [1794599050.648034301] [rclcpp]: signal_handler(signum=2)
+[complementary_filter_node-6] [INFO] [1794599050.868651322] [rclcpp]: signal_handler(signum=2)
+[ERROR] [xbox_teleop-13]: process has died [pid 14164, exit code 1, cmd '/home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/lib/ame505_bringup/xbox_teleop --ros-args -r __node:=xbox_teleop --params-file /home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/share/ame505_bringup/config/xbox.yaml'].
+[INFO] [robot_state_publisher-1]: process has finished cleanly [pid 14119]
+[complementary_filter_node-6] [INFO] [1794599050.881384394] [imu_filter]: Destroying ComplementaryFilterROS
+[apply_calib-5] [INFO] [1794599050.998051237] [rclcpp]: signal_handler(signum=2)
+[robot_state_publisher-1] [INFO] [1794599051.439424867] [rclcpp]: signal_handler(signum=2)
+[component_container_isolated-16] [INFO] [1794599052.217969284] [rclcpp]: signal_handler(signum=15)
+[ros_robot_controller-3] Exception in thread Thread-2 (pub_callback):
+[ros_robot_controller-3] Traceback (most recent call last):
+[ros_robot_controller-3]   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+[ros_robot_controller-3]     self.run()
+[ros_robot_controller-3]   File "/usr/lib/python3.10/threading.py", line 953, in run
+[ros_robot_controller-3]     self._target(*self._args, **self._kwargs)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 68, in pub_callback
+[ros_robot_controller-3]     self.pub_imu_data(self.imu_pub)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 261, in pub_imu_data
+[ros_robot_controller-3]     pub.publish(msg)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[ros_robot_controller-3]     self.__publisher.publish(msg)
+[ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[odom_publisher-4] Exception in thread Thread-1 (cal_odom_fun):
+[odom_publisher-4] Traceback (most recent call last):
+[odom_publisher-4]   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+[odom_publisher-4]     self.run()
+[odom_publisher-4]   File "/usr/lib/python3.10/threading.py", line 953, in run
+[odom_publisher-4]     self._target(*self._args, **self._kwargs)
+[odom_publisher-4]   File "/home/ubuntu/ros2_ws/build/controller/controller/odom_publisher_node.py", line 240, in cal_odom_fun
+[odom_publisher-4]     self.odom_pub.publish(self.odom)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[odom_publisher-4]     self.__publisher.publish(msg)
+[odom_publisher-4] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[odom_publisher-4] [INFO] [1794599052.262526392] [odom_publisher]: shutdown
+[odom_publisher-4] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[odom_publisher-4] Traceback (most recent call last):
+[odom_publisher-4]   File "/home/ubuntu/ros2_ws/install/controller/lib/controller/odom_publisher", line 33, in <module>
+[odom_publisher-4]     sys.exit(load_entry_point('controller', 'console_scripts', 'odom_publisher')())
+[odom_publisher-4]   File "/home/ubuntu/ros2_ws/build/controller/controller/odom_publisher_node.py", line 246, in main
+[odom_publisher-4]     rclpy.spin(node)  # 循环等待ROS2退出
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+[odom_publisher-4]     executor.spin_once()
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+[odom_publisher-4]     self._spin_once_impl(timeout_sec)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+[odom_publisher-4]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+[odom_publisher-4]     return next(self._cb_iter)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 608, in _wait_for_ready_callbacks
+[odom_publisher-4]     wait_set.wait(timeout_nsec)
+[odom_publisher-4]   File "/home/ubuntu/ros2_ws/build/controller/controller/odom_publisher_node.py", line 141, in shutdown
+[odom_publisher-4]     rclpy.shutdown()
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 126, in shutdown
+[odom_publisher-4]     _shutdown(context=context)
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[odom_publisher-4]     return context.shutdown()
+[odom_publisher-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+[odom_publisher-4]     self.__context.shutdown()
+[odom_publisher-4] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[ERROR] [servo_controller-8]: process has died [pid 14135, exit code -2, cmd '/home/ubuntu/ros2_ws/install/servo_controller/lib/servo_controller/servo_controller --ros-args --params-file /home/ubuntu/ros2_ws/src/driver/servo_controller/config/servo_controller.yaml --params-file /tmp/launch_params__60drl78'].
+[ros_robot_controller-3] [INFO] [1794599052.251825112] [ros_robot_controller]: shutdown
+[ros_robot_controller-3] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[ros_robot_controller-3] Traceback (most recent call last):
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/install/ros_robot_controller/lib/ros_robot_controller/ros_robot_controller", line 33, in <module>
+[ros_robot_controller-3]     sys.exit(load_entry_point('ros-robot-controller', 'console_scripts', 'ros_robot_controller')())
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 265, in main
+[ros_robot_controller-3]     rclpy.spin(node)                                 # 循环等待ROS2退出
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+[ros_robot_controller-3]     executor.spin_once()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+[ros_robot_controller-3]     self._spin_once_impl(timeout_sec)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+[ros_robot_controller-3]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+[ros_robot_controller-3]     return next(self._cb_iter)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 608, in _wait_for_ready_callbacks
+[ros_robot_controller-3]     wait_set.wait(timeout_nsec)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 58, in shutdown
+[ros_robot_controller-3]     rclpy.shutdown()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 126, in shutdown
+[ros_robot_controller-3]     _shutdown(context=context)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[ros_robot_controller-3]     return context.shutdown()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+[ros_robot_controller-3]     self.__context.shutdown()
+[ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ERROR] [ros_robot_controller-3]: process has died [pid 14123, exit code 1, cmd '/home/ubuntu/ros2_ws/install/ros_robot_controller/lib/ros_robot_controller/ros_robot_controller --ros-args --params-file /tmp/launch_params_1vwxs4zd'].
+[ERROR] [odom_publisher-4]: process has died [pid 14125, exit code 1, cmd '/home/ubuntu/ros2_ws/install/controller/lib/controller/odom_publisher --ros-args -r __node:=odom_publisher --params-file /home/ubuntu/ros2_ws/src/driver/controller/config/calibrate_params.yaml --params-file /tmp/launch_params_35vigdhj'].
+[ERROR] [joint_state_publisher-2]: process has died [pid 14121, exit code -11, cmd '/opt/ros/humble/lib/joint_state_publisher/joint_state_publisher --ros-args -r __node:=joint_state_publisher --params-file /tmp/launch_params_2g9907hd'].
+[ERROR] [component_container_isolated-16]: process[component_container_isolated-16] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[INFO] [component_container_isolated-16]: sending signal 'SIGTERM' to process[component_container_isolated-16]
+[component_container_isolated-16] [INFO] [1794599054.354127228] [rclcpp]: signal_handler(signum=15)

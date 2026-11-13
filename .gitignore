@@ -18,3 +18,6 @@ log/
 .vscode/
 .idea/
 .DS_Store
+
+# SSD data link (maps, bags, checkpoints live on /home/ubuntu/share/tmp/ame505_data)
+data/

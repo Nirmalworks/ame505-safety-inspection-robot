@@ -1,0 +1,300 @@
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 68, in pub_callback
+[ros_robot_controller-3]     self.pub_imu_data(self.imu_pub)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 261, in pub_imu_data
+[ros_robot_controller-3]     pub.publish(msg)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[ros_robot_controller-3]     self.__publisher.publish(msg)
+[ros_robot_controller-3] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[ERROR] [joint_state_publisher-2]: process has died [pid 14901, exit code -2, cmd '/opt/ros/humble/lib/joint_state_publisher/joint_state_publisher --ros-args -r __node:=joint_state_publisher --params-file /tmp/launch_params_lstgp821'].
+[component_container_isolated-16] [ERROR] [1794599319.819195282] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599319.819535764] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599319.939166455] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599319.939574388] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599320.063194039] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599320.088043505] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [INFO] [1794599320.166316842] [rclcpp]: signal_handler(signum=2)
+[component_container_isolated-16] [ERROR] [1794599320.208677413] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599320.222563948] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599320.339252910] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599320.389811668] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599320.514098167] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599320.514498547] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[ros_robot_controller-3] [INFO] [1794599320.534860337] [ros_robot_controller]: shutdown
+[ros_robot_controller-3] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[component_container_isolated-16] [ERROR] [1794599320.624766892] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [ERROR] [1794599320.625471295] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] 校验失败
+[ros_robot_controller-3] Traceback (most recent call last):
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/install/ros_robot_controller/lib/ros_robot_controller/ros_robot_controller", line 33, in <module>
+[ros_robot_controller-3]     sys.exit(load_entry_point('ros-robot-controller', 'console_scripts', 'ros_robot_controller')())
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 265, in main
+[ros_robot_controller-3]     rclpy.spin(node)                                 # 循环等待ROS2退出
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+[component_container_isolated-16] [WARN] [1794599320.650170494] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[ros_robot_controller-3]     executor.spin_once()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+[ros_robot_controller-3]     self._spin_once_impl(timeout_sec)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 736, in _spin_once_impl
+[ros_robot_controller-3]     raise handler.exception()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/task.py", line 239, in __call__
+[ros_robot_controller-3]     self._handler.send(None)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 437, in handler
+[ros_robot_controller-3]     await call_coroutine(entity, arg)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 362, in _execute_subscription
+[ros_robot_controller-3]     await await_or_execute(sub.callback, msg)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 107, in await_or_execute
+[ros_robot_controller-3]     return callback(*args)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 83, in set_motor_state
+[ros_robot_controller-3]     self.board.set_motor_speed(data)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_sdk.py", line 335, in set_motor_speed
+[ros_robot_controller-3]     self.buf_write(PacketFunction.PACKET_FUNC_MOTOR, data)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_sdk.py", line 319, in buf_write
+[ros_robot_controller-3]     self.port.write(buf)
+[ros_robot_controller-3]   File "/home/ubuntu/.local/lib/python3.10/site-packages/serial/serialposix.py", line 640, in write
+[ros_robot_controller-3]     abort, ready, _ = select.select([self.pipe_abort_write_r], [self.fd], [], None)
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 58, in shutdown
+[ros_robot_controller-3]     rclpy.shutdown()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 126, in shutdown
+[ros_robot_controller-3]     _shutdown(context=context)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[ros_robot_controller-3]     return context.shutdown()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 103, in shutdown
+[ros_robot_controller-3]     self._call_on_shutdown_callbacks()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 92, in _call_on_shutdown_callbacks
+[ros_robot_controller-3]     callback = weak_method()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 107, in reset_executor
+[ros_robot_controller-3]     __executor.shutdown()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 223, in shutdown
+[ros_robot_controller-3]     if not self._work_tracker.wait(timeout_sec):
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 94, in wait
+[ros_robot_controller-3]     if not self._work_condition.wait_for(
+[ros_robot_controller-3]   File "/usr/lib/python3.10/threading.py", line 355, in wait_for
+[ros_robot_controller-3]     self.wait(waittime)
+[ros_robot_controller-3]   File "/usr/lib/python3.10/threading.py", line 320, in wait
+[ros_robot_controller-3]     waiter.acquire()
+[ros_robot_controller-3]   File "/home/ubuntu/ros2_ws/build/ros_robot_controller/ros_robot_controller/ros_robot_controller_node.py", line 58, in shutdown
+[ros_robot_controller-3]     rclpy.shutdown()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 126, in shutdown
+[ros_robot_controller-3]     _shutdown(context=context)
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[ros_robot_controller-3]     return context.shutdown()
+[ros_robot_controller-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 100, in shutdown
+[ros_robot_controller-3]     raise RuntimeError('Context must be initialized before it can be shutdown')
+[ros_robot_controller-3] RuntimeError: Context must be initialized before it can be shutdown
+[component_container_isolated-16] [ERROR] [1794599320.756503580] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599320.756829895] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599320.871010789] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599320.874296074] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599320.979227178] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599320.979755480] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599321.089777200] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.047325, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599321.096345271] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599321.201951921] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.374832, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599321.202391522] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599321.305464583] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.374832, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599321.308874874] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599321.425209029] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.374832, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599321.433743948] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599321.538473429] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.374832, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599321.545702151] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599321.625197306] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.374832, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [ERROR] [1794599321.667251043] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.374832, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599321.679089685] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599321.789498087] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.374832, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599321.801659555] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599321.906204341] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[ERROR] [ros_robot_controller-3]: process has died [pid 14903, exit code 1, cmd '/home/ubuntu/ros2_ws/install/ros_robot_controller/lib/ros_robot_controller/ros_robot_controller --ros-args --params-file /tmp/launch_params__1o34ovd'].
+[component_container_isolated-16] [WARN] [1794599321.909966572] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599322.023190553] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599322.026287498] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599322.136705952] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599322.137142688] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599322.244815462] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599322.245241052] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599322.355872327] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599322.356344273] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599322.462878251] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599322.465303034] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599322.584695644] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599322.586786976] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599322.617457660] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [ERROR] [1794599322.697258974] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599322.699561044] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599322.804058849] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599322.804888986] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599322.914694968] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599322.923660997] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599323.032860602] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599323.041285360] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599323.151169471] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599323.151520318] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599323.266406031] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599323.266759326] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [INFO] [1794599323.305003277] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[component_container_isolated-16] [INFO] [1794599323.305272871] [map_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599323.305344385] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599323.316224760] [map_server]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599323.316492427] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599323.316560346] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[component_container_isolated-16] [INFO] [1794599323.316631755] [amcl]: Deactivating
+[component_container_isolated-16] [INFO] [1794599323.316682382] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599323.334184997] [amcl]: Cleaning up
+[component_container_isolated-16] [ERROR] [1794599323.372769535] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599323.375430525] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [INFO] [1794599323.464046039] [lifecycle_manager_localization]: Have not received a heartbeat from map_server.
+[component_container_isolated-16] [ERROR] [1794599323.494927201] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 30000 ms. Shutting down related nodes.
+[component_container_isolated-16] [INFO] [1794599323.495333362] [lifecycle_manager_localization]: Terminating bond timer...
+[component_container_isolated-16] [INFO] [1794599323.495407271] [lifecycle_manager_localization]: Resetting managed nodes...
+[component_container_isolated-16] [INFO] [1794599323.495449877] [lifecycle_manager_localization]: Deactivating amcl
+[component_container_isolated-16] [ERROR] [1794599323.481728140] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599323.497310107] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [WARN] [1794599323.549748574] [rcl_lifecycle]: No transition matching 4 found for current state cleaningup
+[component_container_isolated-16] [ERROR] [1794599323.549822379] [amcl]: Unable to start transition 4 from current state cleaningup: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[component_container_isolated-16] [ERROR] [1794599323.553854517] [lifecycle_manager_localization]: Failed to change state for node: amcl
+[component_container_isolated-16] [INFO] [1794599323.553968531] [lifecycle_manager_localization]: Deactivating map_server
+[component_container_isolated-16] [WARN] [1794599323.555181704] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[component_container_isolated-16] [ERROR] [1794599323.555240352] [map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[component_container_isolated-16] [ERROR] [1794599323.556542591] [lifecycle_manager_localization]: Failed to change state for node: map_server
+[component_container_isolated-16] [INFO] [1794599323.556625459] [lifecycle_manager_localization]: Cleaning up amcl
+[component_container_isolated-16] [INFO] [1794599323.574893260] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599323.586605543] [lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[component_container_isolated-16] [WARN] [1794599323.587043894] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[component_container_isolated-16] [ERROR] [1794599323.587097698] [amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[component_container_isolated-16] [INFO] [1794599323.590157871] [lifecycle_manager_localization]: Cleaning up map_server
+[component_container_isolated-16] [WARN] [1794599323.591061552] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[component_container_isolated-16] [ERROR] [1794599323.591117440] [map_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[component_container_isolated-16] [INFO] [1794599323.592427804] [lifecycle_manager_localization]: Managed nodes have been reset
+[component_container_isolated-16] [ERROR] [1794599323.604877147] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599323.610607372] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [ERROR] [1794599323.621853283] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [INFO] [1794599323.643965975] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[component_container_isolated-16] [INFO] [1794599323.644132909] [bt_navigator]: Deactivating
+[component_container_isolated-16] [WARN] [1794599323.644178744] [bt_navigator]: [navigate_to_pose] [ActionServer] Requested to deactivate server but goal is still executing. Should check if action server is running before deactivating.
+[component_container_isolated-16] [ERROR] [1794599323.717071244] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599323.717447509] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[component_container_isolated-16] [INFO] [1794599323.747026744] [bt_navigator]: [navigate_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [INFO] [1794599323.847239225] [bt_navigator]: [navigate_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [INFO] [1794599323.947458633] [bt_navigator]: [navigate_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [INFO] [1794599324.047662467] [bt_navigator]: [navigate_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [INFO] [1794599324.147878854] [bt_navigator]: [navigate_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [WARN] [1794599324.148012974] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[component_container_isolated-16] [ERROR] [1794599324.158562294] [bt_navigator]: Caught exception in callback for transition 14
+[component_container_isolated-16] [ERROR] [1794599324.158684903] [bt_navigator]: Original error: bad_function_call
+[component_container_isolated-16] [WARN] [1794599324.158760323] [bt_navigator]: Error occurred while doing error handling.
+[component_container_isolated-16] [FATAL] [1794599324.158808085] [bt_navigator]: Lifecycle node bt_navigator does not have error state implemented
+[component_container_isolated-16] [INFO] [1794599324.158870692] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599324.158958560] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[component_container_isolated-16] [INFO] [1794599324.159131431] [controller_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599324.159303730] [local_costmap.local_costmap]: Deactivating
+[component_container_isolated-16] [INFO] [1794599324.278191528] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599324.278435027] [controller_server]: Cleaning up
+[component_container_isolated-16] [INFO] [1794599324.283893314] [local_costmap.local_costmap]: Cleaning up
+[component_container_isolated-16] [WARN] [1794599324.332875239] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 12.119589 seconds. Ignoring the source.
+[component_container_isolated-16] [WARN] [1794599324.429138658] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 12.215852 seconds. Ignoring the source.
+[component_container_isolated-16] [WARN] [1794599324.533090452] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 12.319803 seconds. Ignoring the source.
+[component_container_isolated-16] [INFO] [1794599324.562364884] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599324.562483587] [smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[component_container_isolated-16] [INFO] [1794599324.562594529] [smoother_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599324.562683490] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599324.562838340] [smoother_server]: Cleaning up
+[component_container_isolated-16] [ERROR] [1794599324.626535792] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 1794599244.600674 but the earliest data is at time 1794599299.546438, when looking up transform from frame [base_footprint] to frame [map]
+[component_container_isolated-16] 
+[component_container_isolated-16] [WARN] [1794599324.630478863] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 12.417192 seconds. Ignoring the source.
+[ERROR] [component_container_isolated-16]: process[component_container_isolated-16] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[INFO] [component_container_isolated-16]: sending signal 'SIGTERM' to process[component_container_isolated-16]
+[component_container_isolated-16] [INFO] [1794599324.672919386] [rclcpp]: signal_handler(signum=15)
+[component_container_isolated-16] [INFO] [1794599324.701725153] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599324.701824688] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[component_container_isolated-16] [INFO] [1794599324.701916880] [planner_server]: Deactivating
+[component_container_isolated-16] [WARN] [1794599324.701955839] [planner_server]: [compute_path_to_pose] [ActionServer] Requested to deactivate server but goal is still executing. Should check if action server is running before deactivating.
+[component_container_isolated-16] [ERROR] [1794599324.725037372] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for compute_path_to_pose in node halt!
+[component_container_isolated-16] [INFO] [1794599324.725355613] [bt_navigator]: Goal canceled
+[component_container_isolated-16] [WARN] [1794599324.725435043] [bt_navigator]: [navigate_to_pose] [ActionServer] Stopping the thread per request.
+[component_container_isolated-16] [WARN] [1794599324.728944348] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 12.515659 seconds. Ignoring the source.
+[component_container_isolated-16] [INFO] [1794599324.802076806] [planner_server]: [compute_path_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [WARN] [1794599324.828945362] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 12.615660 seconds. Ignoring the source.
+[component_container_isolated-16] [INFO] [1794599324.902296734] [planner_server]: [compute_path_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [WARN] [1794599324.928956480] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 12.715670 seconds. Ignoring the source.
+[component_container_isolated-16] [INFO] [1794599325.002536508] [planner_server]: [compute_path_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [WARN] [1794599325.028981609] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 12.815696 seconds. Ignoring the source.
+[component_container_isolated-16] [INFO] [1794599325.102748884] [planner_server]: [compute_path_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [WARN] [1794599325.131559235] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 12.918089 seconds. Ignoring the source.
+[component_container_isolated-16] [INFO] [1794599325.203062618] [planner_server]: [compute_path_to_pose] [ActionServer] Waiting for async process to finish.
+[component_container_isolated-16] [WARN] [1794599325.203473051] [planner_server]: [compute_path_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[component_container_isolated-16] [ERROR] [1794599325.203905516] [planner_server]: Caught exception in callback for transition 14
+[component_container_isolated-16] [ERROR] [1794599325.203979686] [planner_server]: Original error: bad_function_call
+[component_container_isolated-16] [WARN] [1794599325.204044428] [planner_server]: Error occurred while doing error handling.
+[component_container_isolated-16] [FATAL] [1794599325.204123129] [planner_server]: Lifecycle node planner_server does not have error state implemented
+[component_container_isolated-16] [INFO] [1794599325.204192558] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599325.204282614] [behavior_server]: Running Nav2 LifecycleNode rcl preshutdown (behavior_server)
+[component_container_isolated-16] [INFO] [1794599325.204366055] [behavior_server]: Deactivating
+[component_container_isolated-16] [INFO] [1794599325.204433558] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599325.204600022] [behavior_server]: Cleaning up
+[component_container_isolated-16] [WARN] [1794599325.229670279] [collision_monitor]: [scan]: Latest source and current collision monitor node timestamps differ on 13.016385 seconds. Ignoring the source.
+[component_container_isolated-16] [INFO] [1794599325.253303343] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[component_container_isolated-16] [INFO] [1794599325.253421473] [global_costmap.global_costmap]: Running Nav2 LifecycleNode rcl preshutdown (global_costmap)
+[component_container_isolated-16] [INFO] [1794599325.253497726] [global_costmap.global_costmap]: Deactivating
+[component_container_isolated-16] [INFO] [1794599325.312829953] [global_costmap.global_costmap]: Cleaning up
+[component_container_isolated-16] Magick: abort due to signal 11 (SIGSEGV) "Segmentation Fault"...
+[ERROR] [component_container_isolated-16]: process has died [pid 15205, exit code -6, cmd '/opt/ros/humble/lib/rclcpp_components/component_container_isolated --ros-args -r __node:=nav2_container -r __ns:=/ --params-file /home/ubuntu/ame505-safety-inspection-robot/install/ame505_bringup/share/ame505_bringup/config/nav2_params.yaml --params-file /tmp/launch_params_0kwmwfmi'].

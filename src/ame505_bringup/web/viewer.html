@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Map Viewer</title>
+<style>
+  html,body{margin:0;height:100%;background:#0f1216;color:#e6e9ee;font:14px system-ui,sans-serif;overflow:hidden}
+  #bar{position:absolute;top:0;left:0;right:0;display:flex;gap:10px;align-items:center;padding:10px 14px;background:#0f1216cc;flex-wrap:wrap;z-index:2}
+  select,button,input{background:#181c22;color:#e6e9ee;border:1px solid #2a3039;border-radius:8px;padding:6px 10px}
+  a{color:#7fb2ff} #msg{color:#f1c40f} #help{color:#8a94a3;font-size:12px}
+  canvas{display:block}
+</style>
+</head>
+<body>
+<div id="bar">
+  <a href="/">← Dashboard</a>
+  <select id="file"></select>
+  <label>Point size <input type="range" id="size" min="1" max="8" value="1"></label>
+  <label><input type="checkbox" id="ceil" checked> Hide ceiling (&gt;1.6 m)</label>
+  <button id="top">Top view</button>
+  <button id="eye">Eye level</button>
+  <a id="dl" href="#" download>Download .ply</a>
+  <span id="msg"></span>
+  <span id="help">Drag = rotate · right-drag = pan · wheel = zoom</span>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const renderer = new THREE.WebGLRenderer({antialias: true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x0f1216);
+THREE.Object3D.DefaultUp.set(0, 0, 1);              // ROS: z is up
+const camera = new THREE.PerspectiveCamera(60, 1, 0.05, 500); camera.up.set(0, 0, 1);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+const grid = new THREE.GridHelper(40, 40, 0x335, 0x223); grid.rotation.x = Math.PI / 2; scene.add(grid);
+scene.add(new THREE.AxesHelper(0.5));
+let obj = null, isMesh = false;
+renderer.localClippingEnabled = true;
+const ceilPlane = new THREE.Plane(new THREE.Vector3(0, 0, -1), 1.6);   // keep z <= 1.6 m
+
+function resize() { renderer.setSize(innerWidth, innerHeight); camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); }
+addEventListener('resize', resize); resize();
+
+function show(g) {
+  if (obj) { scene.remove(obj); obj.geometry.dispose(); obj.material.dispose(); }
+  const col = !!g.getAttribute('color');
+  const clip = $('ceil').checked ? [ceilPlane] : [];
+  isMesh = !!g.index;
+  if (isMesh) {   // realistic coloured surfaces
+    obj = new THREE.Mesh(g, new THREE.MeshBasicMaterial({vertexColors: col, side: THREE.DoubleSide, clippingPlanes: clip}));
+    $('msg').textContent = `${(g.index.count / 3).toLocaleString()} triangles (realistic surfaces)`;
+  } else {
+    obj = new THREE.Points(g, new THREE.PointsMaterial({size: +$('size').value / 100, vertexColors: col,
+                                                        color: col ? 0xffffff : 0x66ccff, clippingPlanes: clip}));
+    $('msg').textContent = `${g.getAttribute('position').count.toLocaleString()} points`;
+  }
+  scene.add(obj);
+}
+
+function fit(mode) {
+  if (!obj) return;
+  obj.geometry.computeBoundingBox();
+  const b = obj.geometry.boundingBox, c = new THREE.Vector3(); b.getCenter(c);
+  const r = b.getSize(new THREE.Vector3()).length() / 2 || 5;
+  if (mode === 'eye') {           // stand inside the scene at ~1.2 m, looking along it
+    const sz = b.getSize(new THREE.Vector3()), along = sz.x > sz.y ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(0, 1, 0);
+    camera.position.set(c.x - along.x * r * 0.5, c.y - along.y * r * 0.5, 1.2);
+    controls.target.set(c.x, c.y, 0.8);
+  } else {
+    controls.target.copy(c);
+    camera.position.set(c.x - (mode === 'top' ? 0.01 : r * 0.8), c.y - (mode === 'top' ? 0 : r * 0.8), c.z + r * (mode === 'top' ? 1.6 : 0.9));
+  }
+  controls.update();
+}
+
+function load(name) {
+  $('msg').textContent = 'Loading ' + name + '...';
+  $('dl').href = '/files/maps_3d/' + encodeURIComponent(name);
+  new THREE.PLYLoader().load('/files/maps_3d/' + encodeURIComponent(name), g => {
+    show(g); fit();
+    history.replaceState(null, '', '?file=' + encodeURIComponent(name));
+  }, xhr => { if (xhr.total) $('msg').textContent = `Loading ${name}... ${Math.round(100 * xhr.loaded / xhr.total)}%`; },
+     e => { $('msg').textContent = 'Could not load: ' + e; });
+}
+
+const label = n => n.endsWith('_mesh.ply') ? `★ ${n}  (realistic surfaces)` : n.endsWith('_dense.ply') ? `${n}  (dense points)` : `${n}  (quick map)`;
+(async () => {
+  const files = await (await fetch('/api/files')).json();
+  const want = new URLSearchParams(location.search).get('file');
+  const list = [...files.clouds].sort((a, b) => (b.name.endsWith('_mesh.ply') - a.name.endsWith('_mesh.ply')));
+  $('file').innerHTML = list.map(c => `<option value="${c.name}">${label(c.name)}</option>`).join('');
+  if (!list.length) { $('msg').textContent = 'No 3D maps saved yet: map, then press "Stop & Save" on the dashboard.'; return; }
+  const best = list.find(c => c.name.endsWith('_mesh.ply')) || list.find(c => c.name.endsWith('_dense.ply')) || list[0];
+  $('file').value = want && list.some(c => c.name === want) ? want : best.name;
+  load($('file').value);
+})();
+$('file').onchange = e => load(e.target.value);
+$('size').oninput = () => { if (obj && !isMesh) obj.material.size = +$('size').value / 100; };
+$('ceil').onchange = () => { if (obj) { obj.material.clippingPlanes = $('ceil').checked ? [ceilPlane] : []; obj.material.needsUpdate = true; } };
+$('top').onclick = () => fit('top');
+$('eye').onclick = () => fit('eye');
+(function loop() { requestAnimationFrame(loop); controls.update(); renderer.render(scene, camera); })();
+</script>
+</body>
+</html>
