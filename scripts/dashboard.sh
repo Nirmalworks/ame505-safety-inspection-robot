@@ -13,7 +13,9 @@ if [ "$1" = restart ] && [ -n "$(running_pid)" ]; then
   pkill -INT -f "lib/ame505_bringup/dashboard"
   for i in $(seq 15); do [ -z "$(running_pid)" ] && break; sleep 1; done
   # rclpy/Flask sometimes ignore Ctrl+C: escalate so the port is really free
-  [ -n "$(running_pid)" ] && pkill -TERM -f "lib/ame505_bringup/dashboard" && sleep 3
+  # (on TERM the dashboard first stops its running launch, which can take ~40 s on the Nano)
+  [ -n "$(running_pid)" ] && pkill -TERM -f "lib/ame505_bringup/dashboard"
+  for i in $(seq 45); do [ -z "$(running_pid)" ] && break; sleep 1; done
   [ -n "$(running_pid)" ] && pkill -KILL -f "lib/ame505_bringup/dashboard" && sleep 1
   ros2 run ame505_bringup motor_stop >/dev/null 2>&1 || true
 fi

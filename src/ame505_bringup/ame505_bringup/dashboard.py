@@ -17,6 +17,7 @@ import os
 import re
 import signal
 import subprocess
+import sys
 import threading
 import time
 
@@ -26,6 +27,7 @@ import rclpy
 from ament_index_python.packages import get_package_share_directory
 from flask import Flask, Response, abort, jsonify, request, send_from_directory
 import yaml
+from action_msgs.srv import CancelGoal
 from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped, Twist
 from nav2_msgs.action import NavigateToPose
 from nav2_msgs.msg import ParticleCloud
@@ -106,6 +108,7 @@ class Sensors(Node):
         self.tf = Buffer()
         self.tf_listener = TransformListener(self.tf, self)
         self.nav = ActionClient(self, NavigateToPose, 'navigate_to_pose')
+        self.nav_cancel_all = self.create_client(CancelGoal, 'navigate_to_pose/_action/cancel_goal')
         self.goal_handle = None
         self.goal = None
         self.nav_state = {'state': 'idle'}
@@ -360,6 +363,12 @@ class Sensors(Node):
                           'label': self.goal and self.goal['label']}
         self.goal_handle = None
 
+    def cancel_all_goals(self):
+        """E-STOP: cancel every NavigateToPose goal, the patrol's too (empty request = all goals)."""
+        if self.nav_cancel_all.service_is_ready():
+            self.nav_cancel_all.call_async(CancelGoal.Request())
+        self.goal = None
+
     def cancel_goal(self):
         if self.goal_handle is None:
             return False, 'No active goal.'
@@ -441,6 +450,8 @@ def kill_leftovers():
     """Kill orphaned robot processes (never the dashboard itself). Returns how many were found."""
     pids = _leftover_pids()
     found = len(pids)
+    if not pids:
+        return 0                                   # nothing to wait for (keeps E-STOP fast)
     for sig in (signal.SIGINT, signal.SIGTERM, signal.SIGKILL):
         for p in pids:
             try:
@@ -464,6 +475,7 @@ class Manager:
         self.gtsam = None
         self.gtsam_check = {}
         self.mode = 'idle'
+        self.stopping = False      # True while _stop_job runs: no second Stop, no Start
         self.kind = '2d'
         self.auto_pose = False
         self.map = None
@@ -483,6 +495,8 @@ class Manager:
 
     def start(self, mode, name, new=False, rviz=False, map3d=False, camera=False):
         with self.lock:
+            if self.stopping:
+                return False, 'Still stopping the last run. Try again in a few seconds.'
             if self.running():
                 return False, f'{self.mode} is already running. Stop it first.'
             if mode != 'drive' and not NAME_RE.match(name or ''):
@@ -525,7 +539,7 @@ class Manager:
             with self.node.lock:                   # forget the previous run's map / AMCL state
                 self.node.map_png, self.node.map_info, self.node.plan = None, None, []
                 self.node.particles = []
-            self.node.amcl = None
+                self.node.amcl = None
             if mode == 'drive':
                 self.job = 'Starting... sensors appear in ~10 s. Then hold LB to drive.'
             elif mode == 'mapping':
@@ -552,9 +566,16 @@ class Manager:
             pass
 
     def stop(self, save):
-        if not self.running():
-            self.mode = 'idle'
-            return False, 'Nothing is running.'
+        with self.lock:
+            if self.stopping:
+                return False, 'Already stopping.'
+            if not self.running():
+                self.mode = 'idle'
+                # A restarted dashboard does not own the launch an earlier one started.
+                if kill_leftovers():
+                    return True, 'Stopped leftover robot software. ' + board_stop()[1]
+                return False, 'Nothing is running.'
+            self.stopping = True
         threading.Thread(target=self._stop_job, args=(save,), daemon=True).start()
         return True, 'Stopping...'
 
@@ -608,6 +629,7 @@ class Manager:
             self.job = f'Error while stopping: {e}'
         finally:
             self.mode = 'idle'
+            self.stopping = False
 
     def reconstruct(self, name):
         try:
@@ -690,9 +712,11 @@ class Manager:
             time.sleep(0.02)
 
     def estop(self):
+        self.node.cancel_all_goals()       # Nav2 then commands zero itself, before anything is killed
         self.estop_twist()
         self._stop_proc(self.patrol, 3)
         if not self.running():
+            kill_leftovers()               # an orphaned driver would keep the motor port busy
             ok, bmsg = board_stop()        # nothing running: talk to the motor board directly
             return True, 'E-STOP: ' + bmsg
         if self.mode in ('navigation', 'drive'):
@@ -1054,6 +1078,9 @@ def main():
     threading.Thread(target=ex.spin, daemon=True).start()
     mgr = Manager(node)
     app = create_app(node, mgr)
+    # `dashboard.sh restart` escalates to SIGTERM: exit through the `finally` below so the
+    # running launch is stopped instead of being left behind as an orphan.
+    signal.signal(signal.SIGTERM, lambda *_: sys.exit(0))
     print(f'\n  AME 505 dashboard:  http://localhost:{PORT}   (laptop: http://<robot-ip>:{PORT})\n', flush=True)
     try:
         app.run(host='0.0.0.0', port=PORT, threaded=True, use_reloader=False)
