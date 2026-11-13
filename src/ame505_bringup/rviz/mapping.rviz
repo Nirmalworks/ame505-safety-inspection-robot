@@ -44,7 +44,7 @@ Visualization Manager:
     Decay Time: 0
   - Class: rviz_default_plugins/DepthCloud
     Name: Live depth camera
-    Enabled: true
+    Enabled: false
     Depth Map Topic: /depth_cam/depth/image_raw
     Depth Map Transport Hint: raw
     Color Image Topic: /depth_cam/rgb/image_raw
@@ -65,7 +65,7 @@ Visualization Manager:
       Durability Policy: Transient Local
   - Class: rviz_default_plugins/Image
     Name: Camera
-    Enabled: true
+    Enabled: false
     Topic:
       Value: /depth_cam/rgb/image_raw
       Reliability Policy: Best Effort
