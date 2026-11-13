@@ -14,6 +14,7 @@ setup(
         ('share/' + package_name + '/config', glob('config/*.yaml') + glob('config/*.xml')),
         ('share/' + package_name + '/rviz', glob('rviz/*.rviz')),
         ('share/' + package_name + '/web', glob('web/*.html')),
+        ('share/' + package_name + '/sim', glob('sim/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -36,6 +37,7 @@ setup(
             'depth_obstacles = ame505_bringup.depth_obstacles:main',
             'capture_dataset = ame505_bringup.capture_dataset:main',
             'lifecycle_guard = ame505_bringup.lifecycle_guard:main',
+            'sim_robot = ame505_bringup.sim_robot:main',
         ],
     },
 )

@@ -53,9 +53,35 @@ def lidar(peripherals):
     ]
 
 
+def sim_description(desc, me):
+    """AME505_SIM=1 (scripts/sim_env.sh): sim_robot replaces drivers, lidar, EKF and camera."""
+    robot_description = ParameterValue(
+        Command(['xacro ', os.path.join(desc, 'urdf', 'jetauto.xacro')]), value_type=str)
+    return LaunchDescription([
+        DeclareLaunchArgument('use_camera', default_value='false'),      # accepted, not simulated
+        DeclareLaunchArgument('use_teleop', default_value='true'),
+        DeclareLaunchArgument('use_rviz', default_value='false'),
+        DeclareLaunchArgument('sim_world',
+                              default_value=os.path.join(me, 'sim', 'sim_hall_world.yaml')),
+        Node(package='robot_state_publisher', executable='robot_state_publisher',
+             name='robot_state_publisher', output='screen',
+             parameters=[{'robot_description': robot_description}]),
+        Node(package='joint_state_publisher', executable='joint_state_publisher',
+             name='joint_state_publisher', parameters=[{'rate': 5.0}]),
+        Node(package='ame505_bringup', executable='sim_robot', name='sim_robot', output='screen',
+             parameters=[{'world': LaunchConfiguration('sim_world')}]),
+        include(me, 'launch/teleop.launch.py', condition=IfCondition(LaunchConfiguration('use_teleop'))),
+        Node(package='rviz2', executable='rviz2', name='rviz2', output='screen',
+             arguments=['-d', os.path.join(me, 'rviz', 'robot.rviz')],
+             condition=IfCondition(LaunchConfiguration('use_rviz'))),
+    ])
+
+
 def generate_launch_description():
     desc = get_package_share_directory('ame505_description')
     me = get_package_share_directory('ame505_bringup')
+    if os.environ.get('AME505_SIM'):
+        return sim_description(desc, me)
     peripherals = hiwonder_pkg('peripherals')
     controller = hiwonder_pkg('controller')
     robot_controller = hiwonder_pkg('ros_robot_controller')

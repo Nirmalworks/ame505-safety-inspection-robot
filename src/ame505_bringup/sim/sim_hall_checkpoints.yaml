@@ -1,0 +1,11 @@
+# Sample patrol route for the simulated hallway (same format as checkpoint_recorder writes).
+frame_id: map
+checkpoints:
+- {id: cp_01, x: -1.0, y: 0.0, yaw: 3.14}     # west end of the hallway
+- {id: cp_02, x: 1.5, y: 2.5, yaw: 1.57}      # north-west room
+- {id: cp_03, x: 2.5, y: -2.5, yaw: -1.57}    # south-west room
+- {id: cp_04, x: 8.0, y: 0.0, yaw: 0.0}       # middle of the hallway
+- {id: cp_05, x: 8.0, y: 2.5, yaw: 1.57}      # north middle room
+- {id: cp_06, x: 9.5, y: -2.5, yaw: -1.57}    # south middle room (a box near its door is not on the map)
+- {id: cp_07, x: 14.5, y: 2.5, yaw: 1.57}     # north-east room
+- {id: cp_08, x: 17.0, y: 0.0, yaw: 0.0}      # east end of the hallway

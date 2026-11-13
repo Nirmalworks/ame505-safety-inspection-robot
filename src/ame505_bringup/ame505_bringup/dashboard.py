@@ -423,7 +423,7 @@ LEFTOVER_PROG = re.compile(
     r'imu_complementary_filter|laser_filters|sllidar_ros2|rtabmap_\w+|nav2_\w+|rclcpp_components|joy|slam_toolbox)/'
     r'|^/home/ubuntu/third_party_ros2/'          # sllidar_node (lidar driver) lives here
     r'|astra_bridge\.py$'
-    r'|/lib/ame505_bringup/(xbox_teleop|checkpoint_recorder|patrol|frame_recorder|depth_obstacles|gtsam_slam|lifecycle_guard)$)')
+    r'|/lib/ame505_bringup/(xbox_teleop|checkpoint_recorder|patrol|frame_recorder|depth_obstacles|gtsam_slam|lifecycle_guard|sim_robot)$)')
 
 
 def _leftover_pids():

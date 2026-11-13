@@ -11,7 +11,9 @@ The navigation side (this repo, so far) gets the robot to the checkpoints. Detai
   `~/ame505-safety-inspection-robot`, Hiwonder drivers in `~/ros2_ws` (not in this repo).
   RAM is the bottleneck: VS Code + Claude on the robot use ~1–2 GB and push Nav2 into swap
   (load average 19 seen). **Edit on a laptop, `git push`, then `git pull` + build on the robot.**
-* **Laptop (offline)**: you can edit and read logs/maps here, but you can't run the robot stack.
+* **Laptop (offline)**: you can edit and read logs/maps here, but you can't run the robot stack
+  on hardware. `source scripts/sim_env.sh` runs it against a simulated base + lidar
+  ([docs/SIMULATION.md](docs/SIMULATION.md)); no camera, no Nano timing problems.
   Use `debug_logs/<time>/` (made by `scripts/save_debug_bundle.sh` on the robot) to analyse runs.
 
 ## Build / run (on the robot)
