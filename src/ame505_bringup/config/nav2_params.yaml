@@ -127,7 +127,7 @@ controller_server:
       sim_time: 1.5
       linear_granularity: 0.05
       angular_granularity: 0.05
-      transform_tolerance: 0.3
+      transform_tolerance: 1.0         # AME505: odom->map from AMCL can be ~0.3-1 s old on the loaded Nano
       xy_goal_tolerance: 0.15
       trans_stopped_velocity: 0.05
       short_circuit_trajectory_evaluation: True
@@ -153,6 +153,7 @@ local_costmap:
       publish_frequency: 2.0
       global_frame: odom
       robot_base_frame: base_footprint
+      transform_tolerance: 1.0       # AME505: AMCL/EKF TF lags under load
       use_sim_time: False
       rolling_window: true
       width: 3
@@ -210,6 +211,7 @@ global_costmap:
       publish_frequency: 1.0
       global_frame: map
       robot_base_frame: base_footprint
+      transform_tolerance: 1.0       # AME505: AMCL/EKF TF lags under load
       use_sim_time: False
       footprint: "[[0.165, 0.14], [0.165, -0.14], [-0.165, -0.14], [-0.165, 0.14]]"
       resolution: 0.05
@@ -301,7 +303,7 @@ behavior_server:
       plugin: "nav2_behaviors/Wait"
     global_frame: odom
     robot_base_frame: base_footprint
-    transform_tolerance: 0.2
+    transform_tolerance: 1.0
     use_sim_time: false
     simulate_ahead_time: 2.0
     max_rotational_vel: 0.6
@@ -426,7 +428,7 @@ amcl:
     update_min_d: 0.10             # update every 10 cm / ~6 deg (defaults 0.25 m / 0.2 rad)
     update_min_a: 0.10
     tf_broadcast: true
-    transform_tolerance: 0.5
+    transform_tolerance: 1.5       # post-date map->odom so a few dropped scans don't break Nav2 TF lookups
     save_pose_rate: 0.5
     # Start pose: navigation_2d.launch.py fills initial_pose from the map's "home"
     # (default 0,0,0 = where mapping started). Wrong? Dashboard "Set pose".
