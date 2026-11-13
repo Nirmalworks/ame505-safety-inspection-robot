@@ -55,6 +55,13 @@ done
 {
   echo "time: $(date)"; echo "note: $NOTE"
   echo "git: $(git rev-parse --short HEAD 2>/dev/null) $(git status --short | wc -l) changed files"
+  # Which Jetson and host system this is. Run inside the container, so the host-only files may be hidden.
+  echo; echo "== board"
+  m=$(cat /proc/device-tree/model 2>/dev/null | tr -d '\0'); echo "model:   ${m:-not visible here}"
+  echo "kernel:  $(uname -r) $(uname -m)   (4.9-tegra = JetPack 4 / host Ubuntu 18.04, 5.10 = JetPack 5, 5.15 = JetPack 6)"
+  l=$(head -1 /etc/nv_tegra_release 2>/dev/null); echo "l4t:     ${l:-not visible here (host file)}"
+  echo "os here: $(. /etc/os-release 2>/dev/null && echo "$PRETTY_NAME")"
+  echo "cpu:     $(nproc) cores, $(grep -m1 -iE 'model name|CPU part' /proc/cpuinfo | sed 's/.*: //')"
   echo; echo "== memory"; free -m
   echo; echo "== disk"; df -h "$AME505_DATA" | tail -1
   echo; echo "== robot processes"; pgrep -af 'ros2 launch|dashboard|amcl|slam_toolbox|rtabmap|component_container' | cut -c1-200
