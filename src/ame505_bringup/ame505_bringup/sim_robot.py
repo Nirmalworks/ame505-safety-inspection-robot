@@ -133,12 +133,16 @@ class SimRobot(Node):
                 q['to_b'], q['wait'] = not q['to_b'], q.get('pause', 3.0)
                 continue
             nxt = q['pos'] + d / dist * min(q.get('speed', 0.7) * dt, dist)
-            if np.linalg.norm(nxt - robot) < q['radius'] + self.radius + 0.35:
-                q['held'] += dt                               # the robot is in the way: wait a bit,
-                if q['held'] > 5.0:                           # then turn around and walk off
-                    q['to_b'], q['held'] = not q['to_b'], 0.0
-            else:
-                q['pos'], q['held'] = nxt, 0.0
+            if np.linalg.norm(nxt - robot) < q['radius'] + self.radius + 0.35 and q['held'] < 3.0:
+                q['held'] += dt                               # the robot is in the way: hesitate ~3 s,
+                continue
+            touch = q['radius'] + self.radius + 0.03          # ...then step around it, like people do
+            off = nxt - robot
+            if np.linalg.norm(off) < touch:
+                nxt = robot + off / max(float(np.linalg.norm(off)), 1e-6) * touch
+            q['pos'] = nxt
+            if np.linalg.norm(nxt - robot) > q['radius'] + self.radius + 0.6:
+                q['held'] = 0.0                               # clear of the robot again
 
     def touches_person(self, x, y):
         return any(q['here'] and math.hypot(q['pos'][0] - x, q['pos'][1] - y) < q['radius'] + self.radius

@@ -1,7 +1,7 @@
 # Simulated people for the sample hallway (map-frame metres). Use with
 #   ros2 launch ame505_bringup navigation_2d.launch.py map:=sim_hall sim_people:=default
-# walker:  paces between a and b, pauses at each end. If the robot is in the way it waits up to
-#          5 s, then turns around and walks off.
+# walker:  paces between a and b, pauses at each end. If the robot is in the way it hesitates
+#          about 3 s, then steps around it.
 # stander: stands at one spot for `duration` s out of every `period` s (e.g. chatting in a doorway).
 # The lidar sees them as 0.4 m wide circles; the robot cannot drive through them, and the
 # simulator logs CONTACT if it drives into one.
