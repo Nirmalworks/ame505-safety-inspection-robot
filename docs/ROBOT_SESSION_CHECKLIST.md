@@ -83,6 +83,31 @@ floor in open space. Keep a hand near the power switch.
 If anything in this table fails: note what happened, run section 5, and go back to `main`
 (`git checkout main && colcon build --symlink-install && ./scripts/dashboard.sh restart`).
 
+## 4b. Controller comparison at a real doorway (optional, 15 min)
+
+Needs the branch `nav/rpp-controller-option` (it contains everything in the fix branch):
+`git checkout nav/rpp-controller-option && colcon build --symlink-install`.
+
+In simulation the current controller (DWB) stood still at 0.8–1.0 m gaps and finished the patrol in
+1 of 3 runs; Regulated Pure Pursuit finished 3 of 3. Check whether that holds on a real door.
+
+Pick a start spot and a goal on the other side of the narrowest doorway. Three passes with each
+settings file, from the command line (the dashboard always uses the default file). Ctrl+C between
+the two.
+
+```bash
+ros2 launch ame505_bringup navigation_2d.launch.py map:=lab2d            # A: current DWB settings
+ros2 launch ame505_bringup navigation_2d.launch.py map:=lab2d \
+    params_file:=$(ros2 pkg prefix ame505_bringup)/share/ame505_bringup/config/nav2_params_rpp.yaml   # B
+```
+
+| | Pass 1 | Pass 2 | Pass 3 | Notes (stalls, "Failed to make progress", how close to the frame) |
+|---|---|---|---|---|
+| A: DWB, seconds to goal | | | | |
+| B: pure pursuit, seconds to goal | | | | |
+
+With B the robot does not strafe: it turns on the spot, then drives forward.
+
 ## 5. Bring it home (5 min)
 
 ```bash
