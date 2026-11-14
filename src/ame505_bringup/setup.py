@@ -36,6 +36,7 @@ setup(
             'depth_obstacles = ame505_bringup.depth_obstacles:main',
             'capture_dataset = ame505_bringup.capture_dataset:main',
             'lifecycle_guard = ame505_bringup.lifecycle_guard:main',
+            'inspection = ame505_bringup.inspection:main',
         ],
     },
 )

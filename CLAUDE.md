@@ -70,6 +70,8 @@ TF: `map -(AMCL or slam_toolbox)-> odom -(EKF)-> base_footprint -(URDF)-> lidar_
 * `depth_obstacles.py`: depth image → `/depth_cam/points` for costmaps (only with camera on).
 * `gtsam_*`: Shreyash's GTSAM lidar/gyro SLAM experiment ([docs/GTSAM_SLAM.md](docs/GTSAM_SLAM.md)).
 * `src/ame505_description`: URDF/meshes (footprint 0.33 × 0.28 m).
+* `keep_clear.py` + `inspection.py` + `config/inspection.yaml`: depth-rule hazard check at each patrol
+  checkpoint. `ml/`: dataset split, evaluation, baseline, tests ([ml/README.md](ml/README.md)).
 
 Docs: [docs/MAPPING_NAVIGATION.md](docs/MAPPING_NAVIGATION.md) (how to use) ·
 [docs/LOCALIZATION.md](docs/LOCALIZATION.md) (why it failed, how it works now, mapping good practice) ·
