@@ -18,6 +18,7 @@ ame505-safety-inspection-robot/
 │   └── ame505_bringup/       drivers, Xbox teleop, RTAB-Map 3D mapping, Nav2, patrol, dashboard
 │       └── web/              dashboard + 3D map viewer pages
 ├── scripts/                  dashboard, env, SSD setup, map export, stop
+├── ml/                       dataset split, evaluation, depth-rule baseline (ml/README.md)
 ├── CLAUDE.md                    project context for Claude Code / new teammates
 ├── docs/ROBOT.md                hardware, software layout, working offline
 ├── docs/MAPPING_NAVIGATION.md   step-by-step guide

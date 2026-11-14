@@ -1,0 +1,16 @@
+# Keep-clear check at each patrol checkpoint (inspection node, ml/depth_baseline.py).
+# Plain YAML, not ROS parameters. All distances in metres, in the robot frame at the taped
+# checkpoint position: x forward from base_footprint, y left, z up from the floor.
+
+min_area_m2: 0.01        # hazard when at least this much object surface faces the camera (10 x 10 cm)
+
+zone:                    # default keep-clear zone; measure the taped corners and override per checkpoint
+  x_min: 0.5             # the camera (0.21 m high, level) sees no floor closer than ~0.5 m
+  x_max: 1.5
+  half_width: 0.4        # 0.8 m wide; OSHA 1910.37: exit routes >= 0.71 m
+  z_min: 0.06            # ignore the floor; raise it if a tilted camera makes the floor count
+  z_max: 0.60
+
+camera: {}               # overrides for keep_clear.DEFAULT_CAMERA, e.g. {pitch_deg: 2.0}
+
+checkpoints: {}          # e.g.  cp_03: {zone: {x_max: 1.2, half_width: 0.5}}
