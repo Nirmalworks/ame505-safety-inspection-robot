@@ -60,7 +60,7 @@ def generate_launch_description():
         DeclareLaunchArgument('use_camera', default_value='true',
                               description='false = lidar-only RTAB-Map (lighter, no 3D)'),
         DeclareLaunchArgument('use_teleop', default_value='true'),
-        DeclareLaunchArgument('use_rviz', default_value='true'),
+        DeclareLaunchArgument('use_rviz', default_value='false'),   # RViz exhausts the Nano's RAM
         DeclareLaunchArgument('map_3d', default_value='true',
                               description='build coloured 3D map from the depth camera'),
         DeclareLaunchArgument('rtabmap_viz', default_value='false'),

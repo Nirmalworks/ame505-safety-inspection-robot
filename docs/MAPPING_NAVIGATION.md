@@ -91,16 +91,16 @@ ros2 launch ame505_description view_robot.launch.py
 # drive + watch lidar / depth camera in RViz (no map)
 ros2 launch ame505_bringup robot.launch.py use_rviz:=true
 
-# 3D mapping (RViz opens: 2D map, live lidar, live depth cloud, growing 3D map)
+# 3D mapping (no RViz on the robot by default: it exhausts the Nano's RAM; use the laptop command below)
 ros2 launch ame505_bringup mapping.launch.py map:=lab_map new:=true
 #   leave out new:=true to EXTEND an existing map
 #   map_3d:=false     2D-only from lidar (lighter)      use_camera:=false  no camera at all
-#   use_rviz:=false   no RViz on the robot
+#   use_rviz:=true    RViz on the robot (depth cloud + camera displays start unticked)
 ros2 run ame505_bringup save_3d_map --name lab_map     # while mapping: save .ply
 ./scripts/save_2d_map.sh lab_map                       # while mapping: save .pgm
 # Ctrl+C = stop; RTAB-Map saves data/ssd/maps/lab_map.db on exit
 
-# navigation on the saved map (+ RViz: "2D Goal Pose" to send goals, Y on Xbox = checkpoint)
+# navigation on the saved map (goals from the dashboard, or RViz "2D Goal Pose" on a laptop; Y on Xbox = checkpoint)
 ros2 launch ame505_bringup navigation.launch.py map:=lab_map
 ros2 run ame505_bringup patrol --map lab_map --loops 1 --dwell 5
 

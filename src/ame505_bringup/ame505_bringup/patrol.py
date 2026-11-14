@@ -55,8 +55,10 @@ def main():
     nav = BasicNavigator()
     pub = nav.create_publisher(String, 'patrol/at_checkpoint', 10)
     nav.get_logger().info(f'Loaded {len(cps)} checkpoints from {path}')
-    # RTAB-Map does localization (no AMCL), so only wait for Nav2 itself.
-    nav.waitUntilNav2Active(localizer='robot_localization')
+    # Only wait for Nav2 itself. Naming a localizer makes Humble's BasicNavigator wait for that
+    # node's lifecycle service: 'robot_localization' has none (it blocks forever), and 'amcl'
+    # re-publishes an initial pose at the origin. Localization is already up by patrol time.
+    nav.waitUntilNav2Active(localizer='bt_navigator')
 
     loop = 0
     try:
