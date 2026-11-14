@@ -27,6 +27,7 @@ from rclpy.time import Time
 from sensor_msgs.msg import Imu, LaserScan
 from std_msgs.msg import UInt16
 from tf2_ros import Buffer, TransformBroadcaster, TransformListener
+from visualization_msgs.msg import Marker, MarkerArray
 
 BEAMS = 360
 STEP_HZ = 30.0
@@ -58,6 +59,19 @@ class SimRobot(Node):
         # distance (m) from every cell to the nearest wall, for the collision check
         self.clearance = cv2.distanceTransform((~self.occ).astype(np.uint8), cv2.DIST_L2, 5) * self.res
 
+        # Optional moving people (sim/sim_hall_people.yaml): circles the lidar sees and the robot
+        # cannot drive through. walker: paces between a and b; stander: stands at a spot part of the time.
+        people_yaml = p('people', '').value                   # '' = nobody, 'default' = <world>_people.yaml
+        if people_yaml == 'default':
+            people_yaml = world_yaml.replace('_world.yaml', '_people.yaml')
+        self.people = (yaml.safe_load(open(people_yaml)) or {}).get('people', []) if people_yaml else []
+        for q in self.people:
+            q.setdefault('radius', 0.2)
+            q['pos'] = np.array(q['a'] if q['type'] == 'walker' else q['at'], float)
+            q.update(to_b=True, wait=0.0, held=0.0, here=q['type'] == 'walker')
+        self.contacts, self.in_contact = 0, False
+        self.t0 = None
+
         self.odom = np.zeros(3)                               # pose in the odom frame (starts at 0)
         self.cmd, self.cmd_stamp = np.zeros(3), 0.0
         self.vel = np.zeros(3)
@@ -78,7 +92,11 @@ class SimRobot(Node):
         self.create_timer(1.0 / STEP_HZ, self.step)
         self.create_timer(1.0 / 12.0, self.scan)              # RPLidar A1: 12 Hz
         self.create_timer(1.0, lambda: self.batt_pub.publish(UInt16(data=12000)))
-        self.get_logger().info(f'SIMULATED robot in {world_yaml}, start {self.pose.tolist()}')
+        if self.people:
+            self.people_pub = self.create_publisher(MarkerArray, '/sim/people', 5)
+            self.create_timer(0.2, self.publish_people)
+        self.get_logger().info(f'SIMULATED robot in {world_yaml}, start {self.pose.tolist()}, '
+                               f'{len(self.people)} simulated people')
 
     def now_s(self):
         return self.get_clock().now().nanoseconds / 1e9
@@ -94,15 +112,71 @@ class SimRobot(Node):
             return True
         return self.clearance[r, c] < self.radius
 
+    def move_people(self, dt):
+        if self.t0 is None:
+            self.t0 = self.now_s()
+        t = self.now_s() - self.t0
+        robot = self.pose[:2]
+        for q in self.people:
+            near = np.linalg.norm(q['pos'] - robot) < q['radius'] + self.radius + 0.35
+            if q['type'] == 'stander':                        # e.g. someone chatting in a doorway
+                want = (t + q.get('phase', 0.0)) % q['period'] < q['duration']
+                q['here'] = want and (q['here'] or not near)  # never appears on top of the robot
+                continue
+            if q['wait'] > 0:
+                q['wait'] -= dt
+                continue
+            goal = np.array(q['b'] if q['to_b'] else q['a'], float)
+            d = goal - q['pos']
+            dist = float(np.linalg.norm(d))
+            if dist < 0.05:                                   # arrived: pause, then walk back
+                q['to_b'], q['wait'] = not q['to_b'], q.get('pause', 3.0)
+                continue
+            nxt = q['pos'] + d / dist * min(q.get('speed', 0.7) * dt, dist)
+            if np.linalg.norm(nxt - robot) < q['radius'] + self.radius + 0.35:
+                q['held'] += dt                               # the robot is in the way: wait a bit,
+                if q['held'] > 5.0:                           # then turn around and walk off
+                    q['to_b'], q['held'] = not q['to_b'], 0.0
+            else:
+                q['pos'], q['held'] = nxt, 0.0
+
+    def touches_person(self, x, y):
+        return any(q['here'] and math.hypot(q['pos'][0] - x, q['pos'][1] - y) < q['radius'] + self.radius
+                   for q in self.people)
+
+    def publish_people(self):
+        arr = MarkerArray()
+        for i, q in enumerate(self.people):
+            m = Marker()
+            m.header.frame_id, m.header.stamp = 'map', self.get_clock().now().to_msg()
+            m.ns, m.id, m.type = 'people', i, Marker.CYLINDER
+            m.action = Marker.ADD if q['here'] else Marker.DELETE
+            m.pose.position.x, m.pose.position.y, m.pose.position.z = float(q['pos'][0]), float(q['pos'][1]), 0.85
+            m.pose.orientation.w = 1.0
+            m.scale.x = m.scale.y = 2 * q['radius']
+            m.scale.z = 1.7
+            m.color.r, m.color.g, m.color.b, m.color.a = 1.0, 0.6, 0.1, 0.9
+            arr.markers.append(m)
+        self.people_pub.publish(arr)
+
     def step(self):
         dt = 1.0 / STEP_HZ
+        self.move_people(dt)
         target = self.cmd if self.now_s() - self.cmd_stamp < self.cmd_timeout else np.zeros(3)
         self.vel += np.clip(target - self.vel, -1.5 * dt, 1.5 * dt)      # 1.5 m/s^2 (rad/s^2) ramp
         true_v = self.vel * self.slip
         c, s = math.cos(self.pose[2]), math.sin(self.pose[2])
         nx = self.pose[0] + (true_v[0] * c - true_v[1] * s) * dt
         ny = self.pose[1] + (true_v[0] * s + true_v[1] * c) * dt
-        if self.blocked(nx, ny):                              # walls stop the robot; it can still turn
+        hit_person = self.touches_person(nx, ny)
+        if hit_person and not self.in_contact and float(np.hypot(*true_v[:2])) > 0.02:
+            self.contacts += 1                                # the robot drove into someone
+            self.get_logger().error(f'CONTACT: the robot touched a person at ({nx:.2f}, {ny:.2f}) '
+                                    f'while moving at {float(np.hypot(*true_v[:2])):.2f} m/s')
+        self.in_contact = hit_person
+        if hit_person:
+            pass                                              # cannot push people: stay put
+        elif self.blocked(nx, ny):                            # walls stop the robot; it can still turn
             self.bumps += 1
             if self.bumps % 30 == 1:
                 self.get_logger().warn(f'BUMP: the robot is pushing against a wall at '
@@ -178,6 +252,15 @@ class SimRobot(Node):
         hit[inside] = self.occ[rows[inside], cols[inside]]
         first = hit.argmax(axis=1)
         r = np.where(hit.any(axis=1), dist[first] + self.rng.normal(0, self.range_noise, len(first)), np.inf)
+        for q in self.people:                                 # people: ray against a circle
+            if not q['here']:
+                continue
+            ocx, ocy = q['pos'][0] - ox, q['pos'][1] - oy
+            along = ocx * np.cos(world) + ocy * np.sin(world)
+            disc = along ** 2 - (ocx ** 2 + ocy ** 2 - q['radius'] ** 2)
+            t = along - np.sqrt(np.maximum(disc, 0.0))
+            seen = (disc >= 0) & (t > self.range_min) & (t < self.range_max)
+            r = np.where(seen & (t < r), t + self.rng.normal(0, self.range_noise, len(t)), r)
 
         msg = LaserScan()
         msg.header.stamp, msg.header.frame_id = self.get_clock().now().to_msg(), 'lidar_frame'

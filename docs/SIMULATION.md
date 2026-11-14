@@ -42,6 +42,7 @@ and launch with `map:=<name> sim_world:=<path to that .yaml>`.
 | Lidar `/scan` | 12 Hz, 360 beams in `lidar_frame`, only the robot-front 180° valid, 1 cm noise, 0.2–12 m |
 | Odometry `/odom`, TF `odom -> base_footprint` | believes the commanded speed; the true robot slips (3 % forward, 12 % sideways, 5 % turning), so odometry drifts and AMCL has to correct it |
 | Walls | the robot stops and logs `BUMP` when its 0.18 m circle touches one |
+| People (optional) | add `sim_people:=default` to the launch: two walkers and two people who stand in doorways part of the time (`sim/sim_hall_people.yaml`). The lidar sees them, the robot cannot drive through them, and `CONTACT` is logged if it drives into one. RViz: add a MarkerArray display on `/sim/people` |
 | `/imu`, battery | so the dashboard has data |
 | True pose | `/sim/ground_truth`, to measure localization error |
 
