@@ -16,6 +16,7 @@ import time
 import rclpy
 import yaml
 from geometry_msgs.msg import PoseStamped
+from lifecycle_msgs.srv import GetState
 from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
 from std_msgs.msg import String
 
@@ -33,6 +34,24 @@ def make_pose(nav, frame, cp):
     return p
 
 
+def wait_for_nav2(nav, timeout):
+    """True once bt_navigator is active. Asks again every few seconds instead of using
+    BasicNavigator.waitUntilNav2Active: that waits forever when a single reply is lost (seen on a
+    loaded machine), and with a localizer name it waits for 'robot_localization/get_state', which
+    nothing provides, or re-publishes an initial pose at the origin ('amcl')."""
+    client = nav.create_client(GetState, 'bt_navigator/get_state')
+    end = time.time() + timeout
+    while time.time() < end:
+        if client.wait_for_service(timeout_sec=1.0):
+            future = client.call_async(GetState.Request())
+            rclpy.spin_until_future_complete(nav, future, timeout_sec=3.0)
+            if future.done() and future.result() and future.result().current_state.label == 'active':
+                return True
+            future.cancel()
+        time.sleep(1.0)
+    return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--map', default='lab_map', help='map name (selects checkpoint file)')
@@ -40,6 +59,7 @@ def main():
     ap.add_argument('--loops', type=int, default=1, help='patrol loops (0 = forever)')
     ap.add_argument('--dwell', type=float, default=5.0, help='seconds to stop at each checkpoint')
     ap.add_argument('--return-home', action='store_true', help='go back to cp_01 at the end')
+    ap.add_argument('--nav2-timeout', type=float, default=180.0, help='seconds to wait for Nav2 to be active')
     args = ap.parse_args(rclpy.utilities.remove_ros_args(sys.argv)[1:])
 
     path = args.file or checkpoints_file(args.map)
@@ -56,10 +76,9 @@ def main():
     pub = nav.create_publisher(String, 'patrol/at_checkpoint', 10)
     missed_pub = nav.create_publisher(String, 'patrol/not_reached', 10)   # after two attempts + a later return
     nav.get_logger().info(f'Loaded {len(cps)} checkpoints from {path}')
-    # Only wait for Nav2 itself. Naming a localizer makes Humble's BasicNavigator wait for that
-    # node's lifecycle service: 'robot_localization' has none (it blocks forever), and 'amcl'
-    # re-publishes an initial pose at the origin. Localization is already up by patrol time.
-    nav.waitUntilNav2Active(localizer='bt_navigator')
+    if not wait_for_nav2(nav, args.nav2_timeout):
+        sys.exit(f'Nav2 (bt_navigator) is not active after {args.nav2_timeout:.0f} s. Is navigation running?')
+    nav.get_logger().info('Nav2 is ready')
 
     def drive_to(cp):
         nav.goToPose(make_pose(nav, frame, cp))
