@@ -1,8 +1,13 @@
 <!--
   AME 505 navigate-to-pose tree: Nav2's default replanning tree WITHOUT the Spin and BackUp
   recoveries. Those made the robot turn on the spot / reverse blindly (the A1 lidar only sees
-  the front half) whenever a plan failed. Recovery here = clear both costmaps (fresh live
-  lidar + depth data) and wait, then replan. Replans at 1 Hz so new obstacles are avoided.
+  the front half) whenever a plan failed. Replans at 1 Hz so new obstacles are avoided.
+
+  When the robot gets stuck (people, boxes, a tight doorway):
+    1. the normal controller "FollowPath" gives up after 10 s without progress,
+    2. the SAME path is retried with the fallback controller "FollowPathRPP" (pure pursuit), which
+       keeps going for the rest of this goal; the next goal starts with "FollowPath" again,
+    3. only if that fails too: clear both costmaps (fresh live lidar + depth data), wait, replan.
 -->
 <root main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
@@ -15,7 +20,10 @@
           </RecoveryNode>
         </RateController>
         <RecoveryNode number_of_retries="1" name="FollowPath">
-          <FollowPath path="{path}" controller_id="FollowPath"/>
+          <Fallback name="NormalThenFallbackController">
+            <FollowPath path="{path}" controller_id="FollowPath"/>
+            <FollowPath path="{path}" controller_id="FollowPathRPP"/>
+          </Fallback>
           <ClearEntireCostmap name="ClearLocalCostmap-Context" service_name="local_costmap/clear_entirely_local_costmap"/>
         </RecoveryNode>
       </PipelineSequence>

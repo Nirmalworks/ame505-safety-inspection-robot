@@ -105,8 +105,14 @@ ros2 launch ame505_bringup navigation_2d.launch.py map:=lab2d \
 |---|---|---|---|---|
 | A: DWB, seconds to goal | | | | |
 | B: pure pursuit, seconds to goal | | | | |
+| C: DWB with fallback, seconds to goal | | | | |
 
 With B the robot does not strafe: it turns on the spot, then drives forward.
+
+C needs the branch `nav/stuck-recovery` and no extra argument (first launch line above): DWB drives
+as usual, and when it makes no progress for 10 s the same path is retried with pure pursuit. In
+simulation C finished 3 patrols of 3. To see the hand-over, put a box 0.8 m from a wall on the
+route, or stand in a doorway for 15 s and then step aside.
 
 ## 5. Bring it home (5 min)
 

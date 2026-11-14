@@ -99,11 +99,11 @@ controller_server:
     failure_tolerance: 0.5
     progress_checker_plugin: "progress_checker"
     goal_checker_plugins: ["general_goal_checker"]
-    controller_plugins: ["FollowPath"]
+    controller_plugins: ["FollowPath", "FollowPathRPP"]   # second one = fallback when stuck
     progress_checker:
       plugin: "nav2_controller::SimpleProgressChecker"
       required_movement_radius: 0.25
-      movement_time_allowance: 15.0
+      movement_time_allowance: 10.0      # was 15: hand over to the fallback controller sooner
     general_goal_checker:
       plugin: "nav2_controller::SimpleGoalChecker"
       stateful: True
@@ -115,6 +115,34 @@ controller_server:
       # "stay" scored better than entering the gap; this controller got through 3 patrols of 3.
       # Trade-off: no sideways strafing while navigating; it turns on the spot, then drives forward.
       # First-guess numbers, not tuned on the robot.
+      plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
+      desired_linear_vel: 0.20             # same top speed as the DWB config
+      lookahead_dist: 0.40
+      min_lookahead_dist: 0.25
+      max_lookahead_dist: 0.60
+      lookahead_time: 1.5
+      use_velocity_scaled_lookahead_dist: false
+      rotate_to_heading_angular_vel: 0.6   # same as DWB max_vel_theta
+      max_angular_accel: 2.0
+      transform_tolerance: 1.0             # AME505: odom->map from AMCL can be ~0.3-1 s old on the loaded Nano
+      min_approach_linear_velocity: 0.05
+      approach_velocity_scaling_dist: 0.4
+      use_collision_detection: true
+      max_allowed_time_to_collision_up_to_carrot: 1.0
+      use_regulated_linear_velocity_scaling: true
+      use_cost_regulated_linear_velocity_scaling: true   # slower near walls instead of refusing to go
+      regulated_linear_scaling_min_radius: 0.5
+      regulated_linear_scaling_min_speed: 0.08
+      use_rotate_to_heading: true
+      rotate_to_heading_min_angle: 0.6     # path more than ~35 deg off the heading -> turn on the spot first
+      allow_reversing: false               # nothing watches behind the robot
+      max_robot_pose_search_dist: 2.0
+
+    # Fallback controller. config/navigate_no_spin.xml switches to it for the rest of a leg when
+    # FollowPath (above) stops making progress. In simulation DWB stood still at 0.8-1.0 m gaps
+    # (doorway, a box that is not on the map); pure pursuit follows the path and just slows down.
+    # It does not strafe: it turns on the spot, then drives forward. Not tuned on the robot.
+    FollowPathRPP:
       plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
       desired_linear_vel: 0.20             # same top speed as the DWB config
       lookahead_dist: 0.40
