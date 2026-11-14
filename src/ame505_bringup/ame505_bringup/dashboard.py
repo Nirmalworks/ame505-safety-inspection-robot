@@ -10,6 +10,7 @@ map_server + AMCL lidar localization for Nav2. Legacy RTAB-Map 3D maps (maps/<ma
 still work when no 2D map of that name exists. It listens to topics read-only, except E-STOP (zero velocity) and saving maps.
 """
 import collections
+import csv
 import glob
 import json
 import math
@@ -812,6 +813,15 @@ def load_checkpoints(name):
     return []
 
 
+def last_inspections(n=20):
+    """Newest-first rows of inspections/index.csv (written by the inspection node)."""
+    path = os.path.join(data_dir('inspections'), 'index.csv')
+    if not os.path.exists(path):
+        return []
+    with open(path, newline='') as f:
+        return list(csv.DictReader(f))[-n:][::-1]
+
+
 def list_files():
     def info(p):
         return {'name': os.path.basename(p), 'mb': round(os.path.getsize(p) / 1e6, 1),
@@ -1006,6 +1016,14 @@ def create_app(node, mgr):
     @app.get('/files/maps_3d/<path:name>')
     def ply(name):
         return send_from_directory(data_dir('maps_3d'), name)
+
+    @app.get('/api/inspections')
+    def inspections():
+        return jsonify(last_inspections())
+
+    @app.get('/files/inspections/<path:name>')
+    def inspection_file(name):
+        return send_from_directory(data_dir('inspections'), name)
 
     @app.get('/files/gtsam/<path:name>')
     def gtsam_file(name):

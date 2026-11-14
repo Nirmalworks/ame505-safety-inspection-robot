@@ -46,6 +46,9 @@ def setup(context):
                               'use_teleop': LaunchConfiguration('use_teleop')}.items()),
         Node(package='ame505_bringup', executable='depth_obstacles', name='depth_obstacles',
              output='screen', condition=IfCondition(use_camera)),
+        # keep-clear check at each patrol checkpoint (needs the camera)
+        Node(package='ame505_bringup', executable='inspection', name='inspection',
+             output='screen', condition=IfCondition(use_camera)),
         TimerAction(period=6.0, actions=[IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(me, 'launch', 'nav2_stack.launch.py')),
             launch_arguments={

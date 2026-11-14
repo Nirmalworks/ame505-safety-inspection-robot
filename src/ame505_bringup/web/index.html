@@ -118,6 +118,12 @@
   </div>
 
   <div class="card">
+    <h2>Inspection results</h2>
+    <p style="color:var(--mut);margin:0 0 6px">Start navigation with <b>camera</b> ticked. At each patrol checkpoint the robot checks the keep-clear zone with the depth camera (newest first).</p>
+    <table id="insp"></table>
+  </div>
+
+  <div class="card">
     <h2>GTSAM SLAM (lidar + gyro)</h2>
     <p style="color:var(--mut);margin:0 0 6px">Runs <b>next to</b> driving, mapping or navigation (read-only, never drives).
       Keep the robot <b>still ~5 s</b> after starting. The <span style="color:#ff9f1a;font-weight:700">orange path</span> is GTSAM, drawn on your saved map.</p>
@@ -294,6 +300,19 @@ async function pollFiles() {
   $('datadir').textContent = 'Stored on SSD: ' + files.data_dir;
 }
 
+// inspection results (inspections/index.csv, written by the inspection node)
+async function pollInspections() {
+  let rows = []; try { rows = await (await fetch('/api/inspections')).json(); } catch (e) { return; }
+  const esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const color = {hazard: 'var(--bad)', normal: 'var(--ok)', no_image: 'var(--warn)'};
+  $('insp').innerHTML = rows.length ? rows.map(r =>
+    `<tr><td>${esc(r.time).slice(11)}</td><td>${esc(r.checkpoint)}</td>` +
+    `<td><b style="color:${color[r.result] || 'var(--mut)'}">${esc(r.result).toUpperCase().replace('_', ' ')}</b></td>` +
+    `<td class="r">${r.area_m2 > 0 ? (+r.area_m2).toFixed(3) + ' m²' : ''}</td>` +
+    `<td class="r">${r.file_rgb ? `<a href="/files/inspections/${esc(r.file_rgb)}" target="_blank" style="color:var(--acc)">photo</a>` : ''}</td></tr>`
+  ).join('') : '<tr><td style="color:var(--mut)">No inspections yet.</td></tr>';
+}
+
 // lidar canvas
 async function drawLidar() {
   const c = $('lidar'), g = c.getContext('2d'), W = c.width, H = c.height, s = 40; // px per metre
@@ -307,8 +326,8 @@ async function drawLidar() {
 }
 
 $('rgb').src = '/stream/rgb'; $('depth').src = '/stream/depth';
-poll(); pollFiles(); drawLidar();
-setInterval(poll, 700); setInterval(pollFiles, 4000); setInterval(drawLidar, 250);
+poll(); pollFiles(); drawLidar(); pollInspections();
+setInterval(poll, 700); setInterval(pollFiles, 4000); setInterval(drawLidar, 250); setInterval(pollInspections, 3000);
 </script>
 <script>
 // ---------- Map panel: saved/live map, robot, lidar, plan, goal, home, checkpoints ----------

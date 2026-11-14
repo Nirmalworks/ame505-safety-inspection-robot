@@ -29,12 +29,12 @@ Limits:
 
 ## On the robot
 
-`ros2 run ame505_bringup inspection` next to navigation (camera on) and the patrol: at each
-checkpoint it waits 3 s, takes a new RGB-D frame, runs the rule and writes
-`$AME505_DATA/inspections/index.csv` plus the image pair. Results are also published on
-`inspection/result`.
+`navigation_2d.launch.py use_camera:=true` (dashboard: tick **camera**, Start navigation) starts the
+`inspection` node. At each patrol checkpoint it waits 3 s, takes a new RGB-D frame, runs the rule
+and writes `$AME505_DATA/inspections/index.csv` plus the image pair. The dashboard's
+**Inspection results** card lists the latest 20; results are also published on `inspection/result`.
 
 ## Not here yet
 
 YOLO training and TensorRT export (need the CVAT labels), the checkpoint classifier comparison,
-the detector inside the inspection node, and inspection results on the dashboard.
+and the detector inside the inspection node.
