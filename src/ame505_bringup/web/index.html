@@ -118,12 +118,6 @@
   </div>
 
   <div class="card">
-    <h2>Inspection results</h2>
-    <p style="color:var(--mut);margin:0 0 6px">Start navigation with <b>camera</b> ticked. At each patrol checkpoint the robot checks the keep-clear zone with the depth camera (newest first).</p>
-    <table id="insp"></table>
-  </div>
-
-  <div class="card">
     <h2>GTSAM SLAM (lidar + gyro)</h2>
     <p style="color:var(--mut);margin:0 0 6px">Runs <b>next to</b> driving, mapping or navigation (read-only, never drives).
       Keep the robot <b>still ~5 s</b> after starting. The <span style="color:#ff9f1a;font-weight:700">orange path</span> is GTSAM, drawn on your saved map.</p>
@@ -169,6 +163,12 @@
     <div class="mapwrap"><canvas id="mapcanvas"></canvas><div id="maphint" class="maphint">No saved map yet. Make one with "Start mapping".</div>
       <div id="mapbanner" class="mapbanner" style="display:none"></div></div>
     <div class="navbar"><span id="navstat">–</span><span id="cplist"></span></div>
+  </div>
+
+  <div class="card">
+    <h2>Inspection results</h2>
+    <p style="color:var(--mut);margin:0 0 6px">Start navigation with <b>camera</b> ticked. At each patrol checkpoint the robot checks the keep-clear zone with the depth camera (newest first).</p>
+    <table id="insp"></table>
   </div>
 
   <div class="card">
