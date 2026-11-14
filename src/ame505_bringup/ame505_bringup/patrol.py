@@ -54,32 +54,46 @@ def main():
     rclpy.init()
     nav = BasicNavigator()
     pub = nav.create_publisher(String, 'patrol/at_checkpoint', 10)
+    missed_pub = nav.create_publisher(String, 'patrol/not_reached', 10)   # after two attempts + a later return
     nav.get_logger().info(f'Loaded {len(cps)} checkpoints from {path}')
     # Only wait for Nav2 itself. Naming a localizer makes Humble's BasicNavigator wait for that
     # node's lifecycle service: 'robot_localization' has none (it blocks forever), and 'amcl'
     # re-publishes an initial pose at the origin. Localization is already up by patrol time.
     nav.waitUntilNav2Active(localizer='bt_navigator')
 
+    def drive_to(cp):
+        nav.goToPose(make_pose(nav, frame, cp))
+        while not nav.isTaskComplete():
+            rclpy.spin_once(nav, timeout_sec=0.1)
+        return nav.getResult() == TaskResult.SUCCEEDED
+
+    def visit(cp, label):
+        """Drive to a checkpoint (one retry) and stop there. False = not reached."""
+        nav.get_logger().info(f'[{label}] -> {cp["id"]} ({cp["x"]}, {cp["y"]})')
+        if not drive_to(cp):
+            nav.get_logger().warn(f'{cp["id"]} not reached, trying once more')
+            if not drive_to(cp):
+                return False
+        pub.publish(String(data=cp['id']))
+        nav.get_logger().info(f'Arrived at {cp["id"]}, inspecting for {args.dwell}s')
+        time.sleep(args.dwell)
+        return True
+
     loop = 0
     try:
         while args.loops == 0 or loop < args.loops:
             loop += 1
-            for cp in cps:
-                nav.get_logger().info(f'[loop {loop}] -> {cp["id"]} ({cp["x"]}, {cp["y"]})')
-                nav.goToPose(make_pose(nav, frame, cp))
-                while not nav.isTaskComplete():
-                    rclpy.spin_once(nav, timeout_sec=0.1)
-                result = nav.getResult()
-                if result == TaskResult.SUCCEEDED:
-                    pub.publish(String(data=cp['id']))
-                    nav.get_logger().info(f'Arrived at {cp["id"]}, inspecting for {args.dwell}s')
-                    time.sleep(args.dwell)
-                else:
-                    nav.get_logger().warn(f'{cp["id"]} not reached ({result}), skipping')
+            missed = [cp for cp in cps if not visit(cp, f'loop {loop}')]
+            # Something was in the way (people, a cart). Come back at the end of the loop: it may
+            # have moved, and the robot now arrives from a different direction.
+            missed = [cp for cp in missed if not visit(cp, f'loop {loop}, second attempt')]
+            for cp in missed:
+                missed_pub.publish(String(data=cp['id']))
+            nav.get_logger().info(
+                f'Loop {loop}: {len(cps) - len(missed)}/{len(cps)} checkpoints inspected'
+                + (f', NOT reached: {", ".join(cp["id"] for cp in missed)}' if missed else ''))
         if args.return_home:
-            nav.goToPose(make_pose(nav, frame, cps[0]))
-            while not nav.isTaskComplete():
-                rclpy.spin_once(nav, timeout_sec=0.1)
+            drive_to(cps[0])
         nav.get_logger().info('Patrol finished')
     except KeyboardInterrupt:
         nav.cancelTask()
