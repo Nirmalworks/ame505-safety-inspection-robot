@@ -25,6 +25,7 @@ ame505-safety-inspection-robot/
 ├── docs/DATA_COLLECTION.md      ML dataset plan (1,000-2,000 RGB-D images, 8-10 checkpoints)
 ├── debug_logs/                  trimmed logs from robot runs (scripts/save_debug_bundle.sh)
 ├── docs/GTSAM_SLAM.md           GTSAM lidar/gyro SLAM + safe navigation (lidar + depth + collision monitor)
+├── docs/SIMULATION.md           run mapping / navigation / patrol on a laptop (source scripts/sim_env.sh)
 └── data/ssd -> /home/ubuntu/share/tmp/ame505_data   (SSD, git-ignored)
 ```
 
